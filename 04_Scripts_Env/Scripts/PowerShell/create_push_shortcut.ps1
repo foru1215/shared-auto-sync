@@ -1,4 +1,4 @@
-$WshShell = New-Object -comObject WScript.Shell
+﻿$WshShell = New-Object -comObject WScript.Shell
 $Shortcut = $WshShell.CreateShortcut("$env:USERPROFILE\Desktop\push.lnk")
 $Shortcut.TargetPath = "powershell.exe"
 $Shortcut.Arguments = "-ExecutionPolicy Bypass -File C:\Users\0190\shared\04_Scripts_Env\Scripts\PowerShell\push.ps1"
