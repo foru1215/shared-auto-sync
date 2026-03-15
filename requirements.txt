@@ -1,0 +1,11 @@
+streamlit>=1.30.0
+playwright>=1.40.0
+beautifulsoup4>=4.12.0
+pandas>=2.1.0
+lxml>=5.0.0
+cryptography>=42.0.0
+keyring>=25.0.0
+certifi>=2024.2.2
+pyinstaller>=6.3.0
+PyYAML>=6.0.0
+pytest>=8.0.0

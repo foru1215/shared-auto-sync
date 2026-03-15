@@ -1,5 +1,6 @@
 nul
 *.pyc
+*.pyo
 __pycache__/
 node_modules/
 .env
@@ -7,3 +8,25 @@ dist/
 build/
 auto_save_log.txt
 .next/
+*.db
+*.sqlite3
+*.log
+*.key
+venv/
+.venv/
+*.egg-info/
+*.spec
+
+# 他プロジェクト（shared-auto-sync リポジトリでは管理しない）
+life/
+副業/
+共通ライブラリ/
+学習/
+スクリプト/
+hub_launcher.py
+
+# Claude Code 個人設定
+.claude/
+
+# 自動生成レポート（seed から再生成可能）
+data/sync-reports/

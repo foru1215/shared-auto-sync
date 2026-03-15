@@ -1,0 +1,5144 @@
+meta:
+  project_name: Career Transition 24-Month Plan
+  owner: foru1215
+  repo: shared-auto-sync
+  start_date: '2026-03-14'
+  end_date: '2028-03-31'
+strategy:
+  primary_goal: 制御盤営業 → 制御・設備 × AI 実務人材への転換（24か月）
+  secondary_goals:
+  - 第一種電気工事士 取得
+  - 電験三種 科目合格以上
+  - 制御基礎・PLC・図面読解の習得
+  - Codex / Claude Code スペシャリスト化
+  - 転職で見せられるポートフォリオ構築
+  target_roles:
+  - role: 生産技術（制御・電気寄り）
+    priority: primary
+    salary_range: 500-800万
+  - role: 設備開発・設備設計
+    priority: secondary
+    salary_range: 500-900万
+  - role: 電気設計・制御設計
+    priority: fallback
+    salary_range: 450-700万
+  strengths:
+  - 制御盤メーカーでの顧客折衝・仕様会話力
+  - 発電機盤・ポンプ盤の業界土地勘
+  - 営業としてのコミュニケーション力
+  - AI ツール（Codex / Claude Code）への高い学習意欲
+  weaknesses:
+  - 学歴に強みなし
+  - 制御の技術的理解が浅い
+  - 実務での技術経験がない
+  - 資格未取得
+phases:
+- id: phase-0
+  name: 直前対策期
+  start: '2026-03-14'
+  end: '2026-04-27'
+  priority: p0
+  focus:
+  - 第一種電気工事士 学科試験
+  - GitHub Projects 初期セットアップ
+  - Codex / Claude Code 環境構築
+  success_criteria:
+  - 学科過去問正答率 80% 以上
+  - GitHub Projects が稼働している
+  - Claude Code の基本操作ができる
+- id: phase-1
+  name: 実技集中期
+  start: '2026-04-28'
+  end: '2026-07-04'
+  priority: p0
+  focus:
+  - 第一種電気工事士 実技試験
+  - 候補問題13問の完成
+  success_criteria:
+  - 全13問を40分以内に完成
+  - 実技試験合格
+- id: phase-2
+  name: 制御基礎強化期
+  start: '2026-07-05'
+  end: '2026-10-31'
+  priority: p1
+  focus:
+  - 制御基礎（リレーシーケンス、自己保持回路、インターロック）
+  - 図面読解入門
+  - 実務証拠づくり開始
+  - Claude Code Academy 開始
+  success_criteria:
+  - 制御基礎ノート完成
+  - 展開接続図の基本記号を識別できる
+  - 実務証拠 2件以上
+- id: phase-3
+  name: PLC / 図面読解強化期
+  start: '2026-11-01'
+  end: '2027-03-31'
+  priority: p1
+  focus:
+  - PLC 基礎（ラダー図、基本命令）
+  - シーケンス制御
+  - 図面読解深化
+  - 電験三種 段階導入（理論科目入門）
+  success_criteria:
+  - PLC 課題集 5課題以上
+  - 図面読解ノート完成
+  - 電験三種 理論の範囲把握
+- id: phase-4
+  name: 電験三種段階導入期
+  start: '2027-04-01'
+  end: '2027-09-30'
+  priority: p0
+  focus:
+  - 電験三種（理論 → 電力 → 機械 → 法規）
+  - PLC 応用
+  - AI 中級活用
+  success_criteria:
+  - 電験三種 2科目以上の科目合格
+  - PLC 応用課題 3課題以上
+- id: phase-5
+  name: AI スペシャリスト強化期
+  start: '2027-10-01'
+  end: '2028-01-31'
+  priority: p1
+  focus:
+  - Codex / Claude Code 高度活用
+  - 制御 × AI 適用事例構築
+  - ポートフォリオ構築
+  - 転職準備開始
+  success_criteria:
+  - AI 活用事例 3件以上
+  - ポートフォリオ v1 完成
+  - 職務経歴書ドラフト完成
+- id: phase-6
+  name: 転職仕上げ期
+  start: '2028-02-01'
+  end: '2028-03-31'
+  priority: p0
+  focus:
+  - 転職活動本格化
+  - 面接対策
+  - 内定獲得
+  success_criteria:
+  - 内定獲得
+  - 全成果物の最終整備完了
+epics:
+- id: E-LIC
+  name: License
+  description: 資格取得（第一種電気工事士、電験三種）
+  labels:
+  - area:license
+  priority: p0
+- id: E-CTL
+  name: Control Foundation
+  description: 制御基礎の学習（リレーシーケンス、自己保持回路、インターロック、タイマー回路）
+  labels:
+  - area:control
+  priority: p1
+- id: E-DRW
+  name: Drawing Reading
+  description: 制御図面読解（展開接続図、単線結線図、記号、読解スキル）
+  labels:
+  - area:drawings
+  priority: p1
+- id: E-PLC
+  name: PLC Growth
+  description: PLC / シーケンス制御の学習（ラダー図、基本命令、シミュレータ実習）
+  labels:
+  - area:plc
+  priority: p1
+- id: E-EVD
+  name: Evidence Building
+  description: 実務証拠の構築（技術メモ、現場同行、仕様整理、社内改善）
+  labels:
+  - area:evidence
+  priority: p1
+- id: E-AI
+  name: AI Specialist
+  description: AI 学習・武器化（Codex / Claude Code / Claude Code Academy）
+  labels:
+  - area:ai
+  priority: p1
+- id: E-SEC
+  name: OT / ICS Security
+  description: OT / ICS セキュリティを最小トラックで学び、制御・PLC・AI の成果物へ接続する
+  labels:
+  - area:security
+  priority: p2
+- id: E-CAR
+  name: Career Preparation
+  description: 転職準備（職務経歴書、面接対策、ポートフォリオ、転職エージェント）
+  labels:
+  - area:career
+  priority: p1
+milestones:
+- id: M-2026-Q1
+  title: '2026 Q1: 計画始動'
+  start: '2026-03-14'
+  end: '2026-03-31'
+  goal: 計画基盤構築、GitHub Projects 初期セットアップ
+- id: M-2026-Q2
+  title: '2026 Q2: 資格取得'
+  start: '2026-04-01'
+  end: '2026-06-30'
+  goal: 第一種電気工事士 学科合格 + 実技準備完了
+- id: M-2026-Q3
+  title: '2026 Q3: 制御基礎'
+  start: '2026-07-01'
+  end: '2026-09-30'
+  goal: 実技合格 + 制御基礎ノート完成 + 図面読解入門
+- id: M-2026-Q4
+  title: '2026 Q4: 制御 + PLC 入門'
+  start: '2026-10-01'
+  end: '2026-12-31'
+  goal: PLC 基礎習得 + 電験三種教材選定
+- id: M-2027-Q1
+  title: '2027 Q1: PLC + 電験開始'
+  start: '2027-01-01'
+  end: '2027-03-31'
+  goal: PLC 課題集完成 + 図面読解ノート完成 + 電験理論着手
+- id: M-2027-Q2
+  title: '2027 Q2: 電験本格化'
+  start: '2027-04-01'
+  end: '2027-06-30'
+  goal: 電験 理論・電力の過去問演習 + PLC 応用
+- id: M-2027-Q3
+  title: '2027 Q3: 電験受験'
+  start: '2027-07-01'
+  end: '2027-09-30'
+  goal: 電験三種受験 + AI 実務適用開始
+- id: M-2027-Q4
+  title: '2027 Q4: AI 強化'
+  start: '2027-10-01'
+  end: '2027-12-31'
+  goal: AI スペシャリスト + ポートフォリオ + 転職準備
+- id: M-2028-Q1
+  title: '2028 Q1: 転職仕上げ'
+  start: '2028-01-01'
+  end: '2028-03-31'
+  goal: 内定獲得
+labels:
+  area:
+  - name: area:license
+    color: 0075ca
+    description: 資格関連
+  - name: area:control
+    color: 008672
+    description: 制御基礎
+  - name: area:plc
+    color: 5319e7
+    description: PLC / シーケンス制御
+  - name: area:drawings
+    color: d876e3
+    description: 図面読解
+  - name: area:practice
+    color: fbca04
+    description: 実務（現職業務）
+  - name: area:evidence
+    color: b60205
+    description: 実務証拠
+  - name: area:ai
+    color: 1d76db
+    description: AI 学習・活用
+  - name: area:career
+    color: e4e669
+    description: 転職準備
+  - name: area:security
+    color: 0052cc
+    description: OT / ICS セキュリティ
+  tool:
+  - name: tool:codex
+    color: c2e0c6
+    description: Codex 関連
+  - name: tool:claude-code
+    color: bfdadc
+    description: Claude Code 関連
+  - name: tool:claude-code-academy
+    color: d4c5f9
+    description: Claude Code Academy 関連
+  priority:
+  - name: priority:p0
+    color: b60205
+    description: 最優先
+  - name: priority:p1
+    color: d93f0b
+    description: 高
+  - name: priority:p2
+    color: 0e8a16
+    description: 通常
+  phase:
+  - name: phase:written-exam
+    color: f9d0c4
+    description: 学科試験期
+  - name: phase:practical-exam
+    color: fef2c0
+    description: 実技試験期
+  - name: phase:control-foundation
+    color: c5def5
+    description: 制御基礎強化期
+  - name: phase:plc-growth
+    color: bfd4f2
+    description: PLC 強化期
+  - name: phase:denken-ramp
+    color: d4c5f9
+    description: 電験三種段階導入期
+  - name: phase:ai-specialist
+    color: c2e0c6
+    description: AI スペシャリスト強化期
+  - name: phase:career-finish
+    color: e4e669
+    description: 転職仕上げ期
+project_fields:
+- name: Status
+  type: single_select
+  options:
+  - Backlog
+  - Todo
+  - In Progress
+  - Done
+  - Blocked
+  - Deferred
+- name: Priority
+  type: single_select
+  options:
+  - P0
+  - P1
+  - P2
+- name: Area
+  type: single_select
+  options:
+  - License
+  - Control
+  - PLC
+  - Drawings
+  - Practice
+  - Evidence
+  - AI
+  - Career
+  - Security
+- name: Phase
+  type: single_select
+  options:
+  - Written Exam
+  - Practical Exam
+  - Control Foundation
+  - PLC Growth
+  - Denken Ramp
+  - AI Specialist
+  - Career Finish
+- name: Due Date
+  type: date
+- name: Evidence Type
+  type: single_select
+  options:
+  - Note
+  - Code
+  - Document
+  - Certification
+  - Portfolio
+  - Story
+- name: Monthly Bucket
+  type: text
+- name: Quarter
+  type: single_select
+  options:
+  - 2026-Q1
+  - 2026-Q2
+  - 2026-Q3
+  - 2026-Q4
+  - 2027-Q1
+  - 2027-Q2
+  - 2027-Q3
+  - 2027-Q4
+  - 2028-Q1
+- name: Career Link
+  type: text
+- name: AI Link
+  type: text
+- name: Task Type
+  type: single_select
+  options:
+  - Epic
+  - Phase Card
+  - Win Condition
+  - Exam
+  - Study
+  - PLC
+  - Evidence
+  - AI Skill Building
+  - Career Prep
+  - Recurring Review
+  - Deliverable
+  - Setup
+- name: Review Cycle
+  type: single_select
+  options:
+  - Weekly
+  - Monthly
+  - Quarterly
+  - None
+- name: Active Window
+  type: text
+- name: Deferred Until
+  type: date
+- name: Deferred Flag
+  type: single_select
+  options:
+  - Active
+  - Deferred
+  - N/A
+- name: Blocked By
+  type: text
+- name: DoD Ready
+  type: single_select
+  options:
+  - Ready
+  - Missing
+  - N/A
+- name: Evidence Ready
+  type: single_select
+  options:
+  - Ready
+  - Missing
+  - N/A
+- name: Exam Priority Guard
+  type: single_select
+  options:
+  - Exam Priority
+  - Normal
+  - N/A
+- name: Start Date
+  type: date
+- name: End Date
+  type: date
+- name: Execution Time Block
+  type: text
+- name: Execution Estimate
+  type: text
+- name: Execution Energy
+  type: text
+- name: Execution Focus
+  type: text
+- name: Execution Next Action
+  type: text
+- name: Execution Outcome
+  type: text
+- name: Execution Check
+  type: text
+issue_blueprints:
+  steps_exam_study: &id001
+  - 対象範囲と教材を確定する。
+  - 演習して得点・時間・弱点を記録する。
+  - 次回の補強テーマを決める。
+  deliverables_exam_study: &id002
+  - 学習ログ
+  - 弱点メモ
+  evidence_exam_study: &id003
+  - Issueコメントの進捗記録
+  - 正答率または到達度の記録
+  dod_exam_study: &id004
+  - 主要な演習が完了している。
+  - 結果と次アクションが Issue に残っている。
+  steps_exam_sit: &id013
+  - 受験票・会場・持ち物・移動計画を確認する。
+  - 試験を受けて直後の手応えを記録する。
+  - 結果確認後の次アクションを整理する。
+  deliverables_exam_sit: &id014
+  - 受験記録
+  - 振り返りメモ
+  evidence_exam_sit: &id015
+  - Issueコメントの受験記録
+  - 合否または手応えの記録
+  dod_exam_sit: &id016
+  - 受験の事実が記録されている。
+  - 次の判断材料が Issue に残っている。
+  steps_setup: &id005
+  - 必要なツール、設定、権限を洗い出す。
+  - セットアップを実施し、基本操作を確認する。
+  - 再現手順と詰まりどころを記録する。
+  deliverables_setup: &id006
+  - セットアップ手順メモ
+  - 動作確認結果
+  evidence_setup: &id007
+  - 設定内容の記録
+  - 動作確認のスクリーンショット
+  dod_setup: &id008
+  - 必要なセットアップが完了している。
+  - 再現できる手順が Issue に残っている。
+  steps_study: &id021
+  - 対象章・図面・用語の範囲を整理する。
+  - 要点と判断根拠をノート化する。
+  - 未理解点と次の演習対象を明確にする。
+  deliverables_study: &id022
+  - 学習ノート
+  - 要点まとめ
+  evidence_study: &id023
+  - Issueコメントの進捗記録
+  - ノート保存先のリンク
+  dod_study: &id024
+  - 対象範囲のノートが更新されている。
+  - 未理解点または次回対象が Issue に残っている。
+  steps_plc: &id025
+  - 対象命令や課題の要件を整理する。
+  - ラダーやシミュレーションで動作確認する。
+  - 成果物と改善点を次回に引き継げる形で残す。
+  deliverables_plc: &id026
+  - PLC成果物
+  - 動作確認メモ
+  evidence_plc: &id027
+  - コードまたは設定の保存先リンク
+  - 動作確認結果の記録
+  dod_plc: &id028
+  - 対象課題が動作確認まで完了している。
+  - 再利用可能な成果物またはメモが残っている。
+  steps_evidence: &id009
+  - 対象資料や実務テーマを1件選ぶ。
+  - 技術観点で読み解き、要点を整理する。
+  - 面接や実務説明に使える形で残す。
+  deliverables_evidence: &id010
+  - 技術メモ
+  - 成果要約
+  evidence_evidence: &id011
+  - Issueコメントの進捗記録
+  - 成果物の保存先リンク
+  dod_evidence: &id012
+  - 技術的な要点が文章化されている。
+  - 証拠として残す成果物が保存されている。
+  steps_ai: &id017
+  - 対象教材または事例のゴールを明確にする。
+  - 演習や実装を進めて使える知見を抜き出す。
+  - 業務や学習への転用方法を記録する。
+  deliverables_ai: &id018
+  - 学習ログ
+  - 転用アイデアメモ
+  evidence_ai: &id019
+  - Issueコメントの進捗記録
+  - 再利用できるプロンプトや手順
+  dod_ai: &id020
+  - 対象の学習または試作が完了している。
+  - 転用可能な知見が Issue に残っている。
+  steps_deliverable: &id029
+  - 載せる成果物と見せ方を決める。
+  - 説明文、デモ、構成を整える。
+  - 第三者に伝わる状態まで仕上げる。
+  deliverables_deliverable: &id030
+  - 公開可能な成果物
+  - 説明用メモ
+  evidence_deliverable: &id031
+  - 公開URLまたはリポジトリURL
+  - 画面キャプチャまたはデモ記録
+  dod_deliverable: &id032
+  - 第三者に見せられる成果物が完成している。
+  - 説明用の要点とリンクが Issue に残っている。
+  steps_career: &id033
+  - 転職で使う材料と対象企業を整理する。
+  - 資料作成または面談準備を進める。
+  - 反応と改善点を記録して次回に反映する。
+  deliverables_career: &id034
+  - 応募資料ドラフト
+  - 面談・面接記録
+  evidence_career: &id035
+  - 応募資料の保存先リンク
+  - 面談や面接の振り返りメモ
+  dod_career: &id036
+  - 応募・面談・面接に使える資料が更新されている。
+  - 改善点と次アクションが Issue に残っている。
+  steps_review: &id037
+  - 完了・未完了・保留中のタスクを棚卸しする。
+  - 数字で進捗を記録し、ズレた理由を言語化する。
+  - 次の期間で最重要の3件を決める。
+  deliverables_review: &id038
+  - レビュー記録
+  - 次回の優先タスク一覧
+  evidence_review: &id039
+  - Issueコメントのレビュー記録
+  - 次期間の優先順位メモ
+  dod_review: &id040
+  - 進捗と未完理由が記録されている。
+  - 次の最優先タスクが3件以内で決まっている。
+  review_note_exam: レビュー時に正答率、練習量、弱点、次回補強テーマを更新する。
+  review_note_setup: レビュー時に手順、詰まりどころ、再現方法を更新する。
+  review_note_study: レビュー時に未理解点、ノート完成度、次回演習対象を更新する。
+  review_note_plc: レビュー時に動作確認結果、再利用ポイント、次回課題を更新する。
+  review_note_evidence: レビュー時に残した証拠、公開可否、面接接続ポイントを更新する。
+  review_note_ai: レビュー時に再利用可能な知見、デモ性、転用先を更新する。
+  review_note_career: レビュー時に応募先ごとの差分、反応、改善点を更新する。
+  review_note_review: レビュー完了時に進捗、未完理由、次の最優先3件を記録する。
+issues:
+- id: ISS-001
+  title: '[E-LIC] 2026-03: 第一種電気工事士 過去問入手・1年分着手'
+  body: 過去問題集を入手し、最低1年分を解く。正答率を記録する。
+  epic: E-LIC
+  phase: phase-0
+  labels:
+  - area:license
+  - phase:written-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q1
+  due_date: '2026-03-31'
+  recurring: false
+  dependencies: []
+  evidence_type: Document
+  monthly_bucket: 2026-03
+  quarter: 2026-Q1
+  career_link: 計画的に資格取得に取り組んだ証拠
+  ai_link: ''
+  task_type: exam
+  work_steps: *id001
+  deliverables: *id002
+  evidence_to_keep: *id003
+  dod: *id004
+  active_from: '2026-03-14'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: true
+  review_note: レビュー時に正答率、練習量、弱点、次回補強テーマを更新する。
+  outcome: '[E-LIC] 2026-03: 第一種電気工事士 過去問入手・1年分着手 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象範囲と教材を確定する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 計画的に資格取得に取り組んだ証拠
+  device: iPad / ノート
+  inputs:
+  - 過去問
+  - 参考書または学習アプリ
+  - 誤答メモ
+  things_to_make:
+  - 学習ログ
+  - 弱点メモ
+  completion_check:
+  - 主要な演習が完了している。
+  - 結果と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - '朝: 前回の誤答または要点を3つだけ再確認する'
+  - '主作業: 過去問・複線図・直前対策の本体を1セット進める'
+  - '終了前: 間違い理由と次回の再テスト対象を記録する'
+  time_block: 平日 60-90分 + 休日 120分
+  estimate: 3-5 sessions
+  energy: High
+  focus: 再現・演習・誤答修正
+- id: ISS-002
+  title: '[E-AI] 2026-03: GitHub Projects 初期セットアップ'
+  body: Epic / Milestone / Label / Project Field を作成し、GitHub Projects を稼働状態にする。
+  epic: E-AI
+  phase: phase-0
+  labels:
+  - area:ai
+  - tool:codex
+  - phase:written-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q1
+  due_date: '2026-03-31'
+  recurring: false
+  dependencies: []
+  evidence_type: Document
+  monthly_bucket: 2026-03
+  quarter: 2026-Q1
+  career_link: GitHub で学習管理をしていた証拠
+  ai_link: Codex の基本操作習得
+  task_type: setup
+  work_steps: *id005
+  deliverables: *id006
+  evidence_to_keep: *id007
+  dod: *id008
+  active_from: '2026-03-14'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: false
+  review_note: レビュー時に手順、詰まりどころ、再現方法を更新する。
+  outcome: '[E-AI] 2026-03: GitHub Projects 初期セットアップ を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 必要なツール、設定、権限を洗い出す。ために、必要な資料と作業環境を開く。
+  why_this_matters: GitHub で学習管理をしていた証拠 / Codex の基本操作習得
+  device: PC
+  inputs:
+  - 設定値
+  - CLI
+  - 確認用チェックリスト
+  things_to_make:
+  - セットアップ手順メモ
+  - 動作確認結果
+  completion_check:
+  - 必要なセットアップが完了している。
+  - 再現できる手順が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 現状確認と設定反映を行う'
+  - 'セッション2: 動作確認して運用ルールを記録する'
+  time_block: 60-90分
+  estimate: 1-2 sessions
+  energy: Medium
+  focus: 設定・検証・運用開始
+- id: ISS-003
+  title: '[E-AI] 2026-03: Codex / Claude Code 環境構築'
+  body: ノートPCに Codex / Claude Code をインストールし、基本操作を確認する。
+  epic: E-AI
+  phase: phase-0
+  labels:
+  - area:ai
+  - tool:codex
+  - tool:claude-code
+  - phase:written-exam
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q1
+  due_date: '2026-03-31'
+  recurring: false
+  dependencies: []
+  evidence_type: Document
+  monthly_bucket: 2026-03
+  quarter: 2026-Q1
+  career_link: ''
+  ai_link: AI ツール環境の構築
+  task_type: setup
+  work_steps: *id005
+  deliverables: *id006
+  evidence_to_keep: *id007
+  dod: *id008
+  active_from: '2026-03-14'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: false
+  review_note: レビュー時に手順、詰まりどころ、再現方法を更新する。
+  outcome: '[E-AI] 2026-03: Codex / Claude Code 環境構築 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 必要なツール、設定、権限を洗い出す。ために、必要な資料と作業環境を開く。
+  why_this_matters: AI ツール環境の構築
+  device: PC
+  inputs:
+  - 設定値
+  - CLI
+  - 確認用チェックリスト
+  things_to_make:
+  - セットアップ手順メモ
+  - 動作確認結果
+  completion_check:
+  - 必要なセットアップが完了している。
+  - 再現できる手順が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 現状確認と設定反映を行う'
+  - 'セッション2: 動作確認して運用ルールを記録する'
+  time_block: 60-90分
+  estimate: 1-2 sessions
+  energy: Medium
+  focus: 設定・検証・運用開始
+- id: ISS-004
+  title: '[E-EVD] 2026-03: 仕様書1件を技術視点で読み直す'
+  body: 既存案件の制御盤仕様書を技術的な観点で精読し、メモを作成する。
+  epic: E-EVD
+  phase: phase-0
+  labels:
+  - area:evidence
+  - area:practice
+  - phase:written-exam
+  - priority:p2
+  priority: p2
+  milestone: M-2026-Q1
+  due_date: '2026-03-31'
+  recurring: false
+  dependencies: []
+  evidence_type: Document
+  monthly_bucket: 2026-03
+  quarter: 2026-Q1
+  career_link: 仕様書を技術的に理解する習慣
+  ai_link: ''
+  task_type: evidence
+  work_steps: *id009
+  deliverables: *id010
+  evidence_to_keep: *id011
+  dod: *id012
+  active_from: '2026-03-14'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: false
+  review_note: レビュー時に残した証拠、公開可否、面接接続ポイントを更新する。
+  outcome: '[E-EVD] 2026-03: 仕様書1件を技術視点で読み直す を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象資料や実務テーマを1件選ぶ。ために、必要な資料と作業環境を開く。
+  why_this_matters: 仕様書を技術的に理解する習慣
+  device: PC / ノート
+  inputs:
+  - 仕様書
+  - 現場メモ
+  - 改善案
+  things_to_make:
+  - 技術メモ
+  - 成果要約
+  completion_check:
+  - 技術的な要点が文章化されている。
+  - 証拠として残す成果物が保存されている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 材料を集めて技術観点を整理する'
+  - 'セッション2: 面接で語れる形の技術メモにまとめる'
+  time_block: 週末 60-90分
+  estimate: 2 sessions
+  energy: Medium
+  focus: 整理・言語化・証跡化
+- id: ISS-005
+  title: '[E-LIC] 2026-04: 学科試験 過去問5年分×2周'
+  body: 過去問5年分を2周し、正答率80%以上を目指す。苦手分野を特定して集中学習。
+  epic: E-LIC
+  phase: phase-0
+  labels:
+  - area:license
+  - phase:written-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q2
+  due_date: '2026-04-27'
+  recurring: false
+  dependencies:
+  - ISS-001
+  evidence_type: Certification
+  monthly_bucket: 2026-04
+  quarter: 2026-Q2
+  career_link: 一発合格は計画力と実行力の証明
+  ai_link: Claude Code で過去問解説整理
+  task_type: exam
+  work_steps: *id001
+  deliverables: *id002
+  evidence_to_keep: *id003
+  dod: *id004
+  active_from: '2026-03-14'
+  deferred_until: null
+  blocked_by:
+  - ISS-001
+  exam_priority_guard: true
+  review_note: レビュー時に正答率、練習量、弱点、次回補強テーマを更新する。
+  outcome: '[E-LIC] 2026-04: 学科試験 過去問5年分×2周 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象範囲と教材を確定する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 一発合格は計画力と実行力の証明 / Claude Code で過去問解説整理
+  device: iPad / ノート
+  inputs:
+  - 過去問
+  - 参考書または学習アプリ
+  - 誤答メモ
+  things_to_make:
+  - 学習ログ
+  - 弱点メモ
+  completion_check:
+  - 主要な演習が完了している。
+  - 結果と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - '朝: 前回の誤答または要点を3つだけ再確認する'
+  - '主作業: 過去問・複線図・直前対策の本体を1セット進める'
+  - '終了前: 間違い理由と次回の再テスト対象を記録する'
+  time_block: 平日 60-90分 + 休日 120分
+  estimate: 3-5 sessions
+  energy: High
+  focus: 再現・演習・誤答修正
+- id: ISS-006
+  title: '[E-LIC] 2026-04-27: 第一種電気工事士 学科試験 受験'
+  body: 学科試験を受験する。手応えと結果予測を記録。
+  epic: E-LIC
+  phase: phase-0
+  labels:
+  - area:license
+  - phase:written-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q2
+  due_date: '2026-04-27'
+  recurring: false
+  dependencies:
+  - ISS-005
+  evidence_type: Certification
+  monthly_bucket: 2026-04
+  quarter: 2026-Q2
+  career_link: 資格取得の第一歩
+  ai_link: ''
+  task_type: exam
+  work_steps: *id013
+  deliverables: *id014
+  evidence_to_keep: *id015
+  dod: *id016
+  active_from: '2026-03-14'
+  deferred_until: null
+  blocked_by:
+  - ISS-005
+  exam_priority_guard: true
+  review_note: レビュー時に正答率、練習量、弱点、次回補強テーマを更新する。
+  outcome: '[E-LIC] 2026-04-27: 第一種電気工事士 学科試験 受験 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 受験票・会場・持ち物・移動計画を確認する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 資格取得の第一歩
+  device: iPad / ノート
+  inputs:
+  - 過去問
+  - 参考書または学習アプリ
+  - 誤答メモ
+  things_to_make:
+  - 受験記録
+  - 振り返りメモ
+  completion_check:
+  - 受験の事実が記録されている。
+  - 次の判断材料が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - '朝: 前回の誤答または要点を3つだけ再確認する'
+  - '主作業: 過去問・複線図・直前対策の本体を1セット進める'
+  - '終了前: 間違い理由と次回の再テスト対象を記録する'
+  time_block: 平日 60-90分 + 休日 120分
+  estimate: 3-5 sessions
+  energy: High
+  focus: 再現・演習・誤答修正
+- id: ISS-007
+  title: '[E-LIC] 2026-05: 候補問題13問の複線図練習'
+  body: 全13問の候補問題の複線図を練習。6問以上を見ないで描ける状態にする。
+  epic: E-LIC
+  phase: phase-1
+  labels:
+  - area:license
+  - phase:practical-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q2
+  due_date: '2026-05-31'
+  recurring: false
+  dependencies:
+  - ISS-006
+  evidence_type: Certification
+  monthly_bucket: 2026-05
+  quarter: 2026-Q2
+  career_link: 実技一発合格の基盤
+  ai_link: ''
+  task_type: exam
+  work_steps: *id001
+  deliverables: *id002
+  evidence_to_keep: *id003
+  dod: *id004
+  active_from: '2026-04-28'
+  deferred_until: null
+  blocked_by:
+  - ISS-006
+  exam_priority_guard: true
+  review_note: レビュー時に正答率、練習量、弱点、次回補強テーマを更新する。
+  outcome: '[E-LIC] 2026-05: 候補問題13問の複線図練習 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象範囲と教材を確定する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 実技一発合格の基盤
+  device: iPad / ノート
+  inputs:
+  - 過去問
+  - 参考書または学習アプリ
+  - 誤答メモ
+  things_to_make:
+  - 学習ログ
+  - 弱点メモ
+  completion_check:
+  - 主要な演習が完了している。
+  - 結果と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - '朝: 前回の誤答または要点を3つだけ再確認する'
+  - '主作業: 過去問・複線図・直前対策の本体を1セット進める'
+  - '終了前: 間違い理由と次回の再テスト対象を記録する'
+  time_block: 平日 60-90分 + 休日 120分
+  estimate: 3-5 sessions
+  energy: High
+  focus: 再現・演習・誤答修正
+- id: ISS-008
+  title: '[E-LIC] 2026-06: 実技試験 最終準備'
+  body: 候補問題13問を時間内（40分）に完成する練習。欠陥なし10問以上を目指す。
+  epic: E-LIC
+  phase: phase-1
+  labels:
+  - area:license
+  - phase:practical-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q2
+  due_date: '2026-06-30'
+  recurring: false
+  dependencies:
+  - ISS-007
+  evidence_type: Certification
+  monthly_bucket: 2026-06
+  quarter: 2026-Q2
+  career_link: 実技合格の仕上げ
+  ai_link: ''
+  task_type: exam
+  work_steps: *id001
+  deliverables: *id002
+  evidence_to_keep: *id003
+  dod: *id004
+  active_from: '2026-04-28'
+  deferred_until: null
+  blocked_by:
+  - ISS-007
+  exam_priority_guard: true
+  review_note: レビュー時に正答率、練習量、弱点、次回補強テーマを更新する。
+  outcome: '[E-LIC] 2026-06: 実技試験 最終準備 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象範囲と教材を確定する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 実技合格の仕上げ
+  device: iPad / ノート
+  inputs:
+  - 過去問
+  - 参考書または学習アプリ
+  - 誤答メモ
+  things_to_make:
+  - 学習ログ
+  - 弱点メモ
+  completion_check:
+  - 主要な演習が完了している。
+  - 結果と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - '朝: 前回の誤答または要点を3つだけ再確認する'
+  - '主作業: 過去問・複線図・直前対策の本体を1セット進める'
+  - '終了前: 間違い理由と次回の再テスト対象を記録する'
+  time_block: 平日 60-90分 + 休日 120分
+  estimate: 3-5 sessions
+  energy: High
+  focus: 再現・演習・誤答修正
+- id: ISS-009
+  title: '[E-LIC] 2026-07-04: 第一種電気工事士 実技試験 受験'
+  body: 実技試験を受験する。結果を記録。
+  epic: E-LIC
+  phase: phase-1
+  labels:
+  - area:license
+  - phase:practical-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q3
+  due_date: '2026-07-04'
+  recurring: false
+  dependencies:
+  - ISS-008
+  evidence_type: Certification
+  monthly_bucket: 2026-07
+  quarter: 2026-Q3
+  career_link: 第一種電気工事士 合格
+  ai_link: ''
+  task_type: exam
+  work_steps: *id013
+  deliverables: *id014
+  evidence_to_keep: *id015
+  dod: *id016
+  active_from: '2026-04-28'
+  deferred_until: null
+  blocked_by:
+  - ISS-008
+  exam_priority_guard: true
+  review_note: レビュー時に正答率、練習量、弱点、次回補強テーマを更新する。
+  outcome: '[E-LIC] 2026-07-04: 第一種電気工事士 実技試験 受験 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 受験票・会場・持ち物・移動計画を確認する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 第一種電気工事士 合格
+  device: iPad / ノート
+  inputs:
+  - 過去問
+  - 参考書または学習アプリ
+  - 誤答メモ
+  things_to_make:
+  - 受験記録
+  - 振り返りメモ
+  completion_check:
+  - 受験の事実が記録されている。
+  - 次の判断材料が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - '朝: 前回の誤答または要点を3つだけ再確認する'
+  - '主作業: 過去問・複線図・直前対策の本体を1セット進める'
+  - '終了前: 間違い理由と次回の再テスト対象を記録する'
+  time_block: 平日 60-90分 + 休日 120分
+  estimate: 3-5 sessions
+  energy: High
+  focus: 再現・演習・誤答修正
+- id: ISS-010
+  title: '[E-AI] 2026-05: Claude Code Academy 入門レベル開始'
+  body: Claude Code Academy の入門コースを開始する。週15分程度の軽い学習。
+  epic: E-AI
+  phase: phase-1
+  labels:
+  - area:ai
+  - tool:claude-code-academy
+  - phase:practical-exam
+  - priority:p2
+  priority: p2
+  milestone: M-2026-Q2
+  due_date: '2026-05-31'
+  recurring: false
+  dependencies:
+  - ISS-003
+  evidence_type: Document
+  monthly_bucket: 2026-05
+  quarter: 2026-Q2
+  career_link: ''
+  ai_link: Claude Code Academy 開始
+  task_type: ai
+  work_steps: *id017
+  deliverables: *id018
+  evidence_to_keep: *id019
+  dod: *id020
+  active_from: '2026-04-28'
+  deferred_until: null
+  blocked_by:
+  - ISS-003
+  exam_priority_guard: false
+  review_note: レビュー時に再利用可能な知見、デモ性、転用先を更新する。
+  outcome: '[E-AI] 2026-05: Claude Code Academy 入門レベル開始 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象教材または事例のゴールを明確にする。ために、必要な資料と作業環境を開く。
+  why_this_matters: Claude Code Academy 開始
+  device: PC
+  inputs:
+  - Claude Code / Codex
+  - 仕様メモ
+  - 評価観点
+  things_to_make:
+  - 学習ログ
+  - 転用アイデアメモ
+  completion_check:
+  - 対象の学習または試作が完了している。
+  - 転用可能な知見が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 作るものと評価観点を1枚に整理する'
+  - 'セッション2: 小さく試作して動作を確認する'
+  - 'セッション3: 実務・面接に接続する説明を残す'
+  time_block: 週末 120-180分
+  estimate: 3-4 sessions
+  energy: High
+  focus: 試作・検証・文章化
+- id: ISS-011
+  title: '[E-CTL] 2026-07: 制御基礎ノート 第1章（リレーシーケンスとは）'
+  body: リレーシーケンスの基本概念を学習し、ノートの第1章を作成する。
+  epic: E-CTL
+  phase: phase-2
+  labels:
+  - area:control
+  - phase:control-foundation
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q3
+  due_date: '2026-07-31'
+  recurring: false
+  dependencies:
+  - ISS-009
+  evidence_type: Note
+  monthly_bucket: 2026-07
+  quarter: 2026-Q3
+  career_link: 制御の自走学習を証明
+  ai_link: Claude Code で技術メモ整理
+  task_type: study
+  work_steps: *id021
+  deliverables: *id022
+  evidence_to_keep: *id023
+  dod: *id024
+  active_from: '2026-07-05'
+  deferred_until: null
+  blocked_by:
+  - ISS-009
+  exam_priority_guard: false
+  review_note: レビュー時に未理解点、ノート完成度、次回演習対象を更新する。
+  outcome: '[E-CTL] 2026-07: 制御基礎ノート 第1章（リレーシーケンスとは） を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象章・図面・用語の範囲を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 制御の自走学習を証明 / Claude Code で技術メモ整理
+  device: ノート / iPad
+  inputs:
+  - 教材
+  - ノート
+  - 図や例題
+  things_to_make:
+  - 学習ノート
+  - 要点まとめ
+  completion_check:
+  - 対象範囲のノートが更新されている。
+  - 未理解点または次回対象が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 範囲確認と要点の下書きを作る'
+  - 'セッション2: 自分の言葉で説明できる形へ整える'
+  - 'セッション3: 弱点だけを見直して次の範囲へつなぐ'
+  time_block: 平日 60分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 理解・整理・ノート化
+- id: ISS-012
+  title: '[E-CTL] 2026-08: 制御基礎ノート 第2-3章（自己保持回路）'
+  body: 自己保持回路、a接点・b接点を学習しノート化。ポンプ盤の制御フロー図も作成。
+  epic: E-CTL
+  phase: phase-2
+  labels:
+  - area:control
+  - phase:control-foundation
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q3
+  due_date: '2026-08-31'
+  recurring: false
+  dependencies:
+  - ISS-011
+  evidence_type: Note
+  monthly_bucket: 2026-08
+  quarter: 2026-Q3
+  career_link: 制御回路を説明できる力
+  ai_link: ''
+  task_type: study
+  work_steps: *id021
+  deliverables: *id022
+  evidence_to_keep: *id023
+  dod: *id024
+  active_from: '2026-07-05'
+  deferred_until: null
+  blocked_by:
+  - ISS-011
+  exam_priority_guard: false
+  review_note: レビュー時に未理解点、ノート完成度、次回演習対象を更新する。
+  outcome: '[E-CTL] 2026-08: 制御基礎ノート 第2-3章（自己保持回路） を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象章・図面・用語の範囲を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 制御回路を説明できる力
+  device: ノート / iPad
+  inputs:
+  - 教材
+  - ノート
+  - 図や例題
+  things_to_make:
+  - 学習ノート
+  - 要点まとめ
+  completion_check:
+  - 対象範囲のノートが更新されている。
+  - 未理解点または次回対象が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 範囲確認と要点の下書きを作る'
+  - 'セッション2: 自分の言葉で説明できる形へ整える'
+  - 'セッション3: 弱点だけを見直して次の範囲へつなぐ'
+  time_block: 平日 60分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 理解・整理・ノート化
+- id: ISS-013
+  title: '[E-CTL] 2026-09: 制御基礎ノート 第4-5章（インターロック、タイマー回路）'
+  body: インターロック回路、タイマー回路を学習しノート化。
+  epic: E-CTL
+  phase: phase-2
+  labels:
+  - area:control
+  - phase:control-foundation
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q3
+  due_date: '2026-09-30'
+  recurring: false
+  dependencies:
+  - ISS-012
+  evidence_type: Note
+  monthly_bucket: 2026-09
+  quarter: 2026-Q3
+  career_link: 制御基礎の体系的理解
+  ai_link: Claude Code で記号リスト整理
+  task_type: study
+  work_steps: *id021
+  deliverables: *id022
+  evidence_to_keep: *id023
+  dod: *id024
+  active_from: '2026-07-05'
+  deferred_until: null
+  blocked_by:
+  - ISS-012
+  exam_priority_guard: false
+  review_note: レビュー時に未理解点、ノート完成度、次回演習対象を更新する。
+  outcome: '[E-CTL] 2026-09: 制御基礎ノート 第4-5章（インターロック、タイマー回路） を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象章・図面・用語の範囲を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 制御基礎の体系的理解 / Claude Code で記号リスト整理
+  device: ノート / iPad
+  inputs:
+  - 教材
+  - ノート
+  - 図や例題
+  things_to_make:
+  - 学習ノート
+  - 要点まとめ
+  completion_check:
+  - 対象範囲のノートが更新されている。
+  - 未理解点または次回対象が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 範囲確認と要点の下書きを作る'
+  - 'セッション2: 自分の言葉で説明できる形へ整える'
+  - 'セッション3: 弱点だけを見直して次の範囲へつなぐ'
+  time_block: 平日 60分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 理解・整理・ノート化
+- id: ISS-014
+  title: '[E-CTL] 2026-10: 制御基礎ノート 総仕上げ'
+  body: 制御基礎ノートの総復習・完成。口頭で説明できるかセルフテスト。
+  epic: E-CTL
+  phase: phase-2
+  labels:
+  - area:control
+  - phase:control-foundation
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q4
+  due_date: '2026-10-31'
+  recurring: false
+  dependencies:
+  - ISS-013
+  evidence_type: Note
+  monthly_bucket: 2026-10
+  quarter: 2026-Q4
+  career_link: 制御基礎の完成した理解
+  ai_link: ''
+  task_type: study
+  work_steps: *id021
+  deliverables: *id022
+  evidence_to_keep: *id023
+  dod: *id024
+  active_from: '2026-07-05'
+  deferred_until: null
+  blocked_by:
+  - ISS-013
+  exam_priority_guard: false
+  review_note: レビュー時に未理解点、ノート完成度、次回演習対象を更新する。
+  outcome: '[E-CTL] 2026-10: 制御基礎ノート 総仕上げ を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象章・図面・用語の範囲を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 制御基礎の完成した理解
+  device: ノート / iPad
+  inputs:
+  - 教材
+  - ノート
+  - 図や例題
+  things_to_make:
+  - 学習ノート
+  - 要点まとめ
+  completion_check:
+  - 対象範囲のノートが更新されている。
+  - 未理解点または次回対象が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 範囲確認と要点の下書きを作る'
+  - 'セッション2: 自分の言葉で説明できる形へ整える'
+  - 'セッション3: 弱点だけを見直して次の範囲へつなぐ'
+  time_block: 平日 60分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 理解・整理・ノート化
+- id: ISS-015
+  title: '[E-DRW] 2026-09: 図面読解ノート 第1章（展開接続図の読み方入門）'
+  body: 展開接続図の基本記号・読み方を学習しノート化。
+  epic: E-DRW
+  phase: phase-2
+  labels:
+  - area:drawings
+  - phase:control-foundation
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q3
+  due_date: '2026-09-30'
+  recurring: false
+  dependencies:
+  - ISS-012
+  evidence_type: Note
+  monthly_bucket: 2026-09
+  quarter: 2026-Q3
+  career_link: 図面を読める力の証明
+  ai_link: ''
+  task_type: study
+  work_steps: *id021
+  deliverables: *id022
+  evidence_to_keep: *id023
+  dod: *id024
+  active_from: '2026-07-05'
+  deferred_until: null
+  blocked_by:
+  - ISS-012
+  exam_priority_guard: false
+  review_note: レビュー時に未理解点、ノート完成度、次回演習対象を更新する。
+  outcome: '[E-DRW] 2026-09: 図面読解ノート 第1章（展開接続図の読み方入門） を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象章・図面・用語の範囲を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 図面を読める力の証明
+  device: ノート / iPad
+  inputs:
+  - 教材
+  - ノート
+  - 図や例題
+  things_to_make:
+  - 学習ノート
+  - 要点まとめ
+  completion_check:
+  - 対象範囲のノートが更新されている。
+  - 未理解点または次回対象が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 範囲確認と要点の下書きを作る'
+  - 'セッション2: 自分の言葉で説明できる形へ整える'
+  - 'セッション3: 弱点だけを見直して次の範囲へつなぐ'
+  time_block: 平日 60分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 理解・整理・ノート化
+- id: ISS-016
+  title: '[E-DRW] 2026-10: 図面読解ノート 第2-3章（単線結線図、記号体系）'
+  body: 単線結線図の読み方、JIS記号体系を学習しノート化。
+  epic: E-DRW
+  phase: phase-2
+  labels:
+  - area:drawings
+  - phase:control-foundation
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q4
+  due_date: '2026-10-31'
+  recurring: false
+  dependencies:
+  - ISS-015
+  evidence_type: Note
+  monthly_bucket: 2026-10
+  quarter: 2026-Q4
+  career_link: 図面読解の深化
+  ai_link: 制御図面の記号DBを Claude Code で構築
+  task_type: study
+  work_steps: *id021
+  deliverables: *id022
+  evidence_to_keep: *id023
+  dod: *id024
+  active_from: '2026-07-05'
+  deferred_until: null
+  blocked_by:
+  - ISS-015
+  exam_priority_guard: false
+  review_note: レビュー時に未理解点、ノート完成度、次回演習対象を更新する。
+  outcome: '[E-DRW] 2026-10: 図面読解ノート 第2-3章（単線結線図、記号体系） を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象章・図面・用語の範囲を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 図面読解の深化 / 制御図面の記号DBを Claude Code で構築
+  device: ノート / iPad
+  inputs:
+  - 教材
+  - ノート
+  - 図や例題
+  things_to_make:
+  - 学習ノート
+  - 要点まとめ
+  completion_check:
+  - 対象範囲のノートが更新されている。
+  - 未理解点または次回対象が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 範囲確認と要点の下書きを作る'
+  - 'セッション2: 自分の言葉で説明できる形へ整える'
+  - 'セッション3: 弱点だけを見直して次の範囲へつなぐ'
+  time_block: 平日 60分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 理解・整理・ノート化
+- id: ISS-017
+  title: '[E-EVD] 2026-07: 発電機盤 仕様書を技術視点で精読'
+  body: 発電機盤の仕様書1件を技術的に精読し、制御方式・回路構成をメモ化。
+  epic: E-EVD
+  phase: phase-2
+  labels:
+  - area:evidence
+  - area:practice
+  - phase:control-foundation
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q3
+  due_date: '2026-07-31'
+  recurring: false
+  dependencies: []
+  evidence_type: Document
+  monthly_bucket: 2026-07
+  quarter: 2026-Q3
+  career_link: 担当製品の技術的理解
+  ai_link: ''
+  task_type: evidence
+  work_steps: *id009
+  deliverables: *id010
+  evidence_to_keep: *id011
+  dod: *id012
+  active_from: '2026-07-05'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: false
+  review_note: レビュー時に残した証拠、公開可否、面接接続ポイントを更新する。
+  outcome: '[E-EVD] 2026-07: 発電機盤 仕様書を技術視点で精読 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象資料や実務テーマを1件選ぶ。ために、必要な資料と作業環境を開く。
+  why_this_matters: 担当製品の技術的理解
+  device: PC / ノート
+  inputs:
+  - 仕様書
+  - 現場メモ
+  - 改善案
+  things_to_make:
+  - 技術メモ
+  - 成果要約
+  completion_check:
+  - 技術的な要点が文章化されている。
+  - 証拠として残す成果物が保存されている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 材料を集めて技術観点を整理する'
+  - 'セッション2: 面接で語れる形の技術メモにまとめる'
+  time_block: 週末 60-90分
+  estimate: 2 sessions
+  energy: Medium
+  focus: 整理・言語化・証跡化
+- id: ISS-018
+  title: '[E-EVD] 2026-08: ポンプ盤の制御回路を仕様書から読み解く'
+  body: ポンプ盤の制御フロー図を作成する。
+  epic: E-EVD
+  phase: phase-2
+  labels:
+  - area:evidence
+  - area:practice
+  - phase:control-foundation
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q3
+  due_date: '2026-08-31'
+  recurring: false
+  dependencies: []
+  evidence_type: Document
+  monthly_bucket: 2026-08
+  quarter: 2026-Q3
+  career_link: ポンプ盤の制御を理解している証拠
+  ai_link: ''
+  task_type: evidence
+  work_steps: *id009
+  deliverables: *id010
+  evidence_to_keep: *id011
+  dod: *id012
+  active_from: '2026-07-05'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: false
+  review_note: レビュー時に残した証拠、公開可否、面接接続ポイントを更新する。
+  outcome: '[E-EVD] 2026-08: ポンプ盤の制御回路を仕様書から読み解く を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象資料や実務テーマを1件選ぶ。ために、必要な資料と作業環境を開く。
+  why_this_matters: ポンプ盤の制御を理解している証拠
+  device: PC / ノート
+  inputs:
+  - 仕様書
+  - 現場メモ
+  - 改善案
+  things_to_make:
+  - 技術メモ
+  - 成果要約
+  completion_check:
+  - 技術的な要点が文章化されている。
+  - 証拠として残す成果物が保存されている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 材料を集めて技術観点を整理する'
+  - 'セッション2: 面接で語れる形の技術メモにまとめる'
+  time_block: 週末 60-90分
+  estimate: 2 sessions
+  energy: Medium
+  focus: 整理・言語化・証跡化
+- id: ISS-019
+  title: '[E-AI] 2026-08: Claude Code Academy 中級開始'
+  body: Claude Code Academy の中級コースを開始する。
+  epic: E-AI
+  phase: phase-2
+  labels:
+  - area:ai
+  - tool:claude-code-academy
+  - phase:control-foundation
+  - priority:p2
+  priority: p2
+  milestone: M-2026-Q3
+  due_date: '2026-08-31'
+  recurring: false
+  dependencies:
+  - ISS-010
+  evidence_type: Document
+  monthly_bucket: 2026-08
+  quarter: 2026-Q3
+  career_link: ''
+  ai_link: Claude Code Academy 中級
+  task_type: ai
+  work_steps: *id017
+  deliverables: *id018
+  evidence_to_keep: *id019
+  dod: *id020
+  active_from: '2026-07-05'
+  deferred_until: null
+  blocked_by:
+  - ISS-010
+  exam_priority_guard: false
+  review_note: レビュー時に再利用可能な知見、デモ性、転用先を更新する。
+  outcome: '[E-AI] 2026-08: Claude Code Academy 中級開始 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象教材または事例のゴールを明確にする。ために、必要な資料と作業環境を開く。
+  why_this_matters: Claude Code Academy 中級
+  device: PC
+  inputs:
+  - Claude Code / Codex
+  - 仕様メモ
+  - 評価観点
+  things_to_make:
+  - 学習ログ
+  - 転用アイデアメモ
+  completion_check:
+  - 対象の学習または試作が完了している。
+  - 転用可能な知見が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 作るものと評価観点を1枚に整理する'
+  - 'セッション2: 小さく試作して動作を確認する'
+  - 'セッション3: 実務・面接に接続する説明を残す'
+  time_block: 週末 120-180分
+  estimate: 3-4 sessions
+  energy: High
+  focus: 試作・検証・文章化
+- id: ISS-020
+  title: '[E-PLC] 2026-11: PLC 基礎（ラダー図入門 + シミュレータ環境構築）'
+  body: PLC の基本概念を学習。ラダー図の基本記号を理解。シミュレータ環境を構築。
+  epic: E-PLC
+  phase: phase-3
+  labels:
+  - area:plc
+  - phase:plc-growth
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q4
+  due_date: '2026-11-30'
+  recurring: false
+  dependencies:
+  - ISS-014
+  evidence_type: Code
+  monthly_bucket: 2026-11
+  quarter: 2026-Q4
+  career_link: PLC を理解していることの基盤
+  ai_link: Claude Code でシミュレータ環境構築を効率化
+  task_type: plc
+  work_steps: *id025
+  deliverables: *id026
+  evidence_to_keep: *id027
+  dod: *id028
+  active_from: '2026-11-01'
+  deferred_until: null
+  blocked_by:
+  - ISS-014
+  exam_priority_guard: false
+  review_note: レビュー時に動作確認結果、再利用ポイント、次回課題を更新する。
+  outcome: '[E-PLC] 2026-11: PLC 基礎（ラダー図入門 + シミュレータ環境構築） を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象命令や課題の要件を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: PLC を理解していることの基盤 / Claude Code でシミュレータ環境構築を効率化
+  device: PC / シミュレータ / ノート
+  inputs:
+  - シミュレータ
+  - ラダー図
+  - 課題仕様
+  things_to_make:
+  - PLC成果物
+  - 動作確認メモ
+  completion_check:
+  - 対象課題が動作確認まで完了している。
+  - 再利用可能な成果物またはメモが残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 仕様と入出力を整理する'
+  - 'セッション2: ラダーを組んで動作を確認する'
+  - 'セッション3: 修正点と学びを技術メモへ残す'
+  time_block: 平日 60分 + 休日 120分
+  estimate: 3-4 sessions
+  energy: High
+  focus: 実装・動作確認・説明可能化
+- id: ISS-021
+  title: '[E-PLC] 2026-12: PLC 基本命令（AND/OR/NOT、タイマー、カウンタ）'
+  body: 基本命令をシミュレータで実習。PLC 課題 第1-2課題を作成。
+  epic: E-PLC
+  phase: phase-3
+  labels:
+  - area:plc
+  - phase:plc-growth
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q4
+  due_date: '2026-12-31'
+  recurring: false
+  dependencies:
+  - ISS-020
+  evidence_type: Code
+  monthly_bucket: 2026-12
+  quarter: 2026-Q4
+  career_link: PLC 基本操作の証明
+  ai_link: Claude Code でラダー図の解説生成
+  task_type: plc
+  work_steps: *id025
+  deliverables: *id026
+  evidence_to_keep: *id027
+  dod: *id028
+  active_from: '2026-11-01'
+  deferred_until: null
+  blocked_by:
+  - ISS-020
+  exam_priority_guard: false
+  review_note: レビュー時に動作確認結果、再利用ポイント、次回課題を更新する。
+  outcome: '[E-PLC] 2026-12: PLC 基本命令（AND/OR/NOT、タイマー、カウンタ） を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象命令や課題の要件を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: PLC 基本操作の証明 / Claude Code でラダー図の解説生成
+  device: PC / シミュレータ / ノート
+  inputs:
+  - シミュレータ
+  - ラダー図
+  - 課題仕様
+  things_to_make:
+  - PLC成果物
+  - 動作確認メモ
+  completion_check:
+  - 対象課題が動作確認まで完了している。
+  - 再利用可能な成果物またはメモが残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 仕様と入出力を整理する'
+  - 'セッション2: ラダーを組んで動作を確認する'
+  - 'セッション3: 修正点と学びを技術メモへ残す'
+  time_block: 平日 60分 + 休日 120分
+  estimate: 3-4 sessions
+  energy: High
+  focus: 実装・動作確認・説明可能化
+- id: ISS-022
+  title: '[E-PLC] 2027-01: PLC シーケンス制御実習 + 課題 第3'
+  body: PLC でシーケンス制御を組む実習。自己保持回路を PLC で実現。
+  epic: E-PLC
+  phase: phase-3
+  labels:
+  - area:plc
+  - phase:plc-growth
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q1
+  due_date: '2027-01-31'
+  recurring: false
+  dependencies:
+  - ISS-021
+  evidence_type: Code
+  monthly_bucket: 2027-01
+  quarter: 2027-Q1
+  career_link: PLC でシーケンスを組める力
+  ai_link: ''
+  task_type: plc
+  work_steps: *id025
+  deliverables: *id026
+  evidence_to_keep: *id027
+  dod: *id028
+  active_from: '2026-11-01'
+  deferred_until: null
+  blocked_by:
+  - ISS-021
+  exam_priority_guard: false
+  review_note: レビュー時に動作確認結果、再利用ポイント、次回課題を更新する。
+  outcome: '[E-PLC] 2027-01: PLC シーケンス制御実習 + 課題 第3 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象命令や課題の要件を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: PLC でシーケンスを組める力
+  device: PC / シミュレータ / ノート
+  inputs:
+  - シミュレータ
+  - ラダー図
+  - 課題仕様
+  things_to_make:
+  - PLC成果物
+  - 動作確認メモ
+  completion_check:
+  - 対象課題が動作確認まで完了している。
+  - 再利用可能な成果物またはメモが残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 仕様と入出力を整理する'
+  - 'セッション2: ラダーを組んで動作を確認する'
+  - 'セッション3: 修正点と学びを技術メモへ残す'
+  time_block: 平日 60分 + 休日 120分
+  estimate: 3-4 sessions
+  energy: High
+  focus: 実装・動作確認・説明可能化
+- id: ISS-023
+  title: '[E-PLC] 2027-02: シーケンス制御の体系学習'
+  body: シーケンス制御の体系を学習しノート化。
+  epic: E-PLC
+  phase: phase-3
+  labels:
+  - area:plc
+  - area:control
+  - phase:plc-growth
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q1
+  due_date: '2027-02-28'
+  recurring: false
+  dependencies:
+  - ISS-022
+  evidence_type: Note
+  monthly_bucket: 2027-02
+  quarter: 2027-Q1
+  career_link: シーケンス制御の基本用語を説明できる
+  ai_link: Codex で学習ログ自動整理
+  task_type: study
+  work_steps: *id021
+  deliverables: *id022
+  evidence_to_keep: *id023
+  dod: *id024
+  active_from: '2026-11-01'
+  deferred_until: null
+  blocked_by:
+  - ISS-022
+  exam_priority_guard: false
+  review_note: レビュー時に未理解点、ノート完成度、次回演習対象を更新する。
+  outcome: '[E-PLC] 2027-02: シーケンス制御の体系学習 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象章・図面・用語の範囲を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: シーケンス制御の基本用語を説明できる / Codex で学習ログ自動整理
+  device: ノート / iPad
+  inputs:
+  - 教材
+  - ノート
+  - 図や例題
+  things_to_make:
+  - 学習ノート
+  - 要点まとめ
+  completion_check:
+  - 対象範囲のノートが更新されている。
+  - 未理解点または次回対象が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 範囲確認と要点の下書きを作る'
+  - 'セッション2: 自分の言葉で説明できる形へ整える'
+  - 'セッション3: 弱点だけを見直して次の範囲へつなぐ'
+  time_block: 平日 60分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 理解・整理・ノート化
+- id: ISS-024
+  title: '[E-PLC] 2027-03: PLC 課題集完成（5課題以上）+ 図面読解仕上げ'
+  body: PLC 課題の総復習と追加課題作成。図面読解ノート完成。
+  epic: E-PLC
+  phase: phase-3
+  labels:
+  - area:plc
+  - area:drawings
+  - phase:plc-growth
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q1
+  due_date: '2027-03-31'
+  recurring: false
+  dependencies:
+  - ISS-023
+  evidence_type: Code
+  monthly_bucket: 2027-03
+  quarter: 2027-Q1
+  career_link: PLC 課題集 + 図面読解ノートが成果物
+  ai_link: ''
+  task_type: plc
+  work_steps: *id025
+  deliverables: *id026
+  evidence_to_keep: *id027
+  dod: *id028
+  active_from: '2026-11-01'
+  deferred_until: null
+  blocked_by:
+  - ISS-023
+  exam_priority_guard: false
+  review_note: レビュー時に動作確認結果、再利用ポイント、次回課題を更新する。
+  outcome: '[E-PLC] 2027-03: PLC 課題集完成（5課題以上）+ 図面読解仕上げ を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象命令や課題の要件を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: PLC 課題集 + 図面読解ノートが成果物
+  device: PC / シミュレータ / ノート
+  inputs:
+  - シミュレータ
+  - ラダー図
+  - 課題仕様
+  things_to_make:
+  - PLC成果物
+  - 動作確認メモ
+  completion_check:
+  - 対象課題が動作確認まで完了している。
+  - 再利用可能な成果物またはメモが残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 仕様と入出力を整理する'
+  - 'セッション2: ラダーを組んで動作を確認する'
+  - 'セッション3: 修正点と学びを技術メモへ残す'
+  time_block: 平日 60分 + 休日 120分
+  estimate: 3-4 sessions
+  energy: High
+  focus: 実装・動作確認・説明可能化
+- id: ISS-025
+  title: '[E-LIC] 2027-01: 電験三種 理論科目 入門学習開始'
+  body: 電験三種 理論の範囲を把握し、学習計画を立てる。基礎から開始。
+  epic: E-LIC
+  phase: phase-3
+  labels:
+  - area:license
+  - phase:denken-ramp
+  - priority:p2
+  priority: p2
+  milestone: M-2027-Q1
+  due_date: '2027-01-31'
+  recurring: false
+  dependencies:
+  - ISS-014
+  evidence_type: Document
+  monthly_bucket: 2027-01
+  quarter: 2027-Q1
+  career_link: 電験三種への着手
+  ai_link: Claude Code で過去問分析を自動化
+  task_type: exam
+  work_steps: *id001
+  deliverables: *id002
+  evidence_to_keep: *id003
+  dod: *id004
+  active_from: '2027-01-01'
+  deferred_until: '2026-12-31'
+  blocked_by:
+  - ISS-014
+  exam_priority_guard: true
+  review_note: レビュー時に正答率、練習量、弱点、次回補強テーマを更新する。
+  outcome: '[E-LIC] 2027-01: 電験三種 理論科目 入門学習開始 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象範囲と教材を確定する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 電験三種への着手 / Claude Code で過去問分析を自動化
+  device: iPad / ノート
+  inputs:
+  - 過去問
+  - 参考書または学習アプリ
+  - 誤答メモ
+  things_to_make:
+  - 学習ログ
+  - 弱点メモ
+  completion_check:
+  - 主要な演習が完了している。
+  - 結果と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - '朝: 前回の誤答または要点を3つだけ再確認する'
+  - '主作業: 過去問・複線図・直前対策の本体を1セット進める'
+  - '終了前: 間違い理由と次回の再テスト対象を記録する'
+  time_block: 平日 60-90分 + 休日 120分
+  estimate: 3-5 sessions
+  energy: High
+  focus: 再現・演習・誤答修正
+- id: ISS-026
+  title: '[E-DRW] 2027-03: 図面読解ノート完成版'
+  body: 展開接続図・単線結線図・記号体系をまとめた図面読解ノートの完成。
+  epic: E-DRW
+  phase: phase-3
+  labels:
+  - area:drawings
+  - phase:plc-growth
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q1
+  due_date: '2027-03-31'
+  recurring: false
+  dependencies:
+  - ISS-016
+  evidence_type: Note
+  monthly_bucket: 2027-03
+  quarter: 2027-Q1
+  career_link: 図面読解の完成した成果物
+  ai_link: ''
+  task_type: study
+  work_steps: *id021
+  deliverables: *id022
+  evidence_to_keep: *id023
+  dod: *id024
+  active_from: '2026-11-01'
+  deferred_until: null
+  blocked_by:
+  - ISS-016
+  exam_priority_guard: false
+  review_note: レビュー時に未理解点、ノート完成度、次回演習対象を更新する。
+  outcome: '[E-DRW] 2027-03: 図面読解ノート完成版 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象章・図面・用語の範囲を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 図面読解の完成した成果物
+  device: ノート / iPad
+  inputs:
+  - 教材
+  - ノート
+  - 図や例題
+  things_to_make:
+  - 学習ノート
+  - 要点まとめ
+  completion_check:
+  - 対象範囲のノートが更新されている。
+  - 未理解点または次回対象が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 範囲確認と要点の下書きを作る'
+  - 'セッション2: 自分の言葉で説明できる形へ整える'
+  - 'セッション3: 弱点だけを見直して次の範囲へつなぐ'
+  time_block: 平日 60分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 理解・整理・ノート化
+- id: ISS-027
+  title: '[E-LIC] 2027-04: 電験三種 理論（磁気・静電気）+ 電力入門'
+  body: 理論の磁気・静電気分野を学習。電力科目を入門。
+  epic: E-LIC
+  phase: phase-4
+  labels:
+  - area:license
+  - phase:denken-ramp
+  - priority:p0
+  priority: p0
+  milestone: M-2027-Q2
+  due_date: '2027-04-30'
+  recurring: false
+  dependencies:
+  - ISS-025
+  evidence_type: Document
+  monthly_bucket: 2027-04
+  quarter: 2027-Q2
+  career_link: 電験三種の本格学習
+  ai_link: Claude Code で計算問題の解法整理
+  task_type: exam
+  work_steps: *id001
+  deliverables: *id002
+  evidence_to_keep: *id003
+  dod: *id004
+  active_from: '2027-04-01'
+  deferred_until: '2026-12-31'
+  blocked_by:
+  - ISS-025
+  exam_priority_guard: true
+  review_note: レビュー時に正答率、練習量、弱点、次回補強テーマを更新する。
+  outcome: '[E-LIC] 2027-04: 電験三種 理論（磁気・静電気）+ 電力入門 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象範囲と教材を確定する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 電験三種の本格学習 / Claude Code で計算問題の解法整理
+  device: iPad / ノート
+  inputs:
+  - 過去問
+  - 参考書または学習アプリ
+  - 誤答メモ
+  things_to_make:
+  - 学習ログ
+  - 弱点メモ
+  completion_check:
+  - 主要な演習が完了している。
+  - 結果と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - '朝: 前回の誤答または要点を3つだけ再確認する'
+  - '主作業: 過去問・複線図・直前対策の本体を1セット進める'
+  - '終了前: 間違い理由と次回の再テスト対象を記録する'
+  time_block: 平日 60-90分 + 休日 120分
+  estimate: 3-5 sessions
+  energy: High
+  focus: 再現・演習・誤答修正
+- id: ISS-028
+  title: '[E-LIC] 2027-05: 電験三種 理論（電子回路）+ 電力（変電・配電）'
+  body: 理論の電子回路、電力の変電・配電を学習。
+  epic: E-LIC
+  phase: phase-4
+  labels:
+  - area:license
+  - phase:denken-ramp
+  - priority:p0
+  priority: p0
+  milestone: M-2027-Q2
+  due_date: '2027-05-31'
+  recurring: false
+  dependencies:
+  - ISS-027
+  evidence_type: Document
+  monthly_bucket: 2027-05
+  quarter: 2027-Q2
+  career_link: 電験三種の進捗
+  ai_link: ''
+  task_type: exam
+  work_steps: *id001
+  deliverables: *id002
+  evidence_to_keep: *id003
+  dod: *id004
+  active_from: '2027-04-01'
+  deferred_until: '2026-12-31'
+  blocked_by:
+  - ISS-027
+  exam_priority_guard: true
+  review_note: レビュー時に正答率、練習量、弱点、次回補強テーマを更新する。
+  outcome: '[E-LIC] 2027-05: 電験三種 理論（電子回路）+ 電力（変電・配電） を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象範囲と教材を確定する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 電験三種の進捗
+  device: iPad / ノート
+  inputs:
+  - 過去問
+  - 参考書または学習アプリ
+  - 誤答メモ
+  things_to_make:
+  - 学習ログ
+  - 弱点メモ
+  completion_check:
+  - 主要な演習が完了している。
+  - 結果と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - '朝: 前回の誤答または要点を3つだけ再確認する'
+  - '主作業: 過去問・複線図・直前対策の本体を1セット進める'
+  - '終了前: 間違い理由と次回の再テスト対象を記録する'
+  time_block: 平日 60-90分 + 休日 120分
+  estimate: 3-5 sessions
+  energy: High
+  focus: 再現・演習・誤答修正
+- id: ISS-029
+  title: '[E-LIC] 2027-06: 電験三種 過去問演習（理論・電力）+ 機械入門'
+  body: 理論・電力の過去問周回。機械科目の入門。
+  epic: E-LIC
+  phase: phase-4
+  labels:
+  - area:license
+  - phase:denken-ramp
+  - priority:p0
+  priority: p0
+  milestone: M-2027-Q2
+  due_date: '2027-06-30'
+  recurring: false
+  dependencies:
+  - ISS-028
+  evidence_type: Document
+  monthly_bucket: 2027-06
+  quarter: 2027-Q2
+  career_link: 過去問演習の進捗
+  ai_link: Claude Code で誤答分析を自動化
+  task_type: exam
+  work_steps: *id001
+  deliverables: *id002
+  evidence_to_keep: *id003
+  dod: *id004
+  active_from: '2027-04-01'
+  deferred_until: '2026-12-31'
+  blocked_by:
+  - ISS-028
+  exam_priority_guard: true
+  review_note: レビュー時に正答率、練習量、弱点、次回補強テーマを更新する。
+  outcome: '[E-LIC] 2027-06: 電験三種 過去問演習（理論・電力）+ 機械入門 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象範囲と教材を確定する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 過去問演習の進捗 / Claude Code で誤答分析を自動化
+  device: iPad / ノート
+  inputs:
+  - 過去問
+  - 参考書または学習アプリ
+  - 誤答メモ
+  things_to_make:
+  - 学習ログ
+  - 弱点メモ
+  completion_check:
+  - 主要な演習が完了している。
+  - 結果と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - '朝: 前回の誤答または要点を3つだけ再確認する'
+  - '主作業: 過去問・複線図・直前対策の本体を1セット進める'
+  - '終了前: 間違い理由と次回の再テスト対象を記録する'
+  time_block: 平日 60-90分 + 休日 120分
+  estimate: 3-5 sessions
+  energy: High
+  focus: 再現・演習・誤答修正
+- id: ISS-030
+  title: '[E-LIC] 2027-07: 電験三種 直前対策（理論・電力・法規短期集中）'
+  body: 理論・電力の最終仕上げ。法規の短期集中学習。
+  epic: E-LIC
+  phase: phase-4
+  labels:
+  - area:license
+  - phase:denken-ramp
+  - priority:p0
+  priority: p0
+  milestone: M-2027-Q3
+  due_date: '2027-07-31'
+  recurring: false
+  dependencies:
+  - ISS-029
+  evidence_type: Document
+  monthly_bucket: 2027-07
+  quarter: 2027-Q3
+  career_link: 電験三種の受験準備
+  ai_link: ''
+  task_type: exam
+  work_steps: *id001
+  deliverables: *id002
+  evidence_to_keep: *id003
+  dod: *id004
+  active_from: '2027-04-01'
+  deferred_until: '2026-12-31'
+  blocked_by:
+  - ISS-029
+  exam_priority_guard: true
+  review_note: レビュー時に正答率、練習量、弱点、次回補強テーマを更新する。
+  outcome: '[E-LIC] 2027-07: 電験三種 直前対策（理論・電力・法規短期集中） を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象範囲と教材を確定する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 電験三種の受験準備
+  device: iPad / ノート
+  inputs:
+  - 過去問
+  - 参考書または学習アプリ
+  - 誤答メモ
+  things_to_make:
+  - 学習ログ
+  - 弱点メモ
+  completion_check:
+  - 主要な演習が完了している。
+  - 結果と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - '朝: 前回の誤答または要点を3つだけ再確認する'
+  - '主作業: 過去問・複線図・直前対策の本体を1セット進める'
+  - '終了前: 間違い理由と次回の再テスト対象を記録する'
+  time_block: 平日 60-90分 + 休日 120分
+  estimate: 3-5 sessions
+  energy: High
+  focus: 再現・演習・誤答修正
+- id: ISS-031
+  title: '[E-LIC] 2027-08: 電験三種 受験'
+  body: 電験三種を受験。結果を記録。科目合格の有無を確認。
+  epic: E-LIC
+  phase: phase-4
+  labels:
+  - area:license
+  - phase:denken-ramp
+  - priority:p0
+  priority: p0
+  milestone: M-2027-Q3
+  due_date: '2027-08-31'
+  recurring: false
+  dependencies:
+  - ISS-030
+  evidence_type: Certification
+  monthly_bucket: 2027-08
+  quarter: 2027-Q3
+  career_link: 電験三種 科目合格の証明
+  ai_link: ''
+  task_type: exam
+  work_steps: *id013
+  deliverables: *id014
+  evidence_to_keep: *id015
+  dod: *id016
+  active_from: '2027-04-01'
+  deferred_until: '2026-12-31'
+  blocked_by:
+  - ISS-030
+  exam_priority_guard: true
+  review_note: レビュー時に正答率、練習量、弱点、次回補強テーマを更新する。
+  outcome: '[E-LIC] 2027-08: 電験三種 受験 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 受験票・会場・持ち物・移動計画を確認する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 電験三種 科目合格の証明
+  device: iPad / ノート
+  inputs:
+  - 過去問
+  - 参考書または学習アプリ
+  - 誤答メモ
+  things_to_make:
+  - 受験記録
+  - 振り返りメモ
+  completion_check:
+  - 受験の事実が記録されている。
+  - 次の判断材料が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - '朝: 前回の誤答または要点を3つだけ再確認する'
+  - '主作業: 過去問・複線図・直前対策の本体を1セット進める'
+  - '終了前: 間違い理由と次回の再テスト対象を記録する'
+  time_block: 平日 60-90分 + 休日 120分
+  estimate: 3-5 sessions
+  energy: High
+  focus: 再現・演習・誤答修正
+- id: ISS-032
+  title: '[E-PLC] 2027-05: PLC 応用課題（タイマー・カウンタ応用）'
+  body: PLC のタイマー・カウンタを使った応用課題を作成。
+  epic: E-PLC
+  phase: phase-4
+  labels:
+  - area:plc
+  - phase:denken-ramp
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q2
+  due_date: '2027-05-31'
+  recurring: false
+  dependencies:
+  - ISS-024
+  evidence_type: Code
+  monthly_bucket: 2027-05
+  quarter: 2027-Q2
+  career_link: PLC 応用力の証明
+  ai_link: PLC ラダー図チェックツール試作
+  task_type: plc
+  work_steps: *id025
+  deliverables: *id026
+  evidence_to_keep: *id027
+  dod: *id028
+  active_from: '2027-04-01'
+  deferred_until: null
+  blocked_by:
+  - ISS-024
+  exam_priority_guard: false
+  review_note: レビュー時に動作確認結果、再利用ポイント、次回課題を更新する。
+  outcome: '[E-PLC] 2027-05: PLC 応用課題（タイマー・カウンタ応用） を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象命令や課題の要件を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: PLC 応用力の証明 / PLC ラダー図チェックツール試作
+  device: PC / シミュレータ / ノート
+  inputs:
+  - シミュレータ
+  - ラダー図
+  - 課題仕様
+  things_to_make:
+  - PLC成果物
+  - 動作確認メモ
+  completion_check:
+  - 対象課題が動作確認まで完了している。
+  - 再利用可能な成果物またはメモが残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 仕様と入出力を整理する'
+  - 'セッション2: ラダーを組んで動作を確認する'
+  - 'セッション3: 修正点と学びを技術メモへ残す'
+  time_block: 平日 60分 + 休日 120分
+  estimate: 3-4 sessions
+  energy: High
+  focus: 実装・動作確認・説明可能化
+- id: ISS-033
+  title: '[E-EVD] 2027-06: 社内改善提案 1件作成'
+  body: 業務プロセスの改善提案を技術的な視点から作成する。
+  epic: E-EVD
+  phase: phase-4
+  labels:
+  - area:evidence
+  - area:practice
+  - phase:denken-ramp
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q2
+  due_date: '2027-06-30'
+  recurring: false
+  dependencies: []
+  evidence_type: Document
+  monthly_bucket: 2027-06
+  quarter: 2027-Q2
+  career_link: 問題発見力と改善力の証拠
+  ai_link: ''
+  task_type: evidence
+  work_steps: *id009
+  deliverables: *id010
+  evidence_to_keep: *id011
+  dod: *id012
+  active_from: '2027-04-01'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: false
+  review_note: レビュー時に残した証拠、公開可否、面接接続ポイントを更新する。
+  outcome: '[E-EVD] 2027-06: 社内改善提案 1件作成 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象資料や実務テーマを1件選ぶ。ために、必要な資料と作業環境を開く。
+  why_this_matters: 問題発見力と改善力の証拠
+  device: PC / ノート
+  inputs:
+  - 仕様書
+  - 現場メモ
+  - 改善案
+  things_to_make:
+  - 技術メモ
+  - 成果要約
+  completion_check:
+  - 技術的な要点が文章化されている。
+  - 証拠として残す成果物が保存されている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 材料を集めて技術観点を整理する'
+  - 'セッション2: 面接で語れる形の技術メモにまとめる'
+  time_block: 週末 60-90分
+  estimate: 2 sessions
+  energy: Medium
+  focus: 整理・言語化・証跡化
+- id: ISS-034
+  title: '[E-AI] 2027-09: AI 業務改善事例 第1件'
+  body: Claude Code で仕様書テンプレートの自動生成を構築し、業務改善事例とする。
+  epic: E-AI
+  phase: phase-5
+  labels:
+  - area:ai
+  - tool:claude-code
+  - phase:ai-specialist
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q3
+  due_date: '2027-09-30'
+  recurring: false
+  dependencies:
+  - ISS-019
+  evidence_type: Code
+  monthly_bucket: 2027-09
+  quarter: 2027-Q3
+  career_link: AI を実務に適用できる証拠
+  ai_link: Claude Code 実務適用の第一歩
+  task_type: ai
+  work_steps: *id017
+  deliverables: *id018
+  evidence_to_keep: *id019
+  dod: *id020
+  active_from: '2027-09-01'
+  deferred_until: null
+  blocked_by:
+  - ISS-019
+  exam_priority_guard: false
+  review_note: レビュー時に再利用可能な知見、デモ性、転用先を更新する。
+  outcome: '[E-AI] 2027-09: AI 業務改善事例 第1件 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象教材または事例のゴールを明確にする。ために、必要な資料と作業環境を開く。
+  why_this_matters: AI を実務に適用できる証拠 / Claude Code 実務適用の第一歩
+  device: PC
+  inputs:
+  - Claude Code / Codex
+  - 仕様メモ
+  - 評価観点
+  things_to_make:
+  - 学習ログ
+  - 転用アイデアメモ
+  completion_check:
+  - 対象の学習または試作が完了している。
+  - 転用可能な知見が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 作るものと評価観点を1枚に整理する'
+  - 'セッション2: 小さく試作して動作を確認する'
+  - 'セッション3: 実務・面接に接続する説明を残す'
+  time_block: 週末 120-180分
+  estimate: 3-4 sessions
+  energy: High
+  focus: 試作・検証・文章化
+- id: ISS-035
+  title: '[E-AI] 2027-10: 制御 × AI 適用事例 第1件'
+  body: 制御図面の記号・用語自動抽出ツールを Claude Code で構築。
+  epic: E-AI
+  phase: phase-5
+  labels:
+  - area:ai
+  - area:control
+  - tool:claude-code
+  - phase:ai-specialist
+  - priority:p0
+  priority: p0
+  milestone: M-2027-Q4
+  due_date: '2027-10-31'
+  recurring: false
+  dependencies:
+  - ISS-034
+  evidence_type: Code
+  monthly_bucket: 2027-10
+  quarter: 2027-Q4
+  career_link: 制御 × AI の差別化
+  ai_link: Codex / Claude Code 高度活用
+  task_type: ai
+  work_steps: *id017
+  deliverables: *id018
+  evidence_to_keep: *id019
+  dod: *id020
+  active_from: '2027-10-01'
+  deferred_until: '2027-09-30'
+  blocked_by:
+  - ISS-034
+  exam_priority_guard: false
+  review_note: レビュー時に再利用可能な知見、デモ性、転用先を更新する。
+  outcome: '[E-AI] 2027-10: 制御 × AI 適用事例 第1件 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象教材または事例のゴールを明確にする。ために、必要な資料と作業環境を開く。
+  why_this_matters: 制御 × AI の差別化 / Codex / Claude Code 高度活用
+  device: PC
+  inputs:
+  - Claude Code / Codex
+  - 仕様メモ
+  - 評価観点
+  things_to_make:
+  - 学習ログ
+  - 転用アイデアメモ
+  completion_check:
+  - 対象の学習または試作が完了している。
+  - 転用可能な知見が Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 作るものと評価観点を1枚に整理する'
+  - 'セッション2: 小さく試作して動作を確認する'
+  - 'セッション3: 実務・面接に接続する説明を残す'
+  time_block: 週末 120-180分
+  estimate: 3-4 sessions
+  energy: High
+  focus: 試作・検証・文章化
+- id: ISS-036
+  title: '[E-AI] 2027-11: AI 活用事例 追加 + ポートフォリオ v1'
+  body: AI 活用事例を追加。ポートフォリオの v1 を作成。
+  epic: E-AI
+  phase: phase-5
+  labels:
+  - area:ai
+  - tool:codex
+  - tool:claude-code
+  - phase:ai-specialist
+  - priority:p0
+  priority: p0
+  milestone: M-2027-Q4
+  due_date: '2027-11-30'
+  recurring: false
+  dependencies:
+  - ISS-035
+  evidence_type: Portfolio
+  monthly_bucket: 2027-11
+  quarter: 2027-Q4
+  career_link: ポートフォリオが完成
+  ai_link: AI 成果物の集大成
+  task_type: deliverable
+  work_steps: *id029
+  deliverables: *id030
+  evidence_to_keep: *id031
+  dod: *id032
+  active_from: '2027-10-01'
+  deferred_until: '2027-09-30'
+  blocked_by:
+  - ISS-035
+  exam_priority_guard: false
+  review_note: レビュー時に再利用可能な知見、デモ性、転用先を更新する。
+  outcome: '[E-AI] 2027-11: AI 活用事例 追加 + ポートフォリオ v1 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 載せる成果物と見せ方を決める。ために、必要な資料と作業環境を開く。
+  why_this_matters: ポートフォリオが完成 / AI 成果物の集大成
+  device: PC
+  inputs:
+  - 既存成果物
+  - スクリーンショット
+  - 説明文
+  things_to_make:
+  - 公開可能な成果物
+  - 説明用メモ
+  completion_check:
+  - 第三者に見せられる成果物が完成している。
+  - 説明用の要点とリンクが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 仕上げに必要な差分を洗い出す'
+  - 'セッション2: 成果物を更新して確認する'
+  - 'セッション3: 公開用の説明と証跡を整える'
+  time_block: 週末 120-180分
+  estimate: 4 sessions
+  energy: High
+  focus: 仕上げ・公開・説明準備
+- id: ISS-037
+  title: '[E-CAR] 2027-11: 職務経歴書ドラフト作成'
+  body: 転職で語れるストーリーを整理し、職務経歴書のドラフトを作成。
+  epic: E-CAR
+  phase: phase-5
+  labels:
+  - area:career
+  - phase:ai-specialist
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q4
+  due_date: '2027-11-30'
+  recurring: false
+  dependencies: []
+  evidence_type: Document
+  monthly_bucket: 2027-11
+  quarter: 2027-Q4
+  career_link: 転職の武器
+  ai_link: ''
+  task_type: career
+  work_steps: *id033
+  deliverables: *id034
+  evidence_to_keep: *id035
+  dod: *id036
+  active_from: '2027-11-01'
+  deferred_until: '2027-10-31'
+  blocked_by: []
+  exam_priority_guard: false
+  review_note: レビュー時に応募先ごとの差分、反応、改善点を更新する。
+  outcome: '[E-CAR] 2027-11: 職務経歴書ドラフト作成 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 転職で使う材料と対象企業を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 転職の武器
+  device: PC
+  inputs:
+  - 実績メモ
+  - 職務経歴書ドラフト
+  - 求人要件
+  things_to_make:
+  - 応募資料ドラフト
+  - 面談・面接記録
+  completion_check:
+  - 応募・面談・面接に使える資料が更新されている。
+  - 改善点と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 伝える実績を3件に絞る'
+  - 'セッション2: 書類または面接回答を更新する'
+  - 'セッション3: 次回改善点をメモして再利用可能化する'
+  time_block: 週末 60-90分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 書類・面接・応募導線
+- id: ISS-038
+  title: '[E-CAR] 2027-12: 職務経歴書 v2 + 面接ストーリー集'
+  body: 職務経歴書をブラッシュアップ。面接で語るストーリーを整理。
+  epic: E-CAR
+  phase: phase-5
+  labels:
+  - area:career
+  - phase:ai-specialist
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q4
+  due_date: '2027-12-31'
+  recurring: false
+  dependencies:
+  - ISS-037
+  evidence_type: Story
+  monthly_bucket: 2027-12
+  quarter: 2027-Q4
+  career_link: 面接準備の完了
+  ai_link: ''
+  task_type: career
+  work_steps: *id033
+  deliverables: *id034
+  evidence_to_keep: *id035
+  dod: *id036
+  active_from: '2027-11-01'
+  deferred_until: '2027-10-31'
+  blocked_by:
+  - ISS-037
+  exam_priority_guard: false
+  review_note: レビュー時に応募先ごとの差分、反応、改善点を更新する。
+  outcome: '[E-CAR] 2027-12: 職務経歴書 v2 + 面接ストーリー集 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 転職で使う材料と対象企業を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 面接準備の完了
+  device: PC
+  inputs:
+  - 実績メモ
+  - 職務経歴書ドラフト
+  - 求人要件
+  things_to_make:
+  - 応募資料ドラフト
+  - 面談・面接記録
+  completion_check:
+  - 応募・面談・面接に使える資料が更新されている。
+  - 改善点と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 伝える実績を3件に絞る'
+  - 'セッション2: 書類または面接回答を更新する'
+  - 'セッション3: 次回改善点をメモして再利用可能化する'
+  time_block: 週末 60-90分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 書類・面接・応募導線
+- id: ISS-039
+  title: '[E-AI] 2028-01: ポートフォリオ最終版 + 面接用デモ'
+  body: ポートフォリオの最終版を作成。面接で AI 活用をデモできるよう準備。
+  epic: E-AI
+  phase: phase-5
+  labels:
+  - area:ai
+  - area:career
+  - phase:ai-specialist
+  - priority:p0
+  priority: p0
+  milestone: M-2028-Q1
+  due_date: '2028-01-31'
+  recurring: false
+  dependencies:
+  - ISS-036
+  evidence_type: Portfolio
+  monthly_bucket: 2028-01
+  quarter: 2028-Q1
+  career_link: 面接での AI デモ
+  ai_link: AI 活用の集大成
+  task_type: deliverable
+  work_steps: *id029
+  deliverables: *id030
+  evidence_to_keep: *id031
+  dod: *id032
+  active_from: '2027-11-01'
+  deferred_until: '2027-10-31'
+  blocked_by:
+  - ISS-036
+  exam_priority_guard: false
+  review_note: レビュー時に再利用可能な知見、デモ性、転用先を更新する。
+  outcome: '[E-AI] 2028-01: ポートフォリオ最終版 + 面接用デモ を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 載せる成果物と見せ方を決める。ために、必要な資料と作業環境を開く。
+  why_this_matters: 面接での AI デモ / AI 活用の集大成
+  device: PC
+  inputs:
+  - 既存成果物
+  - スクリーンショット
+  - 説明文
+  things_to_make:
+  - 公開可能な成果物
+  - 説明用メモ
+  completion_check:
+  - 第三者に見せられる成果物が完成している。
+  - 説明用の要点とリンクが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 仕上げに必要な差分を洗い出す'
+  - 'セッション2: 成果物を更新して確認する'
+  - 'セッション3: 公開用の説明と証跡を整える'
+  time_block: 週末 120-180分
+  estimate: 4 sessions
+  energy: High
+  focus: 仕上げ・公開・説明準備
+- id: ISS-040
+  title: '[E-CAR] 2028-01: 転職エージェント登録・面談'
+  body: 転職エージェントに登録し、面談を受ける。求人を確認。
+  epic: E-CAR
+  phase: phase-6
+  labels:
+  - area:career
+  - phase:career-finish
+  - priority:p0
+  priority: p0
+  milestone: M-2028-Q1
+  due_date: '2028-01-31'
+  recurring: false
+  dependencies:
+  - ISS-038
+  evidence_type: Document
+  monthly_bucket: 2028-01
+  quarter: 2028-Q1
+  career_link: 転職活動の開始
+  ai_link: ''
+  task_type: career
+  work_steps: *id033
+  deliverables: *id034
+  evidence_to_keep: *id035
+  dod: *id036
+  active_from: '2028-01-01'
+  deferred_until: '2027-10-31'
+  blocked_by:
+  - ISS-038
+  exam_priority_guard: false
+  review_note: レビュー時に応募先ごとの差分、反応、改善点を更新する。
+  outcome: '[E-CAR] 2028-01: 転職エージェント登録・面談 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 転職で使う材料と対象企業を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 転職活動の開始
+  device: PC
+  inputs:
+  - 実績メモ
+  - 職務経歴書ドラフト
+  - 求人要件
+  things_to_make:
+  - 応募資料ドラフト
+  - 面談・面接記録
+  completion_check:
+  - 応募・面談・面接に使える資料が更新されている。
+  - 改善点と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 伝える実績を3件に絞る'
+  - 'セッション2: 書類または面接回答を更新する'
+  - 'セッション3: 次回改善点をメモして再利用可能化する'
+  time_block: 週末 60-90分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 書類・面接・応募導線
+- id: ISS-041
+  title: '[E-CAR] 2028-02: 応募・面接フェーズ'
+  body: 3社以上に応募。面接対策を継続。面接の振り返りを記録。
+  epic: E-CAR
+  phase: phase-6
+  labels:
+  - area:career
+  - phase:career-finish
+  - priority:p0
+  priority: p0
+  milestone: M-2028-Q1
+  due_date: '2028-02-28'
+  recurring: false
+  dependencies:
+  - ISS-040
+  evidence_type: Document
+  monthly_bucket: 2028-02
+  quarter: 2028-Q1
+  career_link: 面接フェーズ
+  ai_link: ''
+  task_type: career
+  work_steps: *id033
+  deliverables: *id034
+  evidence_to_keep: *id035
+  dod: *id036
+  active_from: '2028-02-01'
+  deferred_until: '2027-10-31'
+  blocked_by:
+  - ISS-040
+  exam_priority_guard: false
+  review_note: レビュー時に応募先ごとの差分、反応、改善点を更新する。
+  outcome: '[E-CAR] 2028-02: 応募・面接フェーズ を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 転職で使う材料と対象企業を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 面接フェーズ
+  device: PC
+  inputs:
+  - 実績メモ
+  - 職務経歴書ドラフト
+  - 求人要件
+  things_to_make:
+  - 応募資料ドラフト
+  - 面談・面接記録
+  completion_check:
+  - 応募・面談・面接に使える資料が更新されている。
+  - 改善点と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 伝える実績を3件に絞る'
+  - 'セッション2: 書類または面接回答を更新する'
+  - 'セッション3: 次回改善点をメモして再利用可能化する'
+  time_block: 週末 60-90分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 書類・面接・応募導線
+- id: ISS-042
+  title: '[E-CAR] 2028-03: 内定獲得 + 24か月計画完了'
+  body: 内定を獲得し、24か月計画を完了する。全 Issue をクローズ。
+  epic: E-CAR
+  phase: phase-6
+  labels:
+  - area:career
+  - phase:career-finish
+  - priority:p0
+  priority: p0
+  milestone: M-2028-Q1
+  due_date: '2028-03-31'
+  recurring: false
+  dependencies:
+  - ISS-041
+  evidence_type: Document
+  monthly_bucket: 2028-03
+  quarter: 2028-Q1
+  career_link: 計画の完遂
+  ai_link: ''
+  task_type: career
+  work_steps: *id033
+  deliverables: *id034
+  evidence_to_keep: *id035
+  dod: *id036
+  active_from: '2028-03-01'
+  deferred_until: '2027-10-31'
+  blocked_by:
+  - ISS-041
+  exam_priority_guard: false
+  review_note: レビュー時に応募先ごとの差分、反応、改善点を更新する。
+  outcome: '[E-CAR] 2028-03: 内定獲得 + 24か月計画完了 を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 転職で使う材料と対象企業を整理する。ために、必要な資料と作業環境を開く。
+  why_this_matters: 計画の完遂
+  device: PC
+  inputs:
+  - 実績メモ
+  - 職務経歴書ドラフト
+  - 求人要件
+  things_to_make:
+  - 応募資料ドラフト
+  - 面談・面接記録
+  completion_check:
+  - 応募・面談・面接に使える資料が更新されている。
+  - 改善点と次アクションが Issue に残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 伝える実績を3件に絞る'
+  - 'セッション2: 書類または面接回答を更新する'
+  - 'セッション3: 次回改善点をメモして再利用可能化する'
+  time_block: 週末 60-90分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 書類・面接・応募導線
+- id: ISS-043
+  title: '[E-SEC] 2026-08: NIST SP 800-82 で OT / ICS セキュリティの全体像を掴む'
+  body: NIST SP 800-82 Rev.3 の要点を読み、IT と OT の違い・安全性・可用性・制御システム固有の観点を1枚にまとめる。
+  epic: E-SEC
+  phase: phase-2
+  labels:
+  - area:security
+  - area:control
+  - phase:control-foundation
+  - priority:p2
+  priority: p2
+  milestone: M-2026-Q3
+  due_date: '2026-08-31'
+  recurring: false
+  dependencies: []
+  evidence_type: Document
+  monthly_bucket: 2026-08
+  quarter: 2026-Q3
+  career_link: 制御理解にセキュリティ観点を重ねて語れる基礎を作る
+  ai_link: ''
+  task_type: study
+  work_steps:
+  - NIST SP 800-82 Rev.3 の読む章を決める。
+  - IT と OT の違い、安全性・可用性・制御系固有の注意点を抜き出す。
+  - 面接やレビューで使える1ページの要点メモにまとめる。
+  deliverables:
+  - OT / ICS セキュリティ要点メモ
+  evidence_to_keep:
+  - 読んだ章と日付の記録
+  - 1ページ要点メモの保存先リンク
+  dod:
+  - OT と IT の違いを自分の言葉で説明できる。
+  - 安全性・可用性・制御系の観点を含む要点メモが残っている。
+  active_from: '2026-07-05'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: false
+  review_note: レビュー時に、制御基礎学習とどう接続したか、今後の実務で使えそうな視点を更新する。
+  outcome: '[E-SEC] 2026-08: NIST SP 800-82 で OT / ICS セキュリティの全体像を掴む を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: NIST SP 800-82 Rev.3 の読む章を決める。ために、必要な資料と作業環境を開く。
+  why_this_matters: 制御理解にセキュリティ観点を重ねて語れる基礎を作る
+  device: ノート / PC
+  inputs:
+  - 公式ドキュメント
+  - ノート
+  - 比較メモ
+  things_to_make:
+  - OT / ICS セキュリティ要点メモ
+  completion_check:
+  - OT と IT の違いを自分の言葉で説明できる。
+  - 安全性・可用性・制御系の観点を含む要点メモが残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 読む範囲と観点を決める'
+  - 'セッション2: 重要点を抜き出して整理する'
+  - 'セッション3: 実務や面接に接続する要点を書く'
+  time_block: 週末 60-90分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 理解・整理・ノート化
+- id: ISS-044
+  title: '[E-SEC] 2026-09: CISA ICS 101 ベースで IT / OT 差分と基本対策を整理する'
+  body: CISA ICS 101 相当の内容を基に、ICS アーキテクチャ、IT / OT 差分、代表的リスクと基本対策を整理する。
+  epic: E-SEC
+  phase: phase-2
+  labels:
+  - area:security
+  - area:control
+  - phase:control-foundation
+  - priority:p2
+  priority: p2
+  milestone: M-2026-Q3
+  due_date: '2026-09-30'
+  recurring: false
+  dependencies:
+  - ISS-043
+  evidence_type: Document
+  monthly_bucket: 2026-09
+  quarter: 2026-Q3
+  career_link: 設備・制御の運用リスクをセキュリティ視点で説明できるようにする
+  ai_link: ''
+  task_type: study
+  work_steps:
+  - CISA ICS 101 の学習範囲を決める。
+  - ICS アーキテクチャ、IT / OT 差分、基本対策を表形式で整理する。
+  - 現職の設備理解とつながる観点を3つ書き出す。
+  deliverables:
+  - ICS 101 学習メモ
+  - IT / OT 差分表
+  evidence_to_keep:
+  - 学習ログ
+  - 差分表またはメモの保存先リンク
+  dod:
+  - ICS アーキテクチャと IT / OT 差分を説明できる。
+  - 代表的リスクと基本対策が表や箇条書きで残っている。
+  active_from: '2026-07-05'
+  deferred_until: null
+  blocked_by:
+  - ISS-043
+  exam_priority_guard: false
+  review_note: レビュー時に、制御基礎ノートや図面読解に取り込めるポイントを追記する。
+  outcome: '[E-SEC] 2026-09: CISA ICS 101 ベースで IT / OT 差分と基本対策を整理する を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: CISA ICS 101 の学習範囲を決める。ために、必要な資料と作業環境を開く。
+  why_this_matters: 設備・制御の運用リスクをセキュリティ視点で説明できるようにする
+  device: ノート / PC
+  inputs:
+  - 公式ドキュメント
+  - ノート
+  - 比較メモ
+  things_to_make:
+  - ICS 101 学習メモ
+  - IT / OT 差分表
+  completion_check:
+  - ICS アーキテクチャと IT / OT 差分を説明できる。
+  - 代表的リスクと基本対策が表や箇条書きで残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 読む範囲と観点を決める'
+  - 'セッション2: 重要点を抜き出して整理する'
+  - 'セッション3: 実務や面接に接続する要点を書く'
+  time_block: 週末 60-90分
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 理解・整理・ノート化
+- id: ISS-045
+  title: '[E-SEC] 2026-12: PLC / 制御盤向け セキュリティ観点チェックリストを作る'
+  body: PLC・制御盤・図面読解の学習内容をもとに、OT / ICS セキュリティ観点のチェックリストを作成する。
+  epic: E-SEC
+  phase: phase-3
+  labels:
+  - area:security
+  - area:plc
+  - area:drawings
+  - phase:plc-growth
+  - priority:p2
+  priority: p2
+  milestone: M-2026-Q4
+  due_date: '2026-12-31'
+  recurring: false
+  dependencies:
+  - ISS-044
+  - ISS-020
+  evidence_type: Document
+  monthly_bucket: 2026-12
+  quarter: 2026-Q4
+  career_link: PLC と制御盤を安全性・可用性の観点でも見られる証拠にする
+  ai_link: ''
+  task_type: evidence
+  work_steps:
+  - 既存の PLC / 図面 / 制御メモから重要観点を洗い出す。
+  - ネットワーク分離、変更管理、アカウント、ログ、保守時の注意点を整理する。
+  - A4 1-2枚のチェックリストとして保存する。
+  deliverables:
+  - PLC / 制御盤セキュリティ観点チェックリスト
+  evidence_to_keep:
+  - チェックリスト本体
+  - 元にした学習ノートや仕様書メモへのリンク
+  dod:
+  - PLC / 制御盤向けの観点がチェックリストとして残っている。
+  - 既存の制御・図面学習との接続が本文かコメントに明記されている。
+  active_from: '2026-11-01'
+  deferred_until: null
+  blocked_by:
+  - ISS-044
+  - ISS-020
+  exam_priority_guard: false
+  review_note: レビュー時に、面接で語れるポイントと現職で使えそうな観点を分けて追記する。
+  outcome: '[E-SEC] 2026-12: PLC / 制御盤向け セキュリティ観点チェックリストを作る を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 既存の PLC / 図面 / 制御メモから重要観点を洗い出す。ために、必要な資料と作業環境を開く。
+  why_this_matters: PLC と制御盤を安全性・可用性の観点でも見られる証拠にする
+  device: PC / ノート
+  inputs:
+  - 既存ノート
+  - 仕様書メモ
+  - 改善観点
+  things_to_make:
+  - PLC / 制御盤セキュリティ観点チェックリスト
+  completion_check:
+  - PLC / 制御盤向けの観点がチェックリストとして残っている。
+  - 既存の制御・図面学習との接続が本文かコメントに明記されている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 既存の PLC / 図面 / 制御メモから観点を拾う'
+  - 'セッション2: 面接や実務で使える形のチェックリストへまとめる'
+  time_block: 週末 60-90分
+  estimate: 2 sessions
+  energy: Medium
+  focus: 整理・言語化・証跡化
+- id: ISS-046
+  title: '[E-SEC] 2027-11: 制御 × AI 成果物に OT セキュリティ視点を加える'
+  body: 制御 × AI の成果物に対し、OT / ICS セキュリティ観点の補足メモを作成し、ポートフォリオ説明へ統合する。
+  epic: E-SEC
+  phase: phase-5
+  labels:
+  - area:security
+  - area:ai
+  - area:control
+  - phase:ai-specialist
+  - priority:p2
+  priority: p2
+  milestone: M-2027-Q4
+  due_date: '2027-11-30'
+  recurring: false
+  dependencies:
+  - ISS-035
+  evidence_type: Portfolio
+  monthly_bucket: 2027-11
+  quarter: 2027-Q4
+  career_link: 制御 × AI に加えて OT セキュリティ視点も持つ人材として語れる
+  ai_link: 制御 × AI 成果物に安全性・可用性・運用リスク視点を追加する
+  task_type: deliverable
+  work_steps:
+  - 既存の制御 × AI 成果物を1件選ぶ。
+  - 安全性、可用性、誤操作、権限、変更管理の観点で補足を書く。
+  - ポートフォリオの説明文へ統合する。
+  deliverables:
+  - OT セキュリティ補足メモ
+  - ポートフォリオ説明更新
+  evidence_to_keep:
+  - 更新したポートフォリオリンク
+  - セキュリティ観点メモ
+  dod:
+  - 制御 × AI 成果物に OT セキュリティ視点が追加されている。
+  - 面接で説明できる要点が3つ以上残っている。
+  active_from: '2027-10-01'
+  deferred_until: '2027-09-30'
+  blocked_by:
+  - ISS-035
+  exam_priority_guard: false
+  review_note: レビュー時に、差別化ポイントと面接での話し方を更新する。
+  outcome: '[E-SEC] 2027-11: 制御 × AI 成果物に OT セキュリティ視点を加える を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 既存の制御 × AI 成果物を1件選ぶ。ために、必要な資料と作業環境を開く。
+  why_this_matters: 制御 × AI に加えて OT セキュリティ視点も持つ人材として語れる / 制御 × AI 成果物に安全性・可用性・運用リスク視点を追加する
+  device: PC
+  inputs:
+  - 既存成果物
+  - ポートフォリオ原稿
+  - 説明観点
+  things_to_make:
+  - OT セキュリティ補足メモ
+  - ポートフォリオ説明更新
+  completion_check:
+  - 制御 × AI 成果物に OT セキュリティ視点が追加されている。
+  - 面接で説明できる要点が3つ以上残っている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 元の成果物と説明観点を並べる'
+  - 'セッション2: OT セキュリティ視点を補足して統合する'
+  - 'セッション3: 面接で話せる要点を 3 つ以上残す'
+  time_block: 週末 120-180分
+  estimate: 3-4 sessions
+  energy: High
+  focus: 統合・説明可能化・公開準備
+- id: ISS-R01
+  title: '[Review] 週次レビュー'
+  body: 日曜夕方30分。GitHub Projects の Issue 確認、完了タスクのクローズ、来週の計画。
+  epic: ''
+  phase: ''
+  labels:
+  - priority:p1
+  priority: p1
+  milestone: ''
+  due_date: ''
+  recurring: weekly
+  dependencies: []
+  evidence_type: ''
+  monthly_bucket: ''
+  quarter: ''
+  career_link: 継続的な学習管理の証拠
+  ai_link: ''
+  task_type: review
+  work_steps: *id037
+  deliverables: *id038
+  evidence_to_keep: *id039
+  dod: *id040
+  active_from: '2026-03-14'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: false
+  review_note: レビュー完了時に進捗、未完理由、次の最優先3件を記録する。
+  outcome: レビュー後に主役・保留・次アクションが更新され、次の期間の迷いが減っている。
+  next_action: 完了・未完了・保留中のタスクを棚卸しする。ために、必要な資料と作業環境を開く。
+  why_this_matters: 継続的な学習管理の証拠
+  device: GitHub Projects / ノート
+  inputs:
+  - GitHub Projects
+  - 実績メモ
+  - 前回レビュー
+  things_to_make:
+  - レビュー記録
+  - 次回の優先タスク一覧
+  completion_check:
+  - 進捗と未完理由が記録されている。
+  - 次の最優先タスクが3件以内で決まっている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 今の In Progress を確認し、主役を1つに絞る
+  - 未完・Blocker・Deferred を棚卸しする
+  - 次回までの最優先タスクを1つだけ決める
+  time_block: 30-60分
+  estimate: 1 session
+  energy: Low
+  focus: 棚卸し・優先順位・軌道修正
+- id: ISS-R02
+  title: '[Review] 月次レビュー'
+  body: 月末に月次ロードマップと照合。成果物の確認、遅れの分析、翌月の計画調整。
+  epic: ''
+  phase: ''
+  labels:
+  - priority:p1
+  priority: p1
+  milestone: ''
+  due_date: ''
+  recurring: monthly
+  dependencies: []
+  evidence_type: ''
+  monthly_bucket: ''
+  quarter: ''
+  career_link: 計画的な進捗管理
+  ai_link: ''
+  task_type: review
+  work_steps: *id037
+  deliverables: *id038
+  evidence_to_keep: *id039
+  dod: *id040
+  active_from: '2026-03-14'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: false
+  review_note: レビュー完了時に進捗、未完理由、次の最優先3件を記録する。
+  outcome: レビュー後に主役・保留・次アクションが更新され、次の期間の迷いが減っている。
+  next_action: 完了・未完了・保留中のタスクを棚卸しする。ために、必要な資料と作業環境を開く。
+  why_this_matters: 計画的な進捗管理
+  device: GitHub Projects / ノート
+  inputs:
+  - GitHub Projects
+  - 実績メモ
+  - 前回レビュー
+  things_to_make:
+  - レビュー記録
+  - 次回の優先タスク一覧
+  completion_check:
+  - 進捗と未完理由が記録されている。
+  - 次の最優先タスクが3件以内で決まっている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 今の In Progress を確認し、主役を1つに絞る
+  - 未完・Blocker・Deferred を棚卸しする
+  - 次回までの最優先タスクを1つだけ決める
+  time_block: 30-60分
+  estimate: 1 session
+  energy: Low
+  focus: 棚卸し・優先順位・軌道修正
+- id: ISS-R03
+  title: '[Review] 四半期レビュー'
+  body: 四半期末にフェーズの進捗を確認。Milestone の達成度、次四半期の計画調整。
+  epic: ''
+  phase: ''
+  labels:
+  - priority:p1
+  priority: p1
+  milestone: ''
+  due_date: ''
+  recurring: quarterly
+  dependencies: []
+  evidence_type: ''
+  monthly_bucket: ''
+  quarter: ''
+  career_link: 長期視点での計画管理
+  ai_link: ''
+  task_type: review
+  work_steps: *id037
+  deliverables: *id038
+  evidence_to_keep: *id039
+  dod: *id040
+  active_from: '2026-03-14'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: false
+  review_note: レビュー完了時に進捗、未完理由、次の最優先3件を記録する。
+  outcome: レビュー後に主役・保留・次アクションが更新され、次の期間の迷いが減っている。
+  next_action: 完了・未完了・保留中のタスクを棚卸しする。ために、必要な資料と作業環境を開く。
+  why_this_matters: 長期視点での計画管理
+  device: GitHub Projects / ノート
+  inputs:
+  - GitHub Projects
+  - 実績メモ
+  - 前回レビュー
+  things_to_make:
+  - レビュー記録
+  - 次回の優先タスク一覧
+  completion_check:
+  - 進捗と未完理由が記録されている。
+  - 次の最優先タスクが3件以内で決まっている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 今の In Progress を確認し、主役を1つに絞る
+  - 未完・Blocker・Deferred を棚卸しする
+  - 次回までの最優先タスクを1つだけ決める
+  time_block: 30-60分
+  estimate: 1 session
+  energy: Low
+  focus: 棚卸し・優先順位・軌道修正
+- id: ISS-R04
+  title: '[Evidence] 技術メモ作成（月1件以上）'
+  body: 日常業務で触れる技術情報を技術メモとして記録する。月1件以上。
+  epic: E-EVD
+  phase: ''
+  labels:
+  - area:evidence
+  - area:practice
+  - priority:p2
+  priority: p2
+  milestone: ''
+  due_date: ''
+  recurring: monthly
+  dependencies: []
+  evidence_type: Document
+  monthly_bucket: ''
+  quarter: ''
+  career_link: 技術への関心と理解力の証明
+  ai_link: ''
+  task_type: evidence
+  work_steps: *id009
+  deliverables: *id010
+  evidence_to_keep: *id011
+  dod: *id012
+  active_from: '2026-03-14'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: false
+  review_note: レビュー時に残した証拠、公開可否、面接接続ポイントを更新する。
+  outcome: '[Evidence] 技術メモ作成（月1件以上） を完了し、必要な成果物と証跡を残して次のタスクへ接続できる状態にする。'
+  next_action: 対象資料や実務テーマを1件選ぶ。ために、必要な資料と作業環境を開く。
+  why_this_matters: 技術への関心と理解力の証明
+  device: PC / ノート
+  inputs:
+  - 仕様書
+  - 現場メモ
+  - 改善案
+  things_to_make:
+  - 技術メモ
+  - 成果要約
+  completion_check:
+  - 技術的な要点が文章化されている。
+  - 証拠として残す成果物が保存されている。
+  - 成果物が issue 本文またはコメントから辿れる
+  - 証跡が残り、次の面接・レビューで再利用できる
+  daily_execution:
+  - 'セッション1: 材料を集めて技術観点を整理する'
+  - 'セッション2: 面接で語れる形の技術メモにまとめる'
+  time_block: 週末 60-90分
+  estimate: 2 sessions
+  energy: Medium
+  focus: 整理・言語化・証跡化
+dependencies:
+  rules:
+  - description: PLC 基礎は制御基礎ノート完成後に開始
+    blocker: ISS-014
+    blocked: ISS-020
+  - description: 電験三種は第一種電気工事士 試験終了後に段階導入
+    blocker: ISS-009
+    blocked: ISS-025
+  - description: AI 実務適用は Claude Code Academy 中級以降
+    blocker: ISS-019
+    blocked: ISS-034
+  - description: 転職活動はポートフォリオ + 職務経歴書完成後に本格化
+    blocker: ISS-039
+    blocked: ISS-040
+  backlog_until:
+  - item: 電験三種
+    backlog_until: '2026-12-31'
+    activate: '2027-01-01'
+  - item: 転職準備
+    backlog_until: '2027-10-31'
+    activate: '2027-11-01'
+  - item: AI スペシャリスト強化
+    backlog_until: '2027-09-30'
+    activate: '2027-10-01'
+weekly_allocation:
+  phase-0:
+    license: 80
+    control: 5
+    ai: 10
+    evidence: 5
+  phase-1:
+    license: 80
+    control: 5
+    ai: 10
+    evidence: 5
+  phase-2:
+    license: 10
+    control: 50
+    ai: 20
+    evidence: 20
+  phase-3:
+    license: 15
+    control: 40
+    ai: 20
+    evidence: 25
+  phase-4:
+    license: 50
+    control: 15
+    ai: 15
+    evidence: 20
+  phase-5:
+    license: 15
+    control: 10
+    ai: 50
+    evidence: 25
+  phase-6:
+    license: 10
+    control: 5
+    ai: 15
+    evidence: 70
+phase_cards:
+- id: PC-phase-0
+  title: '[26/03/14-04/27] [PHASE] 直前対策期'
+  body: 直前対策期 の運用カード。主役を固定し、勝ち条件を3つ以内で回す。
+  epic: ''
+  phase: phase-0
+  labels:
+  - phase:written-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q2
+  due_date: '2026-04-27'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - WC-001
+  - WC-002
+  - WC-003
+  evidence_type: Document
+  monthly_bucket: 2026-03..2026-04
+  quarter: 2026-Q2
+  career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
+  ai_link: AI は主役でない時期も再開コストを下げる補助線として扱う
+  task_type: phase_card
+  outcome: 直前対策期 の主役と保留対象が明確になり、Phase の終点まで迷わず運用できる。
+  next_action: この Phase で主役にするカードを1つだけ確認し、勝ち条件を上から順に見直す。
+  why_this_matters: Project 1 と同じく、主役は常に1つだけに保ち、進捗は成果物で測る。
+  device: GitHub Projects / ノート
+  inputs:
+  - 第一種電気工事士 学科試験
+  - GitHub Projects 初期セットアップ
+  - Codex / Claude Code 環境構築
+  things_to_make:
+  - phase運用メモ
+  - 優先順位メモ
+  work_steps:
+  - 主役を `第一種電気工事士 学科` に固定する
+  - 勝ち条件を3つ以内に絞って順番を決める
+  - 週次レビューで脱線を戻す
+  deliverables:
+  - phase運用メモ
+  - レビュー更新
+  evidence_to_keep:
+  - 週次レビュー記録
+  - priority 更新ログ
+  dod:
+  - 主役と保留対象が本文で明文化されている
+  - 勝ち条件が3つ以内に整理されている
+  completion_check:
+  - 主役が1つに固定されている
+  - 勝ち条件3つ以内で回せている
+  - 保留対象が明文化されている
+  daily_execution:
+  - 今週の主役カードだけを In Progress にする
+  - 保留対象に手を出したらレビューで戻す
+  - 週末に勝ち条件の進捗と証跡を更新する
+  active_from: '2026-03-14'
+  deferred_until: null
+  exam_priority_guard: true
+  review_note: '主役: 第一種電気工事士 学科 / 保留: 電験三種の本格着手、転職書類の本格作成'
+  time_block: 週次レビュー 30-60分
+  estimate: Phase span
+  energy: Medium
+  focus: 第一種電気工事士 学科
+- id: PC-phase-1
+  title: '[26/04/28-07/04] [PHASE] 実技集中期'
+  body: 実技集中期 の運用カード。主役を固定し、勝ち条件を3つ以内で回す。
+  epic: ''
+  phase: phase-1
+  labels:
+  - phase:practical-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q3
+  due_date: '2026-07-04'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - WC-004
+  - WC-005
+  evidence_type: Document
+  monthly_bucket: 2026-04..2026-07
+  quarter: 2026-Q3
+  career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
+  ai_link: AI は主役でない時期も再開コストを下げる補助線として扱う
+  task_type: phase_card
+  outcome: 実技集中期 の主役と保留対象が明確になり、Phase の終点まで迷わず運用できる。
+  next_action: この Phase で主役にするカードを1つだけ確認し、勝ち条件を上から順に見直す。
+  why_this_matters: Project 1 と同じく、主役は常に1つだけに保ち、進捗は成果物で測る。
+  device: GitHub Projects / ノート
+  inputs:
+  - 第一種電気工事士 実技試験
+  - 候補問題13問の完成
+  things_to_make:
+  - phase運用メモ
+  - 優先順位メモ
+  work_steps:
+  - 主役を `第一種電気工事士 実技` に固定する
+  - 勝ち条件を3つ以内に絞って順番を決める
+  - 週次レビューで脱線を戻す
+  deliverables:
+  - phase運用メモ
+  - レビュー更新
+  evidence_to_keep:
+  - 週次レビュー記録
+  - priority 更新ログ
+  dod:
+  - 主役と保留対象が本文で明文化されている
+  - 勝ち条件が3つ以内に整理されている
+  completion_check:
+  - 主役が1つに固定されている
+  - 勝ち条件3つ以内で回せている
+  - 保留対象が明文化されている
+  daily_execution:
+  - 今週の主役カードだけを In Progress にする
+  - 保留対象に手を出したらレビューで戻す
+  - 週末に勝ち条件の進捗と証跡を更新する
+  active_from: '2026-04-28'
+  deferred_until: null
+  exam_priority_guard: true
+  review_note: '主役: 第一種電気工事士 実技 / 保留: 電験三種の本格着手、AI の深掘り学習'
+  time_block: 週次レビュー 30-60分
+  estimate: Phase span
+  energy: Medium
+  focus: 第一種電気工事士 実技
+- id: PC-phase-2
+  title: '[26/07/05-10/31] [PHASE] 制御基礎強化期'
+  body: 制御基礎強化期 の運用カード。主役を固定し、勝ち条件を3つ以内で回す。
+  epic: ''
+  phase: phase-2
+  labels:
+  - phase:control-foundation
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q4
+  due_date: '2026-10-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - WC-006
+  - WC-007
+  - WC-008
+  evidence_type: Document
+  monthly_bucket: 2026-07..2026-10
+  quarter: 2026-Q4
+  career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
+  ai_link: AI は主役でない時期も再開コストを下げる補助線として扱う
+  task_type: phase_card
+  outcome: 制御基礎強化期 の主役と保留対象が明確になり、Phase の終点まで迷わず運用できる。
+  next_action: この Phase で主役にするカードを1つだけ確認し、勝ち条件を上から順に見直す。
+  why_this_matters: Project 1 と同じく、主役は常に1つだけに保ち、進捗は成果物で測る。
+  device: GitHub Projects / ノート
+  inputs:
+  - 制御基礎（リレーシーケンス、自己保持回路、インターロック）
+  - 図面読解入門
+  - 実務証拠づくり開始
+  - Claude Code Academy 開始
+  things_to_make:
+  - phase運用メモ
+  - 優先順位メモ
+  work_steps:
+  - 主役を `制御基礎と図面読解` に固定する
+  - 勝ち条件を3つ以内に絞って順番を決める
+  - 週次レビューで脱線を戻す
+  deliverables:
+  - phase運用メモ
+  - レビュー更新
+  evidence_to_keep:
+  - 週次レビュー記録
+  - priority 更新ログ
+  dod:
+  - 主役と保留対象が本文で明文化されている
+  - 勝ち条件が3つ以内に整理されている
+  completion_check:
+  - 主役が1つに固定されている
+  - 勝ち条件3つ以内で回せている
+  - 保留対象が明文化されている
+  daily_execution:
+  - 今週の主役カードだけを In Progress にする
+  - 保留対象に手を出したらレビューで戻す
+  - 週末に勝ち条件の進捗と証跡を更新する
+  active_from: '2026-07-05'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: '主役: 制御基礎と図面読解 / 保留: 転職活動の本格開始'
+  time_block: 週次レビュー 30-60分
+  estimate: Phase span
+  energy: Medium
+  focus: 制御基礎と図面読解
+- id: PC-phase-3
+  title: '[26/11/01-03/31] [PHASE] PLC / 図面読解強化期'
+  body: PLC / 図面読解強化期 の運用カード。主役を固定し、勝ち条件を3つ以内で回す。
+  epic: ''
+  phase: phase-3
+  labels:
+  - phase:plc-growth
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q1
+  due_date: '2027-03-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - WC-009
+  - WC-010
+  - WC-011
+  evidence_type: Document
+  monthly_bucket: 2026-11..2027-03
+  quarter: 2027-Q1
+  career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
+  ai_link: AI は主役でない時期も再開コストを下げる補助線として扱う
+  task_type: phase_card
+  outcome: PLC / 図面読解強化期 の主役と保留対象が明確になり、Phase の終点まで迷わず運用できる。
+  next_action: この Phase で主役にするカードを1つだけ確認し、勝ち条件を上から順に見直す。
+  why_this_matters: Project 1 と同じく、主役は常に1つだけに保ち、進捗は成果物で測る。
+  device: GitHub Projects / ノート
+  inputs:
+  - PLC 基礎（ラダー図、基本命令）
+  - シーケンス制御
+  - 図面読解深化
+  - 電験三種 段階導入（理論科目入門）
+  things_to_make:
+  - phase運用メモ
+  - 優先順位メモ
+  work_steps:
+  - 主役を `PLC / シーケンス制御` に固定する
+  - 勝ち条件を3つ以内に絞って順番を決める
+  - 週次レビューで脱線を戻す
+  deliverables:
+  - phase運用メモ
+  - レビュー更新
+  evidence_to_keep:
+  - 週次レビュー記録
+  - priority 更新ログ
+  dod:
+  - 主役と保留対象が本文で明文化されている
+  - 勝ち条件が3つ以内に整理されている
+  completion_check:
+  - 主役が1つに固定されている
+  - 勝ち条件3つ以内で回せている
+  - 保留対象が明文化されている
+  daily_execution:
+  - 今週の主役カードだけを In Progress にする
+  - 保留対象に手を出したらレビューで戻す
+  - 週末に勝ち条件の進捗と証跡を更新する
+  active_from: '2026-11-01'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: '主役: PLC / シーケンス制御 / 保留: 電験三種の前面化、転職活動の本格開始'
+  time_block: 週次レビュー 30-60分
+  estimate: Phase span
+  energy: Medium
+  focus: PLC / シーケンス制御
+- id: PC-phase-4
+  title: '[27/04/01-09/30] [PHASE] 電験三種段階導入期'
+  body: 電験三種段階導入期 の運用カード。主役を固定し、勝ち条件を3つ以内で回す。
+  epic: ''
+  phase: phase-4
+  labels:
+  - phase:denken-ramp
+  - priority:p0
+  priority: p0
+  milestone: M-2027-Q3
+  due_date: '2027-09-30'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - WC-012
+  - WC-013
+  - WC-014
+  evidence_type: Document
+  monthly_bucket: 2027-04..2027-09
+  quarter: 2027-Q3
+  career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
+  ai_link: AI は主役でない時期も再開コストを下げる補助線として扱う
+  task_type: phase_card
+  outcome: 電験三種段階導入期 の主役と保留対象が明確になり、Phase の終点まで迷わず運用できる。
+  next_action: この Phase で主役にするカードを1つだけ確認し、勝ち条件を上から順に見直す。
+  why_this_matters: Project 1 と同じく、主役は常に1つだけに保ち、進捗は成果物で測る。
+  device: GitHub Projects / ノート
+  inputs:
+  - 電験三種（理論 → 電力 → 機械 → 法規）
+  - PLC 応用
+  - AI 中級活用
+  things_to_make:
+  - phase運用メモ
+  - 優先順位メモ
+  work_steps:
+  - 主役を `電験三種 段階導入` に固定する
+  - 勝ち条件を3つ以内に絞って順番を決める
+  - 週次レビューで脱線を戻す
+  deliverables:
+  - phase運用メモ
+  - レビュー更新
+  evidence_to_keep:
+  - 週次レビュー記録
+  - priority 更新ログ
+  dod:
+  - 主役と保留対象が本文で明文化されている
+  - 勝ち条件が3つ以内に整理されている
+  completion_check:
+  - 主役が1つに固定されている
+  - 勝ち条件3つ以内で回せている
+  - 保留対象が明文化されている
+  daily_execution:
+  - 今週の主役カードだけを In Progress にする
+  - 保留対象に手を出したらレビューで戻す
+  - 週末に勝ち条件の進捗と証跡を更新する
+  active_from: '2027-04-01'
+  deferred_until: null
+  exam_priority_guard: true
+  review_note: '主役: 電験三種 段階導入 / 保留: AI 成果物の主役化'
+  time_block: 週次レビュー 30-60分
+  estimate: Phase span
+  energy: Medium
+  focus: 電験三種 段階導入
+- id: PC-phase-5
+  title: '[27/10/01-01/31] [PHASE] AI スペシャリスト強化期'
+  body: AI スペシャリスト強化期 の運用カード。主役を固定し、勝ち条件を3つ以内で回す。
+  epic: ''
+  phase: phase-5
+  labels:
+  - phase:ai-specialist
+  - priority:p1
+  priority: p1
+  milestone: M-2028-Q1
+  due_date: '2028-01-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - WC-015
+  - WC-016
+  - WC-017
+  evidence_type: Document
+  monthly_bucket: 2027-10..2028-01
+  quarter: 2028-Q1
+  career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
+  ai_link: AI は主役でない時期も再開コストを下げる補助線として扱う
+  task_type: phase_card
+  outcome: AI スペシャリスト強化期 の主役と保留対象が明確になり、Phase の終点まで迷わず運用できる。
+  next_action: この Phase で主役にするカードを1つだけ確認し、勝ち条件を上から順に見直す。
+  why_this_matters: Project 1 と同じく、主役は常に1つだけに保ち、進捗は成果物で測る。
+  device: GitHub Projects / ノート
+  inputs:
+  - Codex / Claude Code 高度活用
+  - 制御 × AI 適用事例構築
+  - ポートフォリオ構築
+  - 転職準備開始
+  things_to_make:
+  - phase運用メモ
+  - 優先順位メモ
+  work_steps:
+  - 主役を `AI 成果物 + 転職準備` に固定する
+  - 勝ち条件を3つ以内に絞って順番を決める
+  - 週次レビューで脱線を戻す
+  deliverables:
+  - phase運用メモ
+  - レビュー更新
+  evidence_to_keep:
+  - 週次レビュー記録
+  - priority 更新ログ
+  dod:
+  - 主役と保留対象が本文で明文化されている
+  - 勝ち条件が3つ以内に整理されている
+  completion_check:
+  - 主役が1つに固定されている
+  - 勝ち条件3つ以内で回せている
+  - 保留対象が明文化されている
+  daily_execution:
+  - 今週の主役カードだけを In Progress にする
+  - 保留対象に手を出したらレビューで戻す
+  - 週末に勝ち条件の進捗と証跡を更新する
+  active_from: '2027-10-01'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: '主役: AI 成果物 + 転職準備 / 保留: 新しい資格の追加着手'
+  time_block: 週次レビュー 30-60分
+  estimate: Phase span
+  energy: Medium
+  focus: AI 成果物 + 転職準備
+- id: PC-phase-6
+  title: '[28/02/01-03/31] [PHASE] 転職仕上げ期'
+  body: 転職仕上げ期 の運用カード。主役を固定し、勝ち条件を3つ以内で回す。
+  epic: ''
+  phase: phase-6
+  labels:
+  - phase:career-finish
+  - priority:p0
+  priority: p0
+  milestone: M-2028-Q1
+  due_date: '2028-03-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - WC-018
+  - WC-019
+  - WC-020
+  evidence_type: Document
+  monthly_bucket: 2028-02..2028-03
+  quarter: 2028-Q1
+  career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
+  ai_link: AI は主役でない時期も再開コストを下げる補助線として扱う
+  task_type: phase_card
+  outcome: 転職仕上げ期 の主役と保留対象が明確になり、Phase の終点まで迷わず運用できる。
+  next_action: この Phase で主役にするカードを1つだけ確認し、勝ち条件を上から順に見直す。
+  why_this_matters: Project 1 と同じく、主役は常に1つだけに保ち、進捗は成果物で測る。
+  device: GitHub Projects / ノート
+  inputs:
+  - 転職活動本格化
+  - 面接対策
+  - 内定獲得
+  things_to_make:
+  - phase運用メモ
+  - 優先順位メモ
+  work_steps:
+  - 主役を `応募・面接・内定獲得` に固定する
+  - 勝ち条件を3つ以内に絞って順番を決める
+  - 週次レビューで脱線を戻す
+  deliverables:
+  - phase運用メモ
+  - レビュー更新
+  evidence_to_keep:
+  - 週次レビュー記録
+  - priority 更新ログ
+  dod:
+  - 主役と保留対象が本文で明文化されている
+  - 勝ち条件が3つ以内に整理されている
+  completion_check:
+  - 主役が1つに固定されている
+  - 勝ち条件3つ以内で回せている
+  - 保留対象が明文化されている
+  daily_execution:
+  - 今週の主役カードだけを In Progress にする
+  - 保留対象に手を出したらレビューで戻す
+  - 週末に勝ち条件の進捗と証跡を更新する
+  active_from: '2028-02-01'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: '主役: 応募・面接・内定獲得 / 保留: 新しい学習テーマの追加'
+  time_block: 週次レビュー 30-60分
+  estimate: Phase span
+  energy: Medium
+  focus: 応募・面接・内定獲得
+win_conditions:
+- id: WC-001
+  title: '[26/03/14-04/27] [WIN] 学科の過去問ループを立ち上げる'
+  body: 直前対策期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-0
+  labels:
+  - area:license
+  - phase:written-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q2
+  due_date: '2026-04-27'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-001
+  - ISS-005
+  - ISS-006
+  evidence_type: Document
+  monthly_bucket: 2026-03..2026-04
+  quarter: 2026-Q2
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: 学科の過去問ループを立ち上げる が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-LIC] 2026-03: 第一種電気工事士 過去問入手・1年分着手` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-LIC] 2026-03: 第一種電気工事士 過去問入手・1年分着手'
+  - '[E-LIC] 2026-04: 学科試験 過去問5年分×2周'
+  - '[E-LIC] 2026-04-27: 第一種電気工事士 学科試験 受験'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2026-03-14'
+  deferred_until: null
+  exam_priority_guard: true
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: 学科の過去問ループを立ち上げる
+- id: WC-002
+  title: '[26/03/14-04/27] [WIN] GitHub Projects と AI 運用基盤を整える'
+  body: 直前対策期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-0
+  labels:
+  - area:ai
+  - phase:written-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q2
+  due_date: '2026-04-27'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-002
+  - ISS-003
+  evidence_type: Document
+  monthly_bucket: 2026-03..2026-04
+  quarter: 2026-Q2
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: GitHub Projects と AI 運用基盤を整える が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-AI] 2026-03: GitHub Projects 初期セットアップ` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-AI] 2026-03: GitHub Projects 初期セットアップ'
+  - '[E-AI] 2026-03: Codex / Claude Code 環境構築'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2026-03-14'
+  deferred_until: null
+  exam_priority_guard: true
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: GitHub Projects と AI 運用基盤を整える
+- id: WC-003
+  title: '[26/03/14-04/27] [WIN] 実務証跡の記録を止めない'
+  body: 直前対策期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-0
+  labels:
+  - area:evidence
+  - phase:written-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q2
+  due_date: '2026-04-27'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-004
+  - ISS-R01
+  - ISS-R02
+  - ISS-R04
+  evidence_type: Document
+  monthly_bucket: 2026-03..2026-04
+  quarter: 2026-Q2
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: 実務証跡の記録を止めない が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-EVD] 2026-03: 仕様書1件を技術視点で読み直す` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-EVD] 2026-03: 仕様書1件を技術視点で読み直す'
+  - '[Review] 週次レビュー'
+  - '[Review] 月次レビュー'
+  - '[Evidence] 技術メモ作成（月1件以上）'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2026-03-14'
+  deferred_until: null
+  exam_priority_guard: true
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: 実務証跡の記録を止めない
+- id: WC-004
+  title: '[26/04/28-07/04] [WIN] 実技13問を複線図まで反復できるようにする'
+  body: 実技集中期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-1
+  labels:
+  - area:license
+  - phase:practical-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q3
+  due_date: '2026-07-04'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-007
+  - ISS-008
+  - ISS-009
+  evidence_type: Document
+  monthly_bucket: 2026-04..2026-07
+  quarter: 2026-Q3
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: 実技13問を複線図まで反復できるようにする が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-LIC] 2026-05: 候補問題13問の複線図練習` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-LIC] 2026-05: 候補問題13問の複線図練習'
+  - '[E-LIC] 2026-06: 実技試験 最終準備'
+  - '[E-LIC] 2026-07-04: 第一種電気工事士 実技試験 受験'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2026-04-28'
+  deferred_until: null
+  exam_priority_guard: true
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: 実技13問を複線図まで反復できるようにする
+- id: WC-005
+  title: '[26/04/28-07/04] [WIN] AI 学習を補助線として維持する'
+  body: 実技集中期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-1
+  labels:
+  - area:ai
+  - phase:practical-exam
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q3
+  due_date: '2026-07-04'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-010
+  - ISS-R01
+  - ISS-R02
+  evidence_type: Document
+  monthly_bucket: 2026-04..2026-07
+  quarter: 2026-Q3
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: AI 学習を補助線として維持する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-AI] 2026-05: Claude Code Academy 入門レベル開始` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-AI] 2026-05: Claude Code Academy 入門レベル開始'
+  - '[Review] 週次レビュー'
+  - '[Review] 月次レビュー'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2026-04-28'
+  deferred_until: null
+  exam_priority_guard: true
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: AI 学習を補助線として維持する
+- id: WC-006
+  title: '[26/07/05-10/31] [WIN] 制御基礎ノートを5章まで完成させる'
+  body: 制御基礎強化期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-2
+  labels:
+  - area:control
+  - phase:control-foundation
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q4
+  due_date: '2026-10-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-011
+  - ISS-012
+  - ISS-013
+  - ISS-014
+  evidence_type: Document
+  monthly_bucket: 2026-07..2026-10
+  quarter: 2026-Q4
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: 制御基礎ノートを5章まで完成させる が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-CTL] 2026-07: 制御基礎ノート 第1章（リレーシーケンスとは）` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-CTL] 2026-07: 制御基礎ノート 第1章（リレーシーケンスとは）'
+  - '[E-CTL] 2026-08: 制御基礎ノート 第2-3章（自己保持回路）'
+  - '[E-CTL] 2026-09: 制御基礎ノート 第4-5章（インターロック、タイマー回路）'
+  - '[E-CTL] 2026-10: 制御基礎ノート 総仕上げ'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2026-07-05'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: 制御基礎ノートを5章まで完成させる
+- id: WC-007
+  title: '[26/07/05-10/31] [WIN] 図面・仕様書・OT セキュリティの読解を接続する'
+  body: 制御基礎強化期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-2
+  labels:
+  - area:security
+  - area:drawings
+  - area:evidence
+  - phase:control-foundation
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q4
+  due_date: '2026-10-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-015
+  - ISS-016
+  - ISS-017
+  - ISS-018
+  - ISS-043
+  - ISS-044
+  evidence_type: Document
+  monthly_bucket: 2026-07..2026-10
+  quarter: 2026-Q4
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: 図面・仕様書・OT セキュリティの読解を接続する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-SEC] 2026-08: NIST SP 800-82 で OT / ICS セキュリティの全体像を掴む` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-DRW] 2026-09: 図面読解ノート 第1章（展開接続図の読み方入門）'
+  - '[E-DRW] 2026-10: 図面読解ノート 第2-3章（単線結線図、記号体系）'
+  - '[E-EVD] 2026-07: 発電機盤 仕様書を技術視点で精読'
+  - '[E-EVD] 2026-08: ポンプ盤の制御回路を仕様書から読み解く'
+  - '[E-SEC] 2026-08: NIST SP 800-82 で OT / ICS セキュリティの全体像を掴む'
+  - '[E-SEC] 2026-09: CISA ICS 101 ベースで IT / OT 差分と基本対策を整理する'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2026-07-05'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する。security は side track として無理なく接続する。
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: 図面・仕様書・OT セキュリティの読解を接続する
+- id: WC-008
+  title: '[26/07/05-10/31] [WIN] AI 中級と記録運用を継続する'
+  body: 制御基礎強化期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-2
+  labels:
+  - area:ai
+  - phase:control-foundation
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q4
+  due_date: '2026-10-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-019
+  - ISS-R01
+  - ISS-R02
+  - ISS-R04
+  evidence_type: Document
+  monthly_bucket: 2026-07..2026-10
+  quarter: 2026-Q4
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: AI 中級と記録運用を継続する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-AI] 2026-08: Claude Code Academy 中級開始` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-AI] 2026-08: Claude Code Academy 中級開始'
+  - '[Review] 週次レビュー'
+  - '[Review] 月次レビュー'
+  - '[Evidence] 技術メモ作成（月1件以上）'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2026-07-05'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: AI 中級と記録運用を継続する
+- id: WC-009
+  title: '[26/11/01-03/31] [WIN] PLC 基礎から課題5件まで到達する'
+  body: PLC / 図面読解強化期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-3
+  labels:
+  - area:plc
+  - phase:plc-growth
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q1
+  due_date: '2027-03-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-020
+  - ISS-021
+  - ISS-022
+  - ISS-023
+  - ISS-024
+  evidence_type: Document
+  monthly_bucket: 2026-11..2027-03
+  quarter: 2027-Q1
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: PLC 基礎から課題5件まで到達する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-PLC] 2026-11: PLC 基礎（ラダー図入門 + シミュレータ環境構築）` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-PLC] 2026-11: PLC 基礎（ラダー図入門 + シミュレータ環境構築）'
+  - '[E-PLC] 2026-12: PLC 基本命令（AND/OR/NOT、タイマー、カウンタ）'
+  - '[E-PLC] 2027-01: PLC シーケンス制御実習 + 課題 第3'
+  - '[E-PLC] 2027-02: シーケンス制御の体系学習'
+  - '[E-PLC] 2027-03: PLC 課題集完成（5課題以上）+ 図面読解仕上げ'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2026-11-01'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: PLC 基礎から課題5件まで到達する
+- id: WC-010
+  title: '[26/11/01-03/31] [WIN] 図面読解を完成し PLC とセキュリティ観点へつなぐ'
+  body: PLC / 図面読解強化期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-3
+  labels:
+  - area:security
+  - area:drawings
+  - area:plc
+  - phase:plc-growth
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q1
+  due_date: '2027-03-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-024
+  - ISS-026
+  - ISS-045
+  evidence_type: Document
+  monthly_bucket: 2026-11..2027-03
+  quarter: 2027-Q1
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: 図面読解を完成し PLC とセキュリティ観点へつなぐ が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-SEC] 2026-12: PLC / 制御盤向け セキュリティ観点チェックリストを作る` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-PLC] 2027-03: PLC 課題集完成（5課題以上）+ 図面読解仕上げ'
+  - '[E-DRW] 2027-03: 図面読解ノート完成版'
+  - '[E-SEC] 2026-12: PLC / 制御盤向け セキュリティ観点チェックリストを作る'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2026-11-01'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する。security は side track として無理なく接続する。
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: 図面読解を完成し PLC とセキュリティ観点へつなぐ
+- id: WC-011
+  title: '[26/11/01-03/31] [WIN] 電験三種の deferred 管理を準備する'
+  body: PLC / 図面読解強化期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-3
+  labels:
+  - area:license
+  - phase:plc-growth
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q1
+  due_date: '2027-03-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-025
+  - ISS-R03
+  evidence_type: Document
+  monthly_bucket: 2026-11..2027-03
+  quarter: 2027-Q1
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: 電験三種の deferred 管理を準備する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-LIC] 2027-01: 電験三種 理論科目 入門学習開始` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-LIC] 2027-01: 電験三種 理論科目 入門学習開始'
+  - '[Review] 四半期レビュー'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2026-11-01'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: 電験三種の deferred 管理を準備する
+- id: WC-012
+  title: '[27/04/01-09/30] [WIN] 電験三種の主科目を段階的に積み上げる'
+  body: 電験三種段階導入期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-4
+  labels:
+  - area:license
+  - phase:denken-ramp
+  - priority:p0
+  priority: p0
+  milestone: M-2027-Q3
+  due_date: '2027-09-30'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-027
+  - ISS-028
+  - ISS-029
+  - ISS-030
+  - ISS-031
+  evidence_type: Document
+  monthly_bucket: 2027-04..2027-09
+  quarter: 2027-Q3
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: 電験三種の主科目を段階的に積み上げる が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-LIC] 2027-04: 電験三種 理論（磁気・静電気）+ 電力入門` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-LIC] 2027-04: 電験三種 理論（磁気・静電気）+ 電力入門'
+  - '[E-LIC] 2027-05: 電験三種 理論（電子回路）+ 電力（変電・配電）'
+  - '[E-LIC] 2027-06: 電験三種 過去問演習（理論・電力）+ 機械入門'
+  - '[E-LIC] 2027-07: 電験三種 直前対策（理論・電力・法規短期集中）'
+  - '[E-LIC] 2027-08: 電験三種 受験'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2027-04-01'
+  deferred_until: null
+  exam_priority_guard: true
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: 電験三種の主科目を段階的に積み上げる
+- id: WC-013
+  title: '[27/04/01-09/30] [WIN] PLC 応用と社内改善を成果物へつなぐ'
+  body: 電験三種段階導入期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-4
+  labels:
+  - area:plc
+  - area:evidence
+  - phase:denken-ramp
+  - priority:p0
+  priority: p0
+  milestone: M-2027-Q3
+  due_date: '2027-09-30'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-032
+  - ISS-033
+  evidence_type: Document
+  monthly_bucket: 2027-04..2027-09
+  quarter: 2027-Q3
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: PLC 応用と社内改善を成果物へつなぐ が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-PLC] 2027-05: PLC 応用課題（タイマー・カウンタ応用）` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-PLC] 2027-05: PLC 応用課題（タイマー・カウンタ応用）'
+  - '[E-EVD] 2027-06: 社内改善提案 1件作成'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2027-04-01'
+  deferred_until: null
+  exam_priority_guard: true
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: PLC 応用と社内改善を成果物へつなぐ
+- id: WC-014
+  title: '[27/04/01-09/30] [WIN] 受験期でもレビューと記録を維持する'
+  body: 電験三種段階導入期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-4
+  labels:
+  - area:evidence
+  - phase:denken-ramp
+  - priority:p0
+  priority: p0
+  milestone: M-2027-Q3
+  due_date: '2027-09-30'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-R01
+  - ISS-R02
+  - ISS-R03
+  - ISS-R04
+  evidence_type: Document
+  monthly_bucket: 2027-04..2027-09
+  quarter: 2027-Q3
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: 受験期でもレビューと記録を維持する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: 関連カードのうち最初に着手する 1 件を選び、 `[Review] 週次レビュー` を確認する。
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[Review] 週次レビュー'
+  - '[Review] 月次レビュー'
+  - '[Review] 四半期レビュー'
+  - '[Evidence] 技術メモ作成（月1件以上）'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2027-04-01'
+  deferred_until: null
+  exam_priority_guard: true
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: 受験期でもレビューと記録を維持する
+- id: WC-015
+  title: '[27/10/01-01/31] [WIN] AI・制御・OT セキュリティの成果物を統合する'
+  body: AI スペシャリスト強化期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-5
+  labels:
+  - area:security
+  - area:ai
+  - phase:ai-specialist
+  - priority:p1
+  priority: p1
+  milestone: M-2028-Q1
+  due_date: '2028-01-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-034
+  - ISS-035
+  - ISS-036
+  - ISS-039
+  - ISS-046
+  evidence_type: Document
+  monthly_bucket: 2027-10..2028-01
+  quarter: 2028-Q1
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: AI・制御・OT セキュリティの成果物を統合する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-SEC] 2027-11: 制御 × AI 成果物に OT セキュリティ視点を加える` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-AI] 2027-09: AI 業務改善事例 第1件'
+  - '[E-AI] 2027-10: 制御 × AI 適用事例 第1件'
+  - '[E-AI] 2027-11: AI 活用事例 追加 + ポートフォリオ v1'
+  - '[E-AI] 2028-01: ポートフォリオ最終版 + 面接用デモ'
+  - '[E-SEC] 2027-11: 制御 × AI 成果物に OT セキュリティ視点を加える'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2027-10-01'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する。security は side track として無理なく接続する。
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: AI・制御・OT セキュリティの成果物を統合する
+- id: WC-016
+  title: '[27/10/01-01/31] [WIN] 転職書類と面接ストーリーを整える'
+  body: AI スペシャリスト強化期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-5
+  labels:
+  - area:career
+  - phase:ai-specialist
+  - priority:p1
+  priority: p1
+  milestone: M-2028-Q1
+  due_date: '2028-01-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-037
+  - ISS-038
+  evidence_type: Document
+  monthly_bucket: 2027-10..2028-01
+  quarter: 2028-Q1
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: 転職書類と面接ストーリーを整える が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-CAR] 2027-11: 職務経歴書ドラフト作成` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-CAR] 2027-11: 職務経歴書ドラフト作成'
+  - '[E-CAR] 2027-12: 職務経歴書 v2 + 面接ストーリー集'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2027-10-01'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: 転職書類と面接ストーリーを整える
+- id: WC-017
+  title: '[27/10/01-01/31] [WIN] レビューと証跡の運用を維持する'
+  body: AI スペシャリスト強化期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-5
+  labels:
+  - area:evidence
+  - phase:ai-specialist
+  - priority:p1
+  priority: p1
+  milestone: M-2028-Q1
+  due_date: '2028-01-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-R01
+  - ISS-R02
+  - ISS-R03
+  - ISS-R04
+  evidence_type: Document
+  monthly_bucket: 2027-10..2028-01
+  quarter: 2028-Q1
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: レビューと証跡の運用を維持する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: 関連カードのうち最初に着手する 1 件を選び、 `[Review] 週次レビュー` を確認する。
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[Review] 週次レビュー'
+  - '[Review] 月次レビュー'
+  - '[Review] 四半期レビュー'
+  - '[Evidence] 技術メモ作成（月1件以上）'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2027-10-01'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: レビューと証跡の運用を維持する
+- id: WC-018
+  title: '[28/02/01-03/31] [WIN] 応募導線を稼働させる'
+  body: 転職仕上げ期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-6
+  labels:
+  - area:career
+  - phase:career-finish
+  - priority:p0
+  priority: p0
+  milestone: M-2028-Q1
+  due_date: '2028-03-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-040
+  evidence_type: Document
+  monthly_bucket: 2028-02..2028-03
+  quarter: 2028-Q1
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: 応募導線を稼働させる が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-CAR] 2028-01: 転職エージェント登録・面談` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-CAR] 2028-01: 転職エージェント登録・面談'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2028-02-01'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: 応募導線を稼働させる
+- id: WC-019
+  title: '[28/02/01-03/31] [WIN] 面接通過率を上げる'
+  body: 転職仕上げ期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-6
+  labels:
+  - area:career
+  - phase:career-finish
+  - priority:p0
+  priority: p0
+  milestone: M-2028-Q1
+  due_date: '2028-03-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-041
+  evidence_type: Document
+  monthly_bucket: 2028-02..2028-03
+  quarter: 2028-Q1
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: 面接通過率を上げる が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-CAR] 2028-02: 応募・面接フェーズ` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-CAR] 2028-02: 応募・面接フェーズ'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2028-02-01'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: 面接通過率を上げる
+- id: WC-020
+  title: '[28/02/01-03/31] [WIN] オファー獲得と計画完了記録を締める'
+  body: 転職仕上げ期 で達成すべき中間成果。関連する具体作業を束ねる。
+  epic: ''
+  phase: phase-6
+  labels:
+  - area:career
+  - phase:career-finish
+  - priority:p0
+  priority: p0
+  milestone: M-2028-Q1
+  due_date: '2028-03-31'
+  recurring: false
+  dependencies: []
+  blocked_by: []
+  linked_issue_ids:
+  - ISS-042
+  - ISS-R02
+  - ISS-R03
+  evidence_type: Document
+  monthly_bucket: 2028-02..2028-03
+  quarter: 2028-Q1
+  career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
+  ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
+  task_type: win_condition
+  outcome: オファー獲得と計画完了記録を締める が達成され、関連タスクの成果物と証跡で進捗を説明できる。
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-CAR] 2028-03: 内定獲得 + 24か月計画完了` を確認する。'
+  why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
+  device: GitHub Projects / ノート
+  inputs:
+  - '[E-CAR] 2028-03: 内定獲得 + 24か月計画完了'
+  - '[Review] 月次レビュー'
+  - '[Review] 四半期レビュー'
+  things_to_make:
+  - 中間成果メモ
+  - 関連成果物へのリンク
+  work_steps:
+  - 関連カードの順番を決める
+  - 完了条件を満たす成果物を揃える
+  - レビューで勝ち条件の達成度を確認する
+  deliverables:
+  - 勝ち条件の達成メモ
+  evidence_to_keep:
+  - 関連 Issue のリンク
+  - 達成度メモ
+  dod:
+  - 関連カードが完了または説明可能な状態になっている
+  - 証跡から達成度を説明できる
+  completion_check:
+  - 関連カードの完了状況が確認できる
+  - 証跡が1か所に集約されている
+  - 次の勝ち条件へ移る準備ができている
+  daily_execution:
+  - 今週着手する関連カードを1つだけ選ぶ
+  - 関連カードの証跡を更新する
+  - 週次レビューで未達理由を言語化する
+  active_from: '2028-02-01'
+  deferred_until: null
+  exam_priority_guard: false
+  review_note: 関連タスクの進み具合と証跡の質で達成判定する
+  time_block: 週次レビュー 30分 + 実作業
+  estimate: Phase sub-goal
+  energy: Medium
+  focus: オファー獲得と計画完了記録を締める

@@ -1,0 +1,218 @@
+name: Morning Focus Notify
+
+# 毎朝 07:00 JST (22:00 UTC) に今日の集中ポイントを通知
+on:
+  schedule:
+    - cron: '0 22 * * *'  # 22:00 UTC = 07:00 JST
+  workflow_dispatch:
+
+jobs:
+  morning-focus:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Create morning focus issue
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // --- 日付計算 (JST) ---
+            const now = new Date();
+            const jst = new Date(now.getTime() + 9 * 60 * 60 * 1000);
+            const year  = jst.getUTCFullYear();
+            const month = jst.getUTCMonth() + 1;
+            const day   = jst.getUTCDate();
+            const mm    = String(month).padStart(2, '0');
+            const dd    = String(day).padStart(2, '0');
+            const todayStr = `${year}-${mm}-${dd}`;
+            const days  = ['日','月','火','水','木','金','土'];
+            const dayName = days[jst.getUTCDay()];
+
+            // --- GitHub Project 定数 ---
+            const projectId      = "PVT_kwHOD5C6os4BRuWs";
+            const statusFieldId  = "PVTSSF_lAHOD5C6os4BRuWszg_d-e4";
+            const startFieldId   = "PVTF_lAHOD5C6os4BRuWszg_egfc";
+            const endFieldId     = "PVTF_lAHOD5C6os4BRuWszg_egfg";
+            const taskTypeFieldId= "PVTSSF_lAHOD5C6os4BRuWszg_d-lI";
+
+            // --- 全アイテム取得 ---
+            let allItems = [];
+            let cursor   = null;
+            let hasNext  = true;
+
+            while (hasNext) {
+              const afterClause = cursor ? `, after: "${cursor}"` : '';
+              const query = `query {
+                node(id: "${projectId}") {
+                  ... on ProjectV2 {
+                    items(first: 100${afterClause}) {
+                      pageInfo { hasNextPage endCursor }
+                      nodes {
+                        fieldValues(first: 20) {
+                          nodes {
+                            ... on ProjectV2ItemFieldDateValue {
+                              date
+                              field { ... on ProjectV2Field { id } }
+                            }
+                            ... on ProjectV2ItemFieldSingleSelectValue {
+                              name
+                              field { ... on ProjectV2SingleSelectField { id } }
+                            }
+                          }
+                        }
+                        content {
+                          ... on Issue {
+                            number
+                            title
+                            state
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }`;
+
+              const result = await github.graphql(query);
+              allItems = allItems.concat(result.node.items.nodes);
+              hasNext  = result.node.items.pageInfo.hasNextPage;
+              cursor   = result.node.items.pageInfo.endCursor;
+            }
+
+            // --- アイテム分類 ---
+            const todayDate    = new Date(`${todayStr}T00:00:00`);
+            let   phaseItem    = null;
+            const winItems     = [];
+            const inProgress   = [];
+            const todoItems    = [];
+
+            for (const item of allItems) {
+              if (!item.content || item.content.state !== 'OPEN') continue;
+
+              let status    = null;
+              let startDate = null;
+              let endDate   = null;
+              let taskType  = null;
+
+              for (const fv of item.fieldValues.nodes) {
+                if (!fv.field) continue;
+                const fid = fv.field.id;
+                if (fid === statusFieldId)   status    = fv.name;
+                if (fid === startFieldId)    startDate = fv.date;
+                if (fid === endFieldId)      endDate   = fv.date;
+                if (fid === taskTypeFieldId) taskType  = fv.name;
+              }
+
+              if (status === 'Done' || status === 'Deferred') continue;
+
+              const title  = item.content.title;
+              const number = item.content.number;
+
+              // 今日が active window に入っているか確認
+              const isActiveToday = (() => {
+                if (!startDate || !endDate) return false;
+                const s = new Date(`${startDate}T00:00:00`);
+                const e = new Date(`${endDate}T00:00:00`);
+                return todayDate >= s && todayDate <= e;
+              })();
+
+              // Phase Card（今のフェーズ）
+              if (taskType === 'Phase Card' && isActiveToday) {
+                phaseItem = { title, number };
+              }
+
+              // Win Condition（勝ち条件）
+              if (taskType === 'Win Condition' && (status === 'Todo' || status === 'In Progress') && isActiveToday) {
+                winItems.push({ title, number, status });
+              }
+
+              // In Progress
+              if (status === 'In Progress') {
+                inProgress.push({ title, number });
+              }
+
+              // Todo（active window 内に絞る）
+              if (status === 'Todo' && isActiveToday) {
+                todoItems.push({ title, number });
+              }
+            }
+
+            // Todo を issue 番号順にソート
+            todoItems.sort((a, b) => a.number - b.number);
+            inProgress.sort((a, b) => a.number - b.number);
+
+            // --- Issue 本文を構築 ---
+            let body = `## ☀️ おはよう！ ${month}/${day}（${dayName}）の朝確認\n\n`;
+            body += `> **今日の主役は 1 つ** ： 学科の点数を上げること。\n\n`;
+            body += `---\n\n`;
+
+            // 今の Phase
+            if (phaseItem) {
+              const cleanTitle = phaseItem.title.replace(/^\[.*?\]\s*/, '');
+              body += `### 📌 今の Phase\n`;
+              body += `- #${phaseItem.number} ${cleanTitle}\n\n`;
+            }
+
+            // 勝ち条件（最大3件）
+            if (winItems.length > 0) {
+              body += `### 🏆 勝ち条件\n`;
+              for (const w of winItems.slice(0, 3)) {
+                const icon = w.status === 'In Progress' ? '🔥' : '⬜';
+                const cleanTitle = w.title.replace(/^\[.*?\]\s*/, '');
+                body += `- ${icon} #${w.number} ${cleanTitle}\n`;
+              }
+              body += '\n';
+            }
+
+            // In Progress
+            if (inProgress.length > 0) {
+              body += `### 🔥 今やっていること (In Progress)\n`;
+              for (const item of inProgress) {
+                body += `- [ ] #${item.number} ${item.title}\n`;
+              }
+              body += '\n';
+            }
+
+            // Today's Todo（最大3件）
+            if (todoItems.length > 0) {
+              const top = todoItems.slice(0, 3);
+              body += `### ✅ 今日できること (Todo)\n`;
+              for (const item of top) {
+                body += `- [ ] #${item.number} ${item.title}\n`;
+              }
+              if (todoItems.length > 3) {
+                body += `\n*他 ${todoItems.length - 3} 件は今日は見ない*\n`;
+              }
+              body += '\n';
+            }
+
+            // 今日の記録テンプレート
+            body += `---\n\n`;
+            body += `### 📝 今日の記録テンプレート\n\n`;
+            body += `コメントにこれをコピーして記録する。\n\n`;
+            body += `\`\`\`\n`;
+            body += `## ${todayStr}\n\n`;
+            body += `- 解いた問題数: \n`;
+            body += `- 正解数: \n`;
+            body += `- 正答率: \n`;
+            body += `- 間違い分類: 知識不足= / ひっかけ= / 計算ミス=\n`;
+            body += `- 今日の弱点 Top3:\n`;
+            body += `  - \n`;
+            body += `  - \n`;
+            body += `  - \n`;
+            body += `- 次回やること:\n`;
+            body += `  - \n`;
+            body += `\`\`\`\n\n`;
+            body += `> 💡 WIP 上限 3 つ。迷ったら「今日は学科の点数を上げる行動か？」で判断する。\n`;
+
+            // --- Issue 作成 ---
+            const created = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              title: `[朝通知] ${year}-${mm}-${dd}（${dayName}）`,
+              body:  body,
+            });
+
+            console.log(`Created morning focus issue #${created.data.number}`);
