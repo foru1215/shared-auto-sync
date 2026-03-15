@@ -306,22 +306,58 @@ def active_window_text(issue: dict[str, Any]) -> str | None:
     active_from = issue.get("active_from")
     due_date = issue.get("due_date")
     if active_from and due_date:
-        return f"{active_from} -> {due_date}"
+        return f"{active_from} 〜 {due_date}"
     if active_from:
-        return f"From {active_from}"
+        return f"{active_from} 以降"
     return None
 
 
 def markdown_checklist(items: list[str]) -> str:
     if not items:
-        return "- [ ] None"
+        return "- [ ] 未設定"
     return "\n".join(f"- [ ] {item}" for item in items)
 
 
 def markdown_list(items: list[str]) -> str:
     if not items:
-        return "- None"
+        return "- 未設定"
     return "\n".join(f"- {item}" for item in items)
+
+
+def clean_text_list(items: list[Any]) -> list[str]:
+    cleaned: list[str] = []
+    seen: set[str] = set()
+    for item in items:
+        text = normalize_text(item)
+        if not text or text in seen:
+            continue
+        cleaned.append(text)
+        seen.add(text)
+    return cleaned
+
+
+def join_ja_list(items: list[str]) -> str:
+    cleaned = clean_text_list(items)
+    return "、".join(cleaned)
+
+
+def issue_kind_label(entity_kind: str, task_type: str | None) -> str:
+    if entity_kind == "phase_card":
+        return "フェーズ管理Issue"
+    if entity_kind == "win_condition":
+        return "中間目標Issue"
+    mapping = {
+        "exam": "学習Issue",
+        "study": "学習Issue",
+        "plc": "実務学習Issue",
+        "evidence": "証拠作りIssue",
+        "ai": "AI学習Issue",
+        "career": "キャリア準備Issue",
+        "review": "レビューIssue",
+        "deliverable": "成果物Issue",
+        "setup": "セットアップIssue",
+    }
+    return mapping.get((task_type or "").lower(), "実行Issue")
 
 
 def completion_check_text(items: list[str]) -> str | None:
@@ -345,167 +381,199 @@ def iter_seed_work_items(seed: dict[str, Any]) -> list[tuple[str, dict[str, Any]
     return items
 
 
+def epic_major_milestones(
+    child_issues: list[dict[str, Any]],
+    phase_name_by_id: dict[str, str],
+) -> list[str]:
+    monthly_buckets: list[str] = []
+    for issue in child_issues:
+        bucket = normalize_text(issue.get("monthly_bucket"))
+        if bucket and bucket not in monthly_buckets:
+            monthly_buckets.append(bucket)
+    if 2 <= len(monthly_buckets) <= 6:
+        return [f"{bucket} の主要タスクを完了する。" for bucket in monthly_buckets]
+
+    phases: list[str] = []
+    for issue in child_issues:
+        phase_name = normalize_text(phase_name_by_id.get(issue.get("phase", "")))
+        if phase_name and phase_name not in phases:
+            phases.append(phase_name)
+    if phases:
+        return [f"{phase_name} の主要タスクを完了する。" for phase_name in phases]
+
+    titles = clean_text_list([issue.get("title") for issue in child_issues])
+    return [f"{title} を完了する。" for title in titles[:6]]
+
+
 def render_epic_body(
-    base_body: str,
-    metadata_lines: list[str],
+    epic: dict[str, Any],
+    child_issues: list[dict[str, Any]],
+    *,
+    phase_name_by_id: dict[str, str],
     marker: dict[str, str],
 ) -> str:
-    parts = [normalize_text(base_body)]
-    if metadata_lines:
-        parts.append("\n".join(["## Sync Metadata", *metadata_lines]))
-    parts.append(marker_comment(marker))
-    return "\n\n".join(part for part in parts if part).strip() + "\n"
+    description = normalize_text(epic.get("description")) or "このEpicの目的を整理する。"
+    child_titles = [f"{issue['id']}: {issue['title']}" for issue in child_issues]
+    phases = clean_text_list([phase_name_by_id.get(issue.get("phase", "")) for issue in child_issues])
+    milestones = epic_major_milestones(child_issues, phase_name_by_id)
+    completion_lines = [
+        "主要マイルストーンのチェックが完了している。",
+        "子Issueの役割と順番が追える状態になっている。",
+        "次に着手する子Issueまたはフェーズが明確になっている。",
+    ]
+    goal_lines = [
+        description,
+        f"対象となる子Issueを束ねて進捗を見える化する（対象: {len(child_issues)}件）。",
+    ]
+    if phases:
+        goal_lines.append(f"対象フェーズ: {join_ja_list(phases)}")
+    supplement_lines = [
+        f"- 種別: Epic親Issue",
+        f"- 優先度: {priority_to_field(epic.get('priority')) or '未設定'}",
+        f"- 子Issue数: {len(child_issues)}",
+    ]
+    if phases:
+        supplement_lines.append(f"- 主にまたぐフェーズ: {join_ja_list(phases)}")
+    if epic.get("labels"):
+        supplement_lines.append(f"- 関連ラベル: {join_ja_list(list(epic.get('labels', [])))}")
+    if child_titles:
+        supplement_lines.extend(["", "### 含まれるSeed Issue", markdown_list(child_titles)])
+
+    parts = [
+        "## 概要",
+        "このEpicは、関連する子Issueを束ねて進捗を見える化するための親Issueです。",
+        description,
+        "",
+        "## 完了条件",
+        markdown_list(completion_lines),
+        "",
+        "## 今回の到達目標",
+        markdown_list(goal_lines),
+        "",
+        "## 最初の一手（5分で開始できる行動）",
+        "- [ ] まず対象フェーズと子Issue一覧を確認し、最初に進める主要マイルストーンを1つ選ぶ。",
+        "",
+        "## タスクリスト",
+        markdown_checklist(milestones),
+        "",
+        "## 補足メモ",
+        "\n".join(supplement_lines),
+        "",
+        "## 記録欄",
+        "### 実績",
+        "- ",
+        "",
+        "### 気づき",
+        "- ",
+        "",
+        "### 次回への引き継ぎ",
+        "- ",
+        "",
+        marker_comment(marker),
+    ]
+    return "\n".join(parts).strip() + "\n"
 
 
 def render_issue_body(
     issue: dict[str, Any],
     *,
+    entity_kind: str,
     marker: dict[str, str],
     phase_name: str | None,
     blocked_titles: list[str],
     linked_titles: list[str],
 ) -> str:
-    summary = normalize_text(issue.get("body")) or "No summary."
-    outcome = normalize_text(issue.get("outcome")) or "No outcome defined."
-    next_action = normalize_text(issue.get("next_action")) or "No next action defined."
-    why_lines = []
-    if issue.get("why_this_matters"):
-        why_lines.append(f"- {issue['why_this_matters']}")
-    if phase_name:
-        why_lines.append(f"- Phase: {phase_name}")
-    if issue.get("career_link"):
-        why_lines.append(f"- Career: {issue['career_link']}")
-    if issue.get("ai_link"):
-        why_lines.append(f"- AI: {issue['ai_link']}")
-    if not why_lines:
-        why_lines.append("- No linked context.")
+    summary = normalize_text(issue.get("body")) or "このIssueで進める内容を整理する。"
+    outcome = normalize_text(issue.get("outcome")) or "成果物と記録が残る状態にする。"
+    next_action = normalize_text(issue.get("next_action")) or "必要な資料と作業環境を開く。"
+    task_type = str(issue.get("task_type") or "").lower()
+    kind_label = issue_kind_label(entity_kind, task_type)
+    completion_lines = clean_text_list(list(issue.get("dod", [])))
+    completion_lines = clean_text_list(completion_lines)[:5]
 
-    dependency_lines = blocked_titles or ["None"]
-    timing_lines = [
-        f"- Start date: {issue.get('active_from') or 'None'}",
-        f"- End date: {issue.get('due_date') or 'None'}",
-        f"- Active from: {issue.get('active_from') or 'None'}",
-        f"- Deferred until: {issue.get('deferred_until') or 'None'}",
-        f"- Phase: {phase_name or 'None'}",
-        f"- Monthly bucket: {issue.get('monthly_bucket') or 'None'}",
-        f"- Quarter: {issue.get('quarter') or 'None'}",
-        f"- Time block: {issue.get('time_block') or 'None'}",
-        f"- Estimate: {issue.get('estimate') or 'None'}",
-        f"- Energy: {issue.get('energy') or 'None'}",
-        f"- Focus: {issue.get('focus') or 'None'}",
-    ]
+    goal_lines = [outcome]
+    deliverables = clean_text_list(list(issue.get("deliverables", [])) or list(issue.get("things_to_make", [])))
+    if deliverables:
+        goal_lines.append(f"作るもの: {join_ja_list(deliverables)}")
+    if issue.get("focus"):
+        goal_lines.append(f"重点: {normalize_text(issue.get('focus'))}")
+    elif summary and summary not in goal_lines:
+        goal_lines.append(f"扱う内容: {summary}")
+    goal_lines = clean_text_list(goal_lines)[:3]
+
+    task_lines = clean_text_list(list(issue.get("work_steps", [])))
+    task_lines = clean_text_list(task_lines)[:10]
+
+    overview_lines = []
+    if phase_name:
+        overview_lines.append(f"このIssueは {phase_name} に進める {kind_label} です。")
+    else:
+        overview_lines.append(f"このIssueは {kind_label} です。")
+    overview_lines.append(summary)
+    if issue.get("why_this_matters"):
+        overview_lines.append(f"狙い: {normalize_text(issue.get('why_this_matters'))}")
+
+    note_lines: list[str] = [f"- 種別: {kind_label}"]
+    if phase_name:
+        note_lines.append(f"- フェーズ: {phase_name}")
+    if issue.get("active_from") or issue.get("due_date"):
+        note_lines.append(
+            f"- 期間: {issue.get('active_from') or '未設定'} 〜 {issue.get('due_date') or '未設定'}"
+        )
+    if issue.get("deferred_until"):
+        note_lines.append(f"- 保留期限: {issue.get('deferred_until')}")
+    if issue.get("device"):
+        note_lines.append(f"- 使用端末: {normalize_text(issue.get('device'))}")
+    inputs = clean_text_list(list(issue.get("inputs", [])))
+    if inputs:
+        note_lines.append(f"- 使う資料・入力: {join_ja_list(inputs)}")
+    if issue.get("evidence_type"):
+        note_lines.append(f"- 残す証跡の種類: {issue.get('evidence_type')}")
+    if blocked_titles:
+        note_lines.append(f"- 依存Issue: {join_ja_list(blocked_titles)}")
+    if linked_titles:
+        note_lines.append(f"- 関連Issue: {join_ja_list(linked_titles)}")
+    if issue.get("time_block"):
+        note_lines.append(f"- 時間の目安: {normalize_text(issue.get('time_block'))}")
+    if issue.get("estimate"):
+        note_lines.append(f"- 想定セッション数: {normalize_text(issue.get('estimate'))}")
+    if issue.get("energy"):
+        note_lines.append(f"- 負荷感: {normalize_text(issue.get('energy'))}")
+    if issue.get("review_note"):
+        note_lines.append(f"- 記録時の観点: {normalize_text(issue.get('review_note'))}")
+    for daily in clean_text_list(list(issue.get("daily_execution", [])))[:3]:
+        note_lines.append(f"- 実行メモ: {daily}")
+    if task_type in {"exam", "study", "plc", "ai"}:
+        note_lines.append("- 学習系の記録は、誤答・つまずき・再確認対象を分けて残す。")
+
     parts = [
-        "## Summary",
+        "## 概要",
+        "\n".join(overview_lines),
         "",
-        summary,
+        "## 完了条件",
+        markdown_list(completion_lines),
         "",
-        "---",
+        "## 今回の到達目標",
+        markdown_list(goal_lines),
         "",
-        "## Outcome",
-        "",
-        outcome,
-        "",
-        "---",
-        "",
-        "## Next Action",
-        "",
+        "## 最初の一手（5分で開始できる行動）",
         f"- [ ] {next_action}",
         "",
-        "---",
+        "## タスクリスト",
+        markdown_checklist(task_lines),
         "",
-        "## Why this matters",
+        "## 補足メモ",
+        "\n".join(note_lines),
         "",
-        "\n".join(why_lines),
+        "## 記録欄",
+        "### 実績",
+        "- ",
         "",
-        "---",
+        "### 気づき",
+        "- ",
         "",
-        "## Device",
-        "",
-        normalize_text(issue.get("device")) or "None",
-        "",
-        "---",
-        "",
-        "## Inputs",
-        "",
-        markdown_list(list(issue.get("inputs", []))),
-        "",
-        "---",
-        "",
-        "## Things to make",
-        "",
-        markdown_list(list(issue.get("things_to_make", []))),
-        "",
-        "---",
-        "",
-        "## Work checklist",
-        "",
-        markdown_checklist(list(issue.get("work_steps", []))),
-        "",
-        "---",
-        "",
-        "## Deliverables",
-        "",
-        markdown_list(list(issue.get("deliverables", []))),
-        "",
-        "---",
-        "",
-        "## Evidence to keep",
-        "",
-        f"Evidence type: **{issue.get('evidence_type') or 'None'}**",
-        "",
-        markdown_list(list(issue.get("evidence_to_keep", []))),
-        "",
-        "---",
-        "",
-        "## Definition of Done",
-        "",
-        markdown_checklist(list(issue.get("dod", []))),
-        "",
-        "---",
-        "",
-        "## Completion check",
-        "",
-        markdown_checklist(list(issue.get("completion_check", []))),
-        "",
-        "---",
-        "",
-        "## Evidence to keep",
-        "",
-        f"Evidence type: **{issue.get('evidence_type') or 'None'}**",
-        "",
-        markdown_list(list(issue.get("evidence_to_keep", []))),
-        "",
-        "---",
-        "",
-        "## Blockers / dependencies",
-        "",
-        markdown_list(dependency_lines),
-        "",
-        "---",
-        "",
-        "## Linked work items",
-        "",
-        markdown_list(linked_titles),
-        "",
-        "---",
-        "",
-        "## Daily execution",
-        "",
-        markdown_list(list(issue.get("daily_execution", []))),
-        "",
-        "---",
-        "",
-        "## Timing",
-        "",
-        "\n".join(timing_lines),
-        "",
-        "---",
-        "",
-        "## Review note",
-        "",
-        issue.get("review_note") or "None.",
-        "",
-        "---",
+        "### 次回への引き継ぎ",
+        "- ",
         "",
         marker_comment(marker),
     ]
@@ -880,27 +948,19 @@ def validate_seed(seed: dict[str, Any]) -> tuple[list[str], list[str]]:
     return errors, warnings
 
 
-def build_epic_issue(epic: dict[str, Any], child_issues: list[dict[str, Any]]) -> PlannedIssue:
-    base_lines = [epic.get("description", "").strip()]
-    if child_issues:
-        base_lines.extend(
-            [
-                "",
-                "## Included Seed Issues",
-                *[f"- {issue['id']}: {issue['title']}" for issue in child_issues],
-            ]
-        )
-    base_body = "\n".join(line for line in base_lines if line is not None).strip()
-    metadata_lines = [
-        f"- Seed ID: {epic['id']}",
-        f"- Default Priority: {priority_to_field(epic.get('priority')) or ''}",
-        f"- Child Issue Count: {len(child_issues)}",
-    ]
+def build_epic_issue(
+    epic: dict[str, Any],
+    child_issues: list[dict[str, Any]],
+    *,
+    phase_name_by_id: dict[str, str],
+) -> PlannedIssue:
+    child_titles = [f"{issue['id']}: {issue['title']}" for issue in child_issues]
     fingerprint_source = {
         "seed_id": epic["id"],
         "entity_kind": "epic",
         "title": f"[Epic] {epic['name']}",
-        "body": base_body,
+        "description": normalize_text(epic.get("description")),
+        "child_titles": child_titles,
         "labels": sorted(epic.get("labels", []) + [f"priority:{epic['priority']}"]),
         "field_values": {
             "Status": "Backlog",
@@ -911,7 +971,12 @@ def build_epic_issue(epic: dict[str, Any], child_issues: list[dict[str, Any]]) -
     }
     fingerprint = sha256_text(json.dumps(fingerprint_source, ensure_ascii=False, sort_keys=True))
     marker = marker_payload(epic["id"], "epic", fingerprint)
-    body = render_epic_body(base_body, metadata_lines, marker)
+    body = render_epic_body(
+        epic,
+        child_issues,
+        phase_name_by_id=phase_name_by_id,
+        marker=marker,
+    )
     return PlannedIssue(
         seed_id=epic["id"],
         entity_kind="epic",
@@ -1019,6 +1084,7 @@ def build_seed_issue(
     marker = marker_payload(issue["id"], entity_kind, fingerprint)
     body = render_issue_body(
         issue,
+        entity_kind=entity_kind,
         marker=marker,
         phase_name=phase_name_by_id.get(issue.get("phase", "")),
         blocked_titles=blocked_titles,
@@ -1060,7 +1126,13 @@ def build_planned_issues(
 
     planned: list[PlannedIssue] = []
     for epic in seed.get("epics", []):
-        planned.append(build_epic_issue(epic, child_map.get(epic["id"], [])))
+        planned.append(
+            build_epic_issue(
+                epic,
+                child_map.get(epic["id"], []),
+                phase_name_by_id=phase_name_by_id,
+            )
+        )
     for entity_kind, collection in (("phase_card", phase_cards), ("win_condition", win_conditions), ("issue", seed_issues)):
         for issue in collection:
             planned.append(
