@@ -1,5 +1,5 @@
 meta:
-  project_name: Career Transition 24-Month Plan
+  project_name: 24ヶ月キャリア転換計画
   owner: foru1215
   repo: shared-auto-sync
   start_date: '2026-03-14'
@@ -293,52 +293,52 @@ project_fields:
 - name: Status
   type: single_select
   options:
-  - Backlog
-  - Todo
-  - In Progress
-  - Done
-  - Blocked
-  - Deferred
-- name: Priority
+  - バックログ
+  - 未着手
+  - 進行中
+  - 完了
+  - ブロック中
+  - 延期
+- name: 優先度
   type: single_select
   options:
   - P0
   - P1
   - P2
-- name: Area
+- name: 分野
   type: single_select
   options:
-  - License
-  - Control
+  - 資格
+  - 制御
   - PLC
-  - Drawings
-  - Practice
-  - Evidence
+  - 図面
+  - 実習
+  - エビデンス
   - AI
-  - Career
-  - Security
-- name: Phase
+  - キャリア
+  - セキュリティ
+- name: フェーズ
   type: single_select
   options:
-  - Written Exam
-  - Practical Exam
-  - Control Foundation
-  - PLC Growth
-  - Denken Ramp
-  - AI Specialist
-  - Career Finish
-- name: Due Date
+  - 学科試験
+  - 実技試験
+  - 制御基礎
+  - PLC強化
+  - 電験準備
+  - AIスペシャリスト
+  - 転職仕上げ
+- name: 期日
   type: date
-- name: Evidence Type
+- name: エビデンス種別
   type: single_select
   options:
-  - Note
-  - Code
-  - Document
-  - Certification
-  - Portfolio
-  - Story
-- name: Monthly Bucket
+  - ノート
+  - コード
+  - ドキュメント
+  - 認定証
+  - ポートフォリオ
+  - ストーリー
+- name: 月次バケット
   type: text
 - name: Quarter
   type: single_select
@@ -352,65 +352,65 @@ project_fields:
   - 2027-Q3
   - 2027-Q4
   - 2028-Q1
-- name: Career Link
+- name: キャリアリンク
   type: text
-- name: AI Link
+- name: AIリンク
   type: text
-- name: Task Type
+- name: タスク種別
   type: single_select
   options:
-  - Epic
-  - Phase Card
-  - Win Condition
-  - Exam
-  - Study
+  - エピック
+  - フェーズカード
+  - 目標条件
+  - 試験
+  - 学習
   - PLC
-  - Evidence
-  - AI Skill Building
-  - Career Prep
-  - Recurring Review
-  - Deliverable
-  - Setup
-- name: Review Cycle
+  - エビデンス
+  - AIスキル
+  - キャリア準備
+  - 定期レビュー
+  - 成果物
+  - セットアップ
+- name: レビューサイクル
   type: single_select
   options:
-  - Weekly
-  - Monthly
-  - Quarterly
-  - None
-- name: Active Window
+  - 週次
+  - 月次
+  - 四半期次
+  - なし
+- name: 活動期間
   type: text
-- name: Deferred Until
+- name: 延期期日
   type: date
-- name: Deferred Flag
+- name: 延期フラグ
   type: single_select
   options:
-  - Active
-  - Deferred
+  - アクティブ
+  - 延期
   - N/A
-- name: Blocked By
+- name: ブロック元
   type: text
-- name: DoD Ready
+- name: 完了定義
   type: single_select
   options:
-  - Ready
-  - Missing
+  - 完了
+  - 未完了
   - N/A
-- name: Evidence Ready
+- name: エビデンス準備
   type: single_select
   options:
-  - Ready
-  - Missing
+  - 完了
+  - 未完了
   - N/A
-- name: Exam Priority Guard
+- name: 試験優先ガード
   type: single_select
   options:
-  - Exam Priority
-  - Normal
+  - 試験優先
+  - 通常
   - N/A
-- name: Start Date
+- name: 開始日
   type: date
-- name: End Date
+- name: 終了日
   type: date
 - name: Execution Time Block
   type: text
@@ -567,7 +567,7 @@ issue_blueprints:
   review_note_review: レビュー完了時に進捗、未完理由、次の最優先3件を記録する。
 issues:
 - id: ISS-001
-  title: '[E-LIC] 2026-03: 第一種電気工事士 過去問入手・1年分着手'
+  title: '[資格] 2026-03: 第一種電気工事士 過去問入手・1年分着手'
   body: 過去問題集を入手し、最低1年分を解く。正答率を記録する。
   epic: E-LIC
   phase: phase-0
@@ -580,7 +580,7 @@ issues:
   due_date: '2026-03-31'
   recurring: false
   dependencies: []
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-03
   quarter: 2026-Q1
   career_link: 計画的に資格取得に取り組んだ証拠
@@ -630,7 +630,7 @@ issues:
   energy: High
   focus: 過去問を解く → 弱点を把握する
 - id: ISS-002
-  title: '[E-AI] 2026-03: GitHub Projects 初期セットアップ'
+  title: '[AI] 2026-03: GitHub Projects 初期セットアップ'
   body: Epic / Milestone / Label / Project Field を作成し、GitHub Projects を稼働状態にする。
   epic: E-AI
   phase: phase-0
@@ -644,7 +644,7 @@ issues:
   due_date: '2026-03-31'
   recurring: false
   dependencies: []
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-03
   quarter: 2026-Q1
   career_link: GitHub で学習管理をしていた証拠
@@ -682,7 +682,7 @@ issues:
   energy: Medium
   focus: 設定・検証・運用開始
 - id: ISS-003
-  title: '[E-AI] 2026-03: Codex / Claude Code 環境構築'
+  title: '[AI] 2026-03: Codex / Claude Code 環境構築'
   body: ノートPCに Codex / Claude Code をインストールし、基本操作を確認する。
   epic: E-AI
   phase: phase-0
@@ -697,7 +697,7 @@ issues:
   due_date: '2026-03-31'
   recurring: false
   dependencies: []
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-03
   quarter: 2026-Q1
   career_link: ''
@@ -735,7 +735,7 @@ issues:
   energy: Medium
   focus: 設定・検証・運用開始
 - id: ISS-004
-  title: '[E-EVD] 2026-03: 仕様書1件を技術視点で読み直す'
+  title: '[証跡] 2026-03: 仕様書1件を技術視点で読み直す'
   body: 既存案件の制御盤仕様書を技術的な観点で精読し、メモを作成する。
   epic: E-EVD
   phase: phase-0
@@ -749,7 +749,7 @@ issues:
   due_date: '2026-03-31'
   recurring: false
   dependencies: []
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-03
   quarter: 2026-Q1
   career_link: 仕様書を技術的に理解する習慣
@@ -787,7 +787,7 @@ issues:
   energy: Medium
   focus: 整理・言語化・証跡化
 - id: ISS-005
-  title: '[E-LIC] 2026-04: 学科試験 過去問5年分×2周'
+  title: '[資格] 2026-04: 学科試験 過去問5年分×2周'
   body: 過去問5年分を2周し、正答率80%以上を目指す。苦手分野を特定して集中学習。
   epic: E-LIC
   phase: phase-0
@@ -801,7 +801,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-001
-  evidence_type: Certification
+  evidence_type: 認定証
   monthly_bucket: 2026-04
   quarter: 2026-Q2
   career_link: 一発合格は計画力と実行力の証明
@@ -854,7 +854,7 @@ issues:
   energy: High
   focus: 5年分×2周で正答率80%以上
 - id: ISS-006
-  title: '[E-LIC] 2026-04-27: 第一種電気工事士 学科試験 受験'
+  title: '[資格] 2026-04-27: 第一種電気工事士 学科試験 受験'
   body: 学科試験を受験する。手応えと結果予測を記録。
   epic: E-LIC
   phase: phase-0
@@ -868,7 +868,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-005
-  evidence_type: Certification
+  evidence_type: 認定証
   monthly_bucket: 2026-04
   quarter: 2026-Q2
   career_link: 資格取得の第一歩
@@ -920,7 +920,7 @@ issues:
   energy: High
   focus: 学科試験本番
 - id: ISS-007
-  title: '[E-LIC] 2026-05: 候補問題13問の複線図練習'
+  title: '[資格] 2026-05: 候補問題13問の複線図練習'
   body: 全13問の候補問題の複線図を練習。6問以上を見ないで描ける状態にする。
   epic: E-LIC
   phase: phase-1
@@ -934,7 +934,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-006
-  evidence_type: Certification
+  evidence_type: 認定証
   monthly_bucket: 2026-05
   quarter: 2026-Q2
   career_link: 実技一発合格の基盤
@@ -973,7 +973,7 @@ issues:
   energy: High
   focus: 再現・演習・誤答修正
 - id: ISS-008
-  title: '[E-LIC] 2026-06: 実技試験 最終準備'
+  title: '[資格] 2026-06: 実技試験 最終準備'
   body: 候補問題13問を時間内（40分）に完成する練習。欠陥なし10問以上を目指す。
   epic: E-LIC
   phase: phase-1
@@ -987,7 +987,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-007
-  evidence_type: Certification
+  evidence_type: 認定証
   monthly_bucket: 2026-06
   quarter: 2026-Q2
   career_link: 実技合格の仕上げ
@@ -1026,7 +1026,7 @@ issues:
   energy: High
   focus: 再現・演習・誤答修正
 - id: ISS-009
-  title: '[E-LIC] 2026-07-04: 第一種電気工事士 実技試験 受験'
+  title: '[資格] 2026-07-04: 第一種電気工事士 実技試験 受験'
   body: 実技試験を受験する。結果を記録。
   epic: E-LIC
   phase: phase-1
@@ -1040,7 +1040,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-008
-  evidence_type: Certification
+  evidence_type: 認定証
   monthly_bucket: 2026-07
   quarter: 2026-Q3
   career_link: 第一種電気工事士 合格
@@ -1079,7 +1079,7 @@ issues:
   energy: High
   focus: 再現・演習・誤答修正
 - id: ISS-010
-  title: '[E-AI] 2026-05: Claude Code Academy 入門レベル開始'
+  title: '[AI] 2026-05: Claude Code Academy 入門レベル開始'
   body: Claude Code Academy の入門コースを開始する。週15分程度の軽い学習。
   epic: E-AI
   phase: phase-1
@@ -1094,7 +1094,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-003
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-05
   quarter: 2026-Q2
   career_link: ''
@@ -1133,7 +1133,7 @@ issues:
   energy: High
   focus: 試作・検証・文章化
 - id: ISS-011
-  title: '[E-CTL] 2026-07: 制御基礎ノート 第1章（リレーシーケンスとは）'
+  title: '[制御] 2026-07: 制御基礎ノート 第1章（リレーシーケンスとは）'
   body: リレーシーケンスの基本概念を学習し、ノートの第1章を作成する。
   epic: E-CTL
   phase: phase-2
@@ -1147,7 +1147,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-009
-  evidence_type: Note
+  evidence_type: ノート
   monthly_bucket: 2026-07
   quarter: 2026-Q3
   career_link: 制御の自走学習を証明
@@ -1186,7 +1186,7 @@ issues:
   energy: Medium
   focus: 理解・整理・ノート化
 - id: ISS-012
-  title: '[E-CTL] 2026-08: 制御基礎ノート 第2-3章（自己保持回路）'
+  title: '[制御] 2026-08: 制御基礎ノート 第2-3章（自己保持回路）'
   body: 自己保持回路、a接点・b接点を学習しノート化。ポンプ盤の制御フロー図も作成。
   epic: E-CTL
   phase: phase-2
@@ -1200,7 +1200,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-011
-  evidence_type: Note
+  evidence_type: ノート
   monthly_bucket: 2026-08
   quarter: 2026-Q3
   career_link: 制御回路を説明できる力
@@ -1239,7 +1239,7 @@ issues:
   energy: Medium
   focus: 理解・整理・ノート化
 - id: ISS-013
-  title: '[E-CTL] 2026-09: 制御基礎ノート 第4-5章（インターロック、タイマー回路）'
+  title: '[制御] 2026-09: 制御基礎ノート 第4-5章（インターロック、タイマー回路）'
   body: インターロック回路、タイマー回路を学習しノート化。
   epic: E-CTL
   phase: phase-2
@@ -1253,7 +1253,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-012
-  evidence_type: Note
+  evidence_type: ノート
   monthly_bucket: 2026-09
   quarter: 2026-Q3
   career_link: 制御基礎の体系的理解
@@ -1292,7 +1292,7 @@ issues:
   energy: Medium
   focus: 理解・整理・ノート化
 - id: ISS-014
-  title: '[E-CTL] 2026-10: 制御基礎ノート 総仕上げ'
+  title: '[制御] 2026-10: 制御基礎ノート 総仕上げ'
   body: 制御基礎ノートの総復習・完成。口頭で説明できるかセルフテスト。
   epic: E-CTL
   phase: phase-2
@@ -1306,7 +1306,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-013
-  evidence_type: Note
+  evidence_type: ノート
   monthly_bucket: 2026-10
   quarter: 2026-Q4
   career_link: 制御基礎の完成した理解
@@ -1345,7 +1345,7 @@ issues:
   energy: Medium
   focus: 理解・整理・ノート化
 - id: ISS-015
-  title: '[E-DRW] 2026-09: 図面読解ノート 第1章（展開接続図の読み方入門）'
+  title: '[図面] 2026-09: 図面読解ノート 第1章（展開接続図の読み方入門）'
   body: 展開接続図の基本記号・読み方を学習しノート化。
   epic: E-DRW
   phase: phase-2
@@ -1359,7 +1359,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-012
-  evidence_type: Note
+  evidence_type: ノート
   monthly_bucket: 2026-09
   quarter: 2026-Q3
   career_link: 図面を読める力の証明
@@ -1398,7 +1398,7 @@ issues:
   energy: Medium
   focus: 理解・整理・ノート化
 - id: ISS-016
-  title: '[E-DRW] 2026-10: 図面読解ノート 第2-3章（単線結線図、記号体系）'
+  title: '[図面] 2026-10: 図面読解ノート 第2-3章（単線結線図、記号体系）'
   body: 単線結線図の読み方、JIS記号体系を学習しノート化。
   epic: E-DRW
   phase: phase-2
@@ -1412,7 +1412,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-015
-  evidence_type: Note
+  evidence_type: ノート
   monthly_bucket: 2026-10
   quarter: 2026-Q4
   career_link: 図面読解の深化
@@ -1451,7 +1451,7 @@ issues:
   energy: Medium
   focus: 理解・整理・ノート化
 - id: ISS-017
-  title: '[E-EVD] 2026-07: 発電機盤 仕様書を技術視点で精読'
+  title: '[証跡] 2026-07: 発電機盤 仕様書を技術視点で精読'
   body: 発電機盤の仕様書1件を技術的に精読し、制御方式・回路構成をメモ化。
   epic: E-EVD
   phase: phase-2
@@ -1465,7 +1465,7 @@ issues:
   due_date: '2026-07-31'
   recurring: false
   dependencies: []
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-07
   quarter: 2026-Q3
   career_link: 担当製品の技術的理解
@@ -1503,7 +1503,7 @@ issues:
   energy: Medium
   focus: 整理・言語化・証跡化
 - id: ISS-018
-  title: '[E-EVD] 2026-08: ポンプ盤の制御回路を仕様書から読み解く'
+  title: '[証跡] 2026-08: ポンプ盤の制御回路を仕様書から読み解く'
   body: ポンプ盤の制御フロー図を作成する。
   epic: E-EVD
   phase: phase-2
@@ -1517,7 +1517,7 @@ issues:
   due_date: '2026-08-31'
   recurring: false
   dependencies: []
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-08
   quarter: 2026-Q3
   career_link: ポンプ盤の制御を理解している証拠
@@ -1555,7 +1555,7 @@ issues:
   energy: Medium
   focus: 整理・言語化・証跡化
 - id: ISS-019
-  title: '[E-AI] 2026-08: Claude Code Academy 中級開始'
+  title: '[AI] 2026-08: Claude Code Academy 中級開始'
   body: Claude Code Academy の中級コースを開始する。
   epic: E-AI
   phase: phase-2
@@ -1570,7 +1570,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-010
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-08
   quarter: 2026-Q3
   career_link: ''
@@ -1609,7 +1609,7 @@ issues:
   energy: High
   focus: 試作・検証・文章化
 - id: ISS-020
-  title: '[E-PLC] 2026-11: PLC 基礎（ラダー図入門 + シミュレータ環境構築）'
+  title: '[PLC] 2026-11: PLC 基礎（ラダー図入門 + シミュレータ環境構築）'
   body: PLC の基本概念を学習。ラダー図の基本記号を理解。シミュレータ環境を構築。
   epic: E-PLC
   phase: phase-3
@@ -1623,7 +1623,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-014
-  evidence_type: Code
+  evidence_type: コード
   monthly_bucket: 2026-11
   quarter: 2026-Q4
   career_link: PLC を理解していることの基盤
@@ -1663,7 +1663,7 @@ issues:
   energy: High
   focus: 実装・動作確認・説明可能化
 - id: ISS-021
-  title: '[E-PLC] 2026-12: PLC 基本命令（AND/OR/NOT、タイマー、カウンタ）'
+  title: '[PLC] 2026-12: PLC 基本命令（AND/OR/NOT、タイマー、カウンタ）'
   body: 基本命令をシミュレータで実習。PLC 課題 第1-2課題を作成。
   epic: E-PLC
   phase: phase-3
@@ -1677,7 +1677,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-020
-  evidence_type: Code
+  evidence_type: コード
   monthly_bucket: 2026-12
   quarter: 2026-Q4
   career_link: PLC 基本操作の証明
@@ -1716,7 +1716,7 @@ issues:
   energy: High
   focus: 実装・動作確認・説明可能化
 - id: ISS-022
-  title: '[E-PLC] 2027-01: PLC シーケンス制御実習 + 課題 第3'
+  title: '[PLC] 2027-01: PLC シーケンス制御実習 + 課題 第3'
   body: PLC でシーケンス制御を組む実習。自己保持回路を PLC で実現。
   epic: E-PLC
   phase: phase-3
@@ -1730,7 +1730,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-021
-  evidence_type: Code
+  evidence_type: コード
   monthly_bucket: 2027-01
   quarter: 2027-Q1
   career_link: PLC でシーケンスを組める力
@@ -1769,7 +1769,7 @@ issues:
   energy: High
   focus: 実装・動作確認・説明可能化
 - id: ISS-023
-  title: '[E-PLC] 2027-02: シーケンス制御の体系学習'
+  title: '[PLC] 2027-02: シーケンス制御の体系学習'
   body: シーケンス制御の体系を学習しノート化。
   epic: E-PLC
   phase: phase-3
@@ -1784,7 +1784,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-022
-  evidence_type: Note
+  evidence_type: ノート
   monthly_bucket: 2027-02
   quarter: 2027-Q1
   career_link: シーケンス制御の基本用語を説明できる
@@ -1823,7 +1823,7 @@ issues:
   energy: Medium
   focus: 理解・整理・ノート化
 - id: ISS-024
-  title: '[E-PLC] 2027-03: PLC 課題集完成（5課題以上）+ 図面読解仕上げ'
+  title: '[PLC] 2027-03: PLC 課題集完成（5課題以上）+ 図面読解仕上げ'
   body: PLC 課題の総復習と追加課題作成。図面読解ノート完成。
   epic: E-PLC
   phase: phase-3
@@ -1838,7 +1838,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-023
-  evidence_type: Code
+  evidence_type: コード
   monthly_bucket: 2027-03
   quarter: 2027-Q1
   career_link: PLC 課題集 + 図面読解ノートが成果物
@@ -1877,7 +1877,7 @@ issues:
   energy: High
   focus: 実装・動作確認・説明可能化
 - id: ISS-025
-  title: '[E-LIC] 2027-01: 電験三種 理論科目 入門学習開始'
+  title: '[資格] 2027-01: 電験三種 理論科目 入門学習開始'
   body: 電験三種 理論の範囲を把握し、学習計画を立てる。基礎から開始。
   epic: E-LIC
   phase: phase-3
@@ -1891,7 +1891,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-014
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-01
   quarter: 2027-Q1
   career_link: 電験三種への着手
@@ -1930,7 +1930,7 @@ issues:
   energy: High
   focus: 再現・演習・誤答修正
 - id: ISS-026
-  title: '[E-DRW] 2027-03: 図面読解ノート完成版'
+  title: '[図面] 2027-03: 図面読解ノート完成版'
   body: 展開接続図・単線結線図・記号体系をまとめた図面読解ノートの完成。
   epic: E-DRW
   phase: phase-3
@@ -1944,7 +1944,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-016
-  evidence_type: Note
+  evidence_type: ノート
   monthly_bucket: 2027-03
   quarter: 2027-Q1
   career_link: 図面読解の完成した成果物
@@ -1983,7 +1983,7 @@ issues:
   energy: Medium
   focus: 理解・整理・ノート化
 - id: ISS-027
-  title: '[E-LIC] 2027-04: 電験三種 理論（磁気・静電気）+ 電力入門'
+  title: '[資格] 2027-04: 電験三種 理論（磁気・静電気）+ 電力入門'
   body: 理論の磁気・静電気分野を学習。電力科目を入門。
   epic: E-LIC
   phase: phase-4
@@ -1997,7 +1997,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-025
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-04
   quarter: 2027-Q2
   career_link: 電験三種の本格学習
@@ -2036,7 +2036,7 @@ issues:
   energy: High
   focus: 再現・演習・誤答修正
 - id: ISS-028
-  title: '[E-LIC] 2027-05: 電験三種 理論（電子回路）+ 電力（変電・配電）'
+  title: '[資格] 2027-05: 電験三種 理論（電子回路）+ 電力（変電・配電）'
   body: 理論の電子回路、電力の変電・配電を学習。
   epic: E-LIC
   phase: phase-4
@@ -2050,7 +2050,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-027
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-05
   quarter: 2027-Q2
   career_link: 電験三種の進捗
@@ -2089,7 +2089,7 @@ issues:
   energy: High
   focus: 再現・演習・誤答修正
 - id: ISS-029
-  title: '[E-LIC] 2027-06: 電験三種 過去問演習（理論・電力）+ 機械入門'
+  title: '[資格] 2027-06: 電験三種 過去問演習（理論・電力）+ 機械入門'
   body: 理論・電力の過去問周回。機械科目の入門。
   epic: E-LIC
   phase: phase-4
@@ -2103,7 +2103,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-028
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-06
   quarter: 2027-Q2
   career_link: 過去問演習の進捗
@@ -2142,7 +2142,7 @@ issues:
   energy: High
   focus: 再現・演習・誤答修正
 - id: ISS-030
-  title: '[E-LIC] 2027-07: 電験三種 直前対策（理論・電力・法規短期集中）'
+  title: '[資格] 2027-07: 電験三種 直前対策（理論・電力・法規短期集中）'
   body: 理論・電力の最終仕上げ。法規の短期集中学習。
   epic: E-LIC
   phase: phase-4
@@ -2156,7 +2156,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-029
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-07
   quarter: 2027-Q3
   career_link: 電験三種の受験準備
@@ -2195,7 +2195,7 @@ issues:
   energy: High
   focus: 再現・演習・誤答修正
 - id: ISS-031
-  title: '[E-LIC] 2027-08: 電験三種 受験'
+  title: '[資格] 2027-08: 電験三種 受験'
   body: 電験三種を受験。結果を記録。科目合格の有無を確認。
   epic: E-LIC
   phase: phase-4
@@ -2209,7 +2209,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-030
-  evidence_type: Certification
+  evidence_type: 認定証
   monthly_bucket: 2027-08
   quarter: 2027-Q3
   career_link: 電験三種 科目合格の証明
@@ -2248,7 +2248,7 @@ issues:
   energy: High
   focus: 再現・演習・誤答修正
 - id: ISS-032
-  title: '[E-PLC] 2027-05: PLC 応用課題（タイマー・カウンタ応用）'
+  title: '[PLC] 2027-05: PLC 応用課題（タイマー・カウンタ応用）'
   body: PLC のタイマー・カウンタを使った応用課題を作成。
   epic: E-PLC
   phase: phase-4
@@ -2262,7 +2262,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-024
-  evidence_type: Code
+  evidence_type: コード
   monthly_bucket: 2027-05
   quarter: 2027-Q2
   career_link: PLC 応用力の証明
@@ -2301,7 +2301,7 @@ issues:
   energy: High
   focus: 実装・動作確認・説明可能化
 - id: ISS-033
-  title: '[E-EVD] 2027-06: 社内改善提案 1件作成'
+  title: '[証跡] 2027-06: 社内改善提案 1件作成'
   body: 業務プロセスの改善提案を技術的な視点から作成する。
   epic: E-EVD
   phase: phase-4
@@ -2315,7 +2315,7 @@ issues:
   due_date: '2027-06-30'
   recurring: false
   dependencies: []
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-06
   quarter: 2027-Q2
   career_link: 問題発見力と改善力の証拠
@@ -2353,7 +2353,7 @@ issues:
   energy: Medium
   focus: 整理・言語化・証跡化
 - id: ISS-034
-  title: '[E-AI] 2027-09: AI 業務改善事例 第1件'
+  title: '[AI] 2027-09: AI 業務改善事例 第1件'
   body: Claude Code で仕様書テンプレートの自動生成を構築し、業務改善事例とする。
   epic: E-AI
   phase: phase-5
@@ -2368,7 +2368,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-019
-  evidence_type: Code
+  evidence_type: コード
   monthly_bucket: 2027-09
   quarter: 2027-Q3
   career_link: AI を実務に適用できる証拠
@@ -2408,7 +2408,7 @@ issues:
   energy: High
   focus: 試作・検証・文章化
 - id: ISS-035
-  title: '[E-AI] 2027-10: 制御 × AI 適用事例 第1件'
+  title: '[AI] 2027-10: 制御 × AI 適用事例 第1件'
   body: 制御図面の記号・用語自動抽出ツールを Claude Code で構築。
   epic: E-AI
   phase: phase-5
@@ -2424,7 +2424,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-034
-  evidence_type: Code
+  evidence_type: コード
   monthly_bucket: 2027-10
   quarter: 2027-Q4
   career_link: 制御 × AI の差別化
@@ -2464,7 +2464,7 @@ issues:
   energy: High
   focus: 試作・検証・文章化
 - id: ISS-036
-  title: '[E-AI] 2027-11: AI 活用事例 追加 + ポートフォリオ v1'
+  title: '[AI] 2027-11: AI 活用事例 追加 + ポートフォリオ v1'
   body: AI 活用事例を追加。ポートフォリオの v1 を作成。
   epic: E-AI
   phase: phase-5
@@ -2480,7 +2480,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-035
-  evidence_type: Portfolio
+  evidence_type: ポートフォリオ
   monthly_bucket: 2027-11
   quarter: 2027-Q4
   career_link: ポートフォリオが完成
@@ -2519,7 +2519,7 @@ issues:
   energy: High
   focus: 仕上げ・公開・説明準備
 - id: ISS-037
-  title: '[E-CAR] 2027-11: 職務経歴書ドラフト作成'
+  title: '[キャリア] 2027-11: 職務経歴書ドラフト作成'
   body: 転職で語れるストーリーを整理し、職務経歴書のドラフトを作成。
   epic: E-CAR
   phase: phase-5
@@ -2532,7 +2532,7 @@ issues:
   due_date: '2027-11-30'
   recurring: false
   dependencies: []
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-11
   quarter: 2027-Q4
   career_link: 転職の武器
@@ -2570,7 +2570,7 @@ issues:
   energy: Medium
   focus: 書類・面接・応募導線
 - id: ISS-038
-  title: '[E-CAR] 2027-12: 職務経歴書 v2 + 面接ストーリー集'
+  title: '[キャリア] 2027-12: 職務経歴書 v2 + 面接ストーリー集'
   body: 職務経歴書をブラッシュアップ。面接で語るストーリーを整理。
   epic: E-CAR
   phase: phase-5
@@ -2584,7 +2584,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-037
-  evidence_type: Story
+  evidence_type: ストーリー
   monthly_bucket: 2027-12
   quarter: 2027-Q4
   career_link: 面接準備の完了
@@ -2623,7 +2623,7 @@ issues:
   energy: Medium
   focus: 書類・面接・応募導線
 - id: ISS-039
-  title: '[E-AI] 2028-01: ポートフォリオ最終版 + 面接用デモ'
+  title: '[AI] 2028-01: ポートフォリオ最終版 + 面接用デモ'
   body: ポートフォリオの最終版を作成。面接で AI 活用をデモできるよう準備。
   epic: E-AI
   phase: phase-5
@@ -2638,7 +2638,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-036
-  evidence_type: Portfolio
+  evidence_type: ポートフォリオ
   monthly_bucket: 2028-01
   quarter: 2028-Q1
   career_link: 面接での AI デモ
@@ -2677,7 +2677,7 @@ issues:
   energy: High
   focus: 仕上げ・公開・説明準備
 - id: ISS-040
-  title: '[E-CAR] 2028-01: 転職エージェント登録・面談'
+  title: '[キャリア] 2028-01: 転職エージェント登録・面談'
   body: 転職エージェントに登録し、面談を受ける。求人を確認。
   epic: E-CAR
   phase: phase-6
@@ -2691,7 +2691,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-038
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2028-01
   quarter: 2028-Q1
   career_link: 転職活動の開始
@@ -2730,7 +2730,7 @@ issues:
   energy: Medium
   focus: 書類・面接・応募導線
 - id: ISS-041
-  title: '[E-CAR] 2028-02: 応募・面接フェーズ'
+  title: '[キャリア] 2028-02: 応募・面接フェーズ'
   body: 3社以上に応募。面接対策を継続。面接の振り返りを記録。
   epic: E-CAR
   phase: phase-6
@@ -2744,7 +2744,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-040
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2028-02
   quarter: 2028-Q1
   career_link: 面接フェーズ
@@ -2783,7 +2783,7 @@ issues:
   energy: Medium
   focus: 書類・面接・応募導線
 - id: ISS-042
-  title: '[E-CAR] 2028-03: 内定獲得 + 24か月計画完了'
+  title: '[キャリア] 2028-03: 内定獲得 + 24か月計画完了'
   body: 内定を獲得し、24か月計画を完了する。全 Issue をクローズ。
   epic: E-CAR
   phase: phase-6
@@ -2797,7 +2797,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-041
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2028-03
   quarter: 2028-Q1
   career_link: 計画の完遂
@@ -2836,7 +2836,7 @@ issues:
   energy: Medium
   focus: 書類・面接・応募導線
 - id: ISS-043
-  title: '[E-SEC] 2026-08: NIST SP 800-82 で OT / ICS セキュリティの全体像を掴む'
+  title: '[SEC] 2026-08: NIST SP 800-82 で OT / ICS セキュリティの全体像を掴む'
   body: NIST SP 800-82 Rev.3 の要点を読み、IT と OT の違い・安全性・可用性・制御システム固有の観点を1枚にまとめる。
   epic: E-SEC
   phase: phase-2
@@ -2850,7 +2850,7 @@ issues:
   due_date: '2026-08-31'
   recurring: false
   dependencies: []
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-08
   quarter: 2026-Q3
   career_link: 制御理解にセキュリティ観点を重ねて語れる基礎を作る
@@ -2895,7 +2895,7 @@ issues:
   energy: Medium
   focus: 理解・整理・ノート化
 - id: ISS-044
-  title: '[E-SEC] 2026-09: CISA ICS 101 ベースで IT / OT 差分と基本対策を整理する'
+  title: '[SEC] 2026-09: CISA ICS 101 ベースで IT / OT 差分と基本対策を整理する'
   body: CISA ICS 101 相当の内容を基に、ICS アーキテクチャ、IT / OT 差分、代表的リスクと基本対策を整理する。
   epic: E-SEC
   phase: phase-2
@@ -2910,7 +2910,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-043
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-09
   quarter: 2026-Q3
   career_link: 設備・制御の運用リスクをセキュリティ視点で説明できるようにする
@@ -2958,7 +2958,7 @@ issues:
   energy: Medium
   focus: 理解・整理・ノート化
 - id: ISS-045
-  title: '[E-SEC] 2026-12: PLC / 制御盤向け セキュリティ観点チェックリストを作る'
+  title: '[SEC] 2026-12: PLC / 制御盤向け セキュリティ観点チェックリストを作る'
   body: PLC・制御盤・図面読解の学習内容をもとに、OT / ICS セキュリティ観点のチェックリストを作成する。
   epic: E-SEC
   phase: phase-3
@@ -2975,7 +2975,7 @@ issues:
   dependencies:
   - ISS-044
   - ISS-020
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-12
   quarter: 2026-Q4
   career_link: PLC と制御盤を安全性・可用性の観点でも見られる証拠にする
@@ -3023,7 +3023,7 @@ issues:
   energy: Medium
   focus: 整理・言語化・証跡化
 - id: ISS-046
-  title: '[E-SEC] 2027-11: 制御 × AI 成果物に OT セキュリティ視点を加える'
+  title: '[SEC] 2027-11: 制御 × AI 成果物に OT セキュリティ視点を加える'
   body: 制御 × AI の成果物に対し、OT / ICS セキュリティ観点の補足メモを作成し、ポートフォリオ説明へ統合する。
   epic: E-SEC
   phase: phase-5
@@ -3039,7 +3039,7 @@ issues:
   recurring: false
   dependencies:
   - ISS-035
-  evidence_type: Portfolio
+  evidence_type: ポートフォリオ
   monthly_bucket: 2027-11
   quarter: 2027-Q4
   career_link: 制御 × AI に加えて OT セキュリティ視点も持つ人材として語れる
@@ -3087,7 +3087,7 @@ issues:
   energy: High
   focus: 統合・説明可能化・公開準備
 - id: ISS-047
-  title: '[E-AI] 2026-05: AZ-900 Azure 基礎認定取得'
+  title: '[AI] 2026-05: AZ-900 Azure 基礎認定取得'
   body: Microsoft Learn の AZ-900 学習パスを完了し、Azure 基礎認定を取得する。
   epic: E-AI
   phase: phase-1
@@ -3101,7 +3101,7 @@ issues:
   recurring: false
   dependencies: []
   blocked_by: []
-  evidence_type: Certification
+  evidence_type: 認定証
   monthly_bucket: 2026-05
   quarter: 2026-Q2
   career_link: "Azure 知識で DX 推進・制御×クラウド系ポジションへの応募資格が上がる"
@@ -3146,7 +3146,7 @@ issues:
   energy: Low
   focus: "認定取得 → クラウド基礎の語彙を身につける"
 - id: ISS-048
-  title: '[E-AI] 2026-09: Azure IoT Hub 入門 + PLC シミュレータ接続デモ'
+  title: '[AI] 2026-09: Azure IoT Hub 入門 + PLC シミュレータ接続デモ'
   body: "Azure IoT Hub 無料枠で仮想 PLC からデータを送受信するデモを作成する。"
   epic: E-AI
   phase: phase-2
@@ -3165,7 +3165,7 @@ issues:
   blocked_by:
   - ISS-020
   - ISS-047
-  evidence_type: Code
+  evidence_type: コード
   monthly_bucket: 2026-09
   quarter: 2026-Q3
   career_link: "PLC × クラウド連携の実装経験として職務経歴書に書ける"
@@ -3215,7 +3215,7 @@ issues:
   energy: Medium
   focus: "PLC データをクラウドへ送る → 制御×IoT の原理を体験する"
 - id: ISS-049
-  title: '[E-SEC] 2027-01: Microsoft Defender for IoT 体験 + OT 環境評価ラボ'
+  title: '[SEC] 2027-01: Microsoft Defender for IoT 体験 + OT 環境評価ラボ'
   body: "Defender for IoT 30日無料評価で OT 資産スキャンと推奨事項確認を体験する。"
   epic: E-SEC
   phase: phase-3
@@ -3236,7 +3236,7 @@ issues:
   - ISS-044
   - ISS-045
   - ISS-048
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-01
   quarter: 2027-Q1
   career_link: "OT セキュリティツールの実装経験で制御 DX 系企業への差別化ポイントになる"
@@ -3287,7 +3287,7 @@ issues:
   energy: High
   focus: "OT セキュリティツールを実際に動かして理解する"
 - id: ISS-050
-  title: '[E-AI] 2027-11: Azure AI Foundry で制御 × AI デモ統合'
+  title: '[AI] 2027-11: Azure AI Foundry で制御 × AI デモ統合'
   body: "Azure AI Foundry に Claude をデプロイし、IoT Hub データ + OT セキュリティ観点を組み込んだ制御×AI デモを完成させる。"
   epic: E-AI
   phase: phase-5
@@ -3310,7 +3310,7 @@ issues:
   - ISS-035
   - ISS-048
   - ISS-049
-  evidence_type: Portfolio
+  evidence_type: ポートフォリオ
   monthly_bucket: 2027-11
   quarter: 2027-Q4
   career_link: "Azure AI + 制御 + OT セキュリティの三角形がポートフォリオの核になる"
@@ -3361,7 +3361,7 @@ issues:
   energy: High
   focus: "既存の制御×AI 成果物を Azure AI Foundry でスケールしてポートフォリオ最終形にする"
 - id: ISS-R01
-  title: '[Review] 週次レビュー'
+  title: '[レビュー] 週次レビュー'
   body: 日曜夕方30分。GitHub Projects の Issue 確認、完了タスクのクローズ、来週の計画。
   epic: ''
   phase: ''
@@ -3410,7 +3410,7 @@ issues:
   energy: Low
   focus: 棚卸し・優先順位・軌道修正
 - id: ISS-R02
-  title: '[Review] 月次レビュー'
+  title: '[レビュー] 月次レビュー'
   body: 月末に月次ロードマップと照合。成果物の確認、遅れの分析、翌月の計画調整。
   epic: ''
   phase: ''
@@ -3459,7 +3459,7 @@ issues:
   energy: Low
   focus: 棚卸し・優先順位・軌道修正
 - id: ISS-R03
-  title: '[Review] 四半期レビュー'
+  title: '[レビュー] 四半期レビュー'
   body: 四半期末にフェーズの進捗を確認。Milestone の達成度、次四半期の計画調整。
   epic: ''
   phase: ''
@@ -3521,7 +3521,7 @@ issues:
   due_date: ''
   recurring: monthly
   dependencies: []
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: ''
   quarter: ''
   career_link: 技術への関心と理解力の証明
@@ -3636,7 +3636,7 @@ phase_cards:
   - WC-001
   - WC-002
   - WC-003
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-03..2026-04
   quarter: 2026-Q2
   career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
@@ -3699,7 +3699,7 @@ phase_cards:
   linked_issue_ids:
   - WC-004
   - WC-005
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-04..2026-07
   quarter: 2026-Q3
   career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
@@ -3762,7 +3762,7 @@ phase_cards:
   - WC-006
   - WC-007
   - WC-008
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-07..2026-10
   quarter: 2026-Q4
   career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
@@ -3827,7 +3827,7 @@ phase_cards:
   - WC-009
   - WC-010
   - WC-011
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-11..2027-03
   quarter: 2027-Q1
   career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
@@ -3892,7 +3892,7 @@ phase_cards:
   - WC-012
   - WC-013
   - WC-014
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-04..2027-09
   quarter: 2027-Q3
   career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
@@ -3956,7 +3956,7 @@ phase_cards:
   - WC-015
   - WC-016
   - WC-017
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-10..2028-01
   quarter: 2028-Q1
   career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
@@ -4021,7 +4021,7 @@ phase_cards:
   - WC-018
   - WC-019
   - WC-020
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2028-02..2028-03
   quarter: 2028-Q1
   career_link: 主役と非主役を明確にし、転職価値につながる蓄積を崩さない
@@ -4087,7 +4087,7 @@ win_conditions:
   - ISS-001
   - ISS-005
   - ISS-006
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-03..2026-04
   quarter: 2026-Q2
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
@@ -4150,7 +4150,7 @@ win_conditions:
   linked_issue_ids:
   - ISS-002
   - ISS-003
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-03..2026-04
   quarter: 2026-Q2
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
@@ -4214,7 +4214,7 @@ win_conditions:
   - ISS-R01
   - ISS-R02
   - ISS-R04
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-03..2026-04
   quarter: 2026-Q2
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
@@ -4281,20 +4281,20 @@ win_conditions:
   - ISS-007
   - ISS-008
   - ISS-009
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-04..2026-07
   quarter: 2026-Q3
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: 実技13問を複線図まで反復できるようにする が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-LIC] 2026-05: 候補問題13問の複線図練習` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[資格] 2026-05: 候補問題13問の複線図練習` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-LIC] 2026-05: 候補問題13問の複線図練習'
-  - '[E-LIC] 2026-06: 実技試験 最終準備'
-  - '[E-LIC] 2026-07-04: 第一種電気工事士 実技試験 受験'
+  - '[資格] 2026-05: 候補問題13問の複線図練習'
+  - '[資格] 2026-06: 実技試験 最終準備'
+  - '[資格] 2026-07-04: 第一種電気工事士 実技試験 受験'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク
@@ -4345,20 +4345,20 @@ win_conditions:
   - ISS-010
   - ISS-R01
   - ISS-R02
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-04..2026-07
   quarter: 2026-Q3
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: AI 学習を補助線として維持する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-AI] 2026-05: Claude Code Academy 入門レベル開始` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[AI] 2026-05: Claude Code Academy 入門レベル開始` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-AI] 2026-05: Claude Code Academy 入門レベル開始'
-  - '[Review] 週次レビュー'
-  - '[Review] 月次レビュー'
+  - '[AI] 2026-05: Claude Code Academy 入門レベル開始'
+  - '[レビュー] 週次レビュー'
+  - '[レビュー] 月次レビュー'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク
@@ -4410,21 +4410,21 @@ win_conditions:
   - ISS-012
   - ISS-013
   - ISS-014
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-07..2026-10
   quarter: 2026-Q4
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: 制御基礎ノートを5章まで完成させる が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-CTL] 2026-07: 制御基礎ノート 第1章（リレーシーケンスとは）` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[制御] 2026-07: 制御基礎ノート 第1章（リレーシーケンスとは）` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-CTL] 2026-07: 制御基礎ノート 第1章（リレーシーケンスとは）'
-  - '[E-CTL] 2026-08: 制御基礎ノート 第2-3章（自己保持回路）'
-  - '[E-CTL] 2026-09: 制御基礎ノート 第4-5章（インターロック、タイマー回路）'
-  - '[E-CTL] 2026-10: 制御基礎ノート 総仕上げ'
+  - '[制御] 2026-07: 制御基礎ノート 第1章（リレーシーケンスとは）'
+  - '[制御] 2026-08: 制御基礎ノート 第2-3章（自己保持回路）'
+  - '[制御] 2026-09: 制御基礎ノート 第4-5章（インターロック、タイマー回路）'
+  - '[制御] 2026-10: 制御基礎ノート 総仕上げ'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク
@@ -4480,23 +4480,23 @@ win_conditions:
   - ISS-018
   - ISS-043
   - ISS-044
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-07..2026-10
   quarter: 2026-Q4
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: 図面・仕様書・OT セキュリティの読解を接続する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-SEC] 2026-08: NIST SP 800-82 で OT / ICS セキュリティの全体像を掴む` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[SEC] 2026-08: NIST SP 800-82 で OT / ICS セキュリティの全体像を掴む` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-DRW] 2026-09: 図面読解ノート 第1章（展開接続図の読み方入門）'
-  - '[E-DRW] 2026-10: 図面読解ノート 第2-3章（単線結線図、記号体系）'
-  - '[E-EVD] 2026-07: 発電機盤 仕様書を技術視点で精読'
-  - '[E-EVD] 2026-08: ポンプ盤の制御回路を仕様書から読み解く'
-  - '[E-SEC] 2026-08: NIST SP 800-82 で OT / ICS セキュリティの全体像を掴む'
-  - '[E-SEC] 2026-09: CISA ICS 101 ベースで IT / OT 差分と基本対策を整理する'
+  - '[図面] 2026-09: 図面読解ノート 第1章（展開接続図の読み方入門）'
+  - '[図面] 2026-10: 図面読解ノート 第2-3章（単線結線図、記号体系）'
+  - '[証跡] 2026-07: 発電機盤 仕様書を技術視点で精読'
+  - '[証跡] 2026-08: ポンプ盤の制御回路を仕様書から読み解く'
+  - '[SEC] 2026-08: NIST SP 800-82 で OT / ICS セキュリティの全体像を掴む'
+  - '[SEC] 2026-09: CISA ICS 101 ベースで IT / OT 差分と基本対策を整理する'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク
@@ -4548,20 +4548,20 @@ win_conditions:
   - ISS-R01
   - ISS-R02
   - ISS-R04
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-07..2026-10
   quarter: 2026-Q4
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: AI 中級と記録運用を継続する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-AI] 2026-08: Claude Code Academy 中級開始` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[AI] 2026-08: Claude Code Academy 中級開始` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-AI] 2026-08: Claude Code Academy 中級開始'
-  - '[Review] 週次レビュー'
-  - '[Review] 月次レビュー'
+  - '[AI] 2026-08: Claude Code Academy 中級開始'
+  - '[レビュー] 週次レビュー'
+  - '[レビュー] 月次レビュー'
   - '[Evidence] 技術メモ作成（月1件以上）'
   things_to_make:
   - 中間成果メモ
@@ -4615,22 +4615,22 @@ win_conditions:
   - ISS-022
   - ISS-023
   - ISS-024
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-11..2027-03
   quarter: 2027-Q1
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: PLC 基礎から課題5件まで到達する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-PLC] 2026-11: PLC 基礎（ラダー図入門 + シミュレータ環境構築）` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[PLC] 2026-11: PLC 基礎（ラダー図入門 + シミュレータ環境構築）` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-PLC] 2026-11: PLC 基礎（ラダー図入門 + シミュレータ環境構築）'
-  - '[E-PLC] 2026-12: PLC 基本命令（AND/OR/NOT、タイマー、カウンタ）'
-  - '[E-PLC] 2027-01: PLC シーケンス制御実習 + 課題 第3'
-  - '[E-PLC] 2027-02: シーケンス制御の体系学習'
-  - '[E-PLC] 2027-03: PLC 課題集完成（5課題以上）+ 図面読解仕上げ'
+  - '[PLC] 2026-11: PLC 基礎（ラダー図入門 + シミュレータ環境構築）'
+  - '[PLC] 2026-12: PLC 基本命令（AND/OR/NOT、タイマー、カウンタ）'
+  - '[PLC] 2027-01: PLC シーケンス制御実習 + 課題 第3'
+  - '[PLC] 2027-02: シーケンス制御の体系学習'
+  - '[PLC] 2027-03: PLC 課題集完成（5課題以上）+ 図面読解仕上げ'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク
@@ -4683,20 +4683,20 @@ win_conditions:
   - ISS-024
   - ISS-026
   - ISS-045
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-11..2027-03
   quarter: 2027-Q1
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: 図面読解を完成し PLC とセキュリティ観点へつなぐ が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-SEC] 2026-12: PLC / 制御盤向け セキュリティ観点チェックリストを作る` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[SEC] 2026-12: PLC / 制御盤向け セキュリティ観点チェックリストを作る` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-PLC] 2027-03: PLC 課題集完成（5課題以上）+ 図面読解仕上げ'
-  - '[E-DRW] 2027-03: 図面読解ノート完成版'
-  - '[E-SEC] 2026-12: PLC / 制御盤向け セキュリティ観点チェックリストを作る'
+  - '[PLC] 2027-03: PLC 課題集完成（5課題以上）+ 図面読解仕上げ'
+  - '[図面] 2027-03: 図面読解ノート完成版'
+  - '[SEC] 2026-12: PLC / 制御盤向け セキュリティ観点チェックリストを作る'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク
@@ -4746,19 +4746,19 @@ win_conditions:
   linked_issue_ids:
   - ISS-025
   - ISS-R03
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2026-11..2027-03
   quarter: 2027-Q1
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: 電験三種の deferred 管理を準備する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-LIC] 2027-01: 電験三種 理論科目 入門学習開始` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[資格] 2027-01: 電験三種 理論科目 入門学習開始` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-LIC] 2027-01: 電験三種 理論科目 入門学習開始'
-  - '[Review] 四半期レビュー'
+  - '[資格] 2027-01: 電験三種 理論科目 入門学習開始'
+  - '[レビュー] 四半期レビュー'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク
@@ -4811,22 +4811,22 @@ win_conditions:
   - ISS-029
   - ISS-030
   - ISS-031
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-04..2027-09
   quarter: 2027-Q3
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: 電験三種の主科目を段階的に積み上げる が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-LIC] 2027-04: 電験三種 理論（磁気・静電気）+ 電力入門` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[資格] 2027-04: 電験三種 理論（磁気・静電気）+ 電力入門` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-LIC] 2027-04: 電験三種 理論（磁気・静電気）+ 電力入門'
-  - '[E-LIC] 2027-05: 電験三種 理論（電子回路）+ 電力（変電・配電）'
-  - '[E-LIC] 2027-06: 電験三種 過去問演習（理論・電力）+ 機械入門'
-  - '[E-LIC] 2027-07: 電験三種 直前対策（理論・電力・法規短期集中）'
-  - '[E-LIC] 2027-08: 電験三種 受験'
+  - '[資格] 2027-04: 電験三種 理論（磁気・静電気）+ 電力入門'
+  - '[資格] 2027-05: 電験三種 理論（電子回路）+ 電力（変電・配電）'
+  - '[資格] 2027-06: 電験三種 過去問演習（理論・電力）+ 機械入門'
+  - '[資格] 2027-07: 電験三種 直前対策（理論・電力・法規短期集中）'
+  - '[資格] 2027-08: 電験三種 受験'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク
@@ -4877,19 +4877,19 @@ win_conditions:
   linked_issue_ids:
   - ISS-032
   - ISS-033
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-04..2027-09
   quarter: 2027-Q3
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: PLC 応用と社内改善を成果物へつなぐ が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-PLC] 2027-05: PLC 応用課題（タイマー・カウンタ応用）` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[PLC] 2027-05: PLC 応用課題（タイマー・カウンタ応用）` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-PLC] 2027-05: PLC 応用課題（タイマー・カウンタ応用）'
-  - '[E-EVD] 2027-06: 社内改善提案 1件作成'
+  - '[PLC] 2027-05: PLC 応用課題（タイマー・カウンタ応用）'
+  - '[証跡] 2027-06: 社内改善提案 1件作成'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク
@@ -4941,20 +4941,20 @@ win_conditions:
   - ISS-R02
   - ISS-R03
   - ISS-R04
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-04..2027-09
   quarter: 2027-Q3
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: 受験期でもレビューと記録を維持する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: 関連カードのうち最初に着手する 1 件を選び、 `[Review] 週次レビュー` を確認する。
+  next_action: 関連カードのうち最初に着手する 1 件を選び、 `[レビュー] 週次レビュー` を確認する。
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[Review] 週次レビュー'
-  - '[Review] 月次レビュー'
-  - '[Review] 四半期レビュー'
+  - '[レビュー] 週次レビュー'
+  - '[レビュー] 月次レビュー'
+  - '[レビュー] 四半期レビュー'
   - '[Evidence] 技術メモ作成（月1件以上）'
   things_to_make:
   - 中間成果メモ
@@ -5009,22 +5009,22 @@ win_conditions:
   - ISS-036
   - ISS-039
   - ISS-046
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-10..2028-01
   quarter: 2028-Q1
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: AI・制御・OT セキュリティの成果物を統合する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-SEC] 2027-11: 制御 × AI 成果物に OT セキュリティ視点を加える` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[SEC] 2027-11: 制御 × AI 成果物に OT セキュリティ視点を加える` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-AI] 2027-09: AI 業務改善事例 第1件'
-  - '[E-AI] 2027-10: 制御 × AI 適用事例 第1件'
-  - '[E-AI] 2027-11: AI 活用事例 追加 + ポートフォリオ v1'
-  - '[E-AI] 2028-01: ポートフォリオ最終版 + 面接用デモ'
-  - '[E-SEC] 2027-11: 制御 × AI 成果物に OT セキュリティ視点を加える'
+  - '[AI] 2027-09: AI 業務改善事例 第1件'
+  - '[AI] 2027-10: 制御 × AI 適用事例 第1件'
+  - '[AI] 2027-11: AI 活用事例 追加 + ポートフォリオ v1'
+  - '[AI] 2028-01: ポートフォリオ最終版 + 面接用デモ'
+  - '[SEC] 2027-11: 制御 × AI 成果物に OT セキュリティ視点を加える'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク
@@ -5074,19 +5074,19 @@ win_conditions:
   linked_issue_ids:
   - ISS-037
   - ISS-038
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-10..2028-01
   quarter: 2028-Q1
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: 転職書類と面接ストーリーを整える が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-CAR] 2027-11: 職務経歴書ドラフト作成` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[キャリア] 2027-11: 職務経歴書ドラフト作成` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-CAR] 2027-11: 職務経歴書ドラフト作成'
-  - '[E-CAR] 2027-12: 職務経歴書 v2 + 面接ストーリー集'
+  - '[キャリア] 2027-11: 職務経歴書ドラフト作成'
+  - '[キャリア] 2027-12: 職務経歴書 v2 + 面接ストーリー集'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク
@@ -5138,20 +5138,20 @@ win_conditions:
   - ISS-R02
   - ISS-R03
   - ISS-R04
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2027-10..2028-01
   quarter: 2028-Q1
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: レビューと証跡の運用を維持する が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: 関連カードのうち最初に着手する 1 件を選び、 `[Review] 週次レビュー` を確認する。
+  next_action: 関連カードのうち最初に着手する 1 件を選び、 `[レビュー] 週次レビュー` を確認する。
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[Review] 週次レビュー'
-  - '[Review] 月次レビュー'
-  - '[Review] 四半期レビュー'
+  - '[レビュー] 週次レビュー'
+  - '[レビュー] 月次レビュー'
+  - '[レビュー] 四半期レビュー'
   - '[Evidence] 技術メモ作成（月1件以上）'
   things_to_make:
   - 中間成果メモ
@@ -5201,18 +5201,18 @@ win_conditions:
   blocked_by: []
   linked_issue_ids:
   - ISS-040
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2028-02..2028-03
   quarter: 2028-Q1
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: 応募導線を稼働させる が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-CAR] 2028-01: 転職エージェント登録・面談` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[キャリア] 2028-01: 転職エージェント登録・面談` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-CAR] 2028-01: 転職エージェント登録・面談'
+  - '[キャリア] 2028-01: 転職エージェント登録・面談'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク
@@ -5261,18 +5261,18 @@ win_conditions:
   blocked_by: []
   linked_issue_ids:
   - ISS-041
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2028-02..2028-03
   quarter: 2028-Q1
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: 面接通過率を上げる が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-CAR] 2028-02: 応募・面接フェーズ` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[キャリア] 2028-02: 応募・面接フェーズ` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-CAR] 2028-02: 応募・面接フェーズ'
+  - '[キャリア] 2028-02: 応募・面接フェーズ'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク
@@ -5323,20 +5323,20 @@ win_conditions:
   - ISS-042
   - ISS-R02
   - ISS-R03
-  evidence_type: Document
+  evidence_type: ドキュメント
   monthly_bucket: 2028-02..2028-03
   quarter: 2028-Q1
   career_link: 中間成果が見えることで、学習と転職価値の接続が説明しやすくなる
   ai_link: 必要な時だけ AI を補助線として使い、主役を崩さない
   task_type: win_condition
   outcome: オファー獲得と計画完了記録を締める が達成され、関連タスクの成果物と証跡で進捗を説明できる。
-  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[E-CAR] 2028-03: 内定獲得 + 24か月計画完了` を確認する。'
+  next_action: '関連カードのうち最初に着手する 1 件を選び、 `[キャリア] 2028-03: 内定獲得 + 24か月計画完了` を確認する。'
   why_this_matters: Phase の勝ち条件を満たすことで、ただ学ぶだけでなく成果として積み上がる。
   device: GitHub Projects / ノート
   inputs:
-  - '[E-CAR] 2028-03: 内定獲得 + 24か月計画完了'
-  - '[Review] 月次レビュー'
-  - '[Review] 四半期レビュー'
+  - '[キャリア] 2028-03: 内定獲得 + 24か月計画完了'
+  - '[レビュー] 月次レビュー'
+  - '[レビュー] 四半期レビュー'
   things_to_make:
   - 中間成果メモ
   - 関連成果物へのリンク

@@ -22,24 +22,24 @@ REPORT_VERSION = 2
 DATE_WINDOW_DAYS = 45
 
 TASK_TYPE_TO_FIELD = {
-    "epic": "Epic",
-    "phase_card": "Phase Card",
-    "win_condition": "Win Condition",
-    "exam": "Exam",
-    "study": "Study",
+    "epic": "エピック",
+    "phase_card": "フェーズカード",
+    "win_condition": "目標条件",
+    "exam": "試験",
+    "study": "学習",
     "plc": "PLC",
-    "evidence": "Evidence",
-    "ai": "AI Skill Building",
-    "career": "Career Prep",
-    "review": "Recurring Review",
-    "deliverable": "Deliverable",
-    "setup": "Setup",
+    "evidence": "エビデンス",
+    "ai": "AIスキル",
+    "career": "キャリア準備",
+    "review": "定期レビュー",
+    "deliverable": "成果物",
+    "setup": "セットアップ",
 }
 
 REVIEW_CYCLE_TO_FIELD = {
-    "weekly": "Weekly",
-    "monthly": "Monthly",
-    "quarterly": "Quarterly",
+    "weekly": "週次",
+    "monthly": "月次",
+    "quarterly": "四半期次",
 }
 
 AUDIT_SEVERITY_ORDER = {"FAIL": 0, "WARN": 1, "INFO": 2}
@@ -582,46 +582,46 @@ def render_issue_body(
 
 def option_color(field_name: str, option_name: str, index: int) -> str:
     status_map = {
-        "Backlog": "GRAY",
-        "Todo": "BLUE",
-        "In Progress": "YELLOW",
-        "Done": "GREEN",
-        "Blocked": "RED",
-        "Deferred": "ORANGE",
+        "バックログ": "GRAY",
+        "未着手": "BLUE",
+        "進行中": "YELLOW",
+        "完了": "GREEN",
+        "ブロック中": "RED",
+        "延期": "ORANGE",
     }
     priority_map = {"P0": "RED", "P1": "ORANGE", "P2": "GREEN"}
     task_type_map = {
-        "Epic": "PURPLE",
-        "Phase Card": "BLUE",
-        "Win Condition": "GREEN",
-        "Exam": "RED",
-        "Study": "BLUE",
+        "エピック": "PURPLE",
+        "フェーズカード": "BLUE",
+        "目標条件": "GREEN",
+        "試験": "RED",
+        "学習": "BLUE",
         "PLC": "YELLOW",
-        "Evidence": "ORANGE",
-        "AI Skill Building": "PURPLE",
-        "Career Prep": "GREEN",
-        "Recurring Review": "PINK",
-        "Deliverable": "PINK",
-        "Setup": "GRAY",
+        "エビデンス": "ORANGE",
+        "AIスキル": "PURPLE",
+        "キャリア準備": "GREEN",
+        "定期レビュー": "PINK",
+        "成果物": "PINK",
+        "セットアップ": "GRAY",
     }
-    review_map = {"Weekly": "BLUE", "Monthly": "GREEN", "Quarterly": "ORANGE", "None": "GRAY"}
-    ready_map = {"Ready": "GREEN", "Missing": "RED", "N/A": "GRAY"}
-    deferred_flag_map = {"Active": "BLUE", "Deferred": "ORANGE", "N/A": "GRAY"}
-    exam_guard_map = {"Exam Priority": "RED", "Normal": "GRAY", "N/A": "GRAY"}
+    review_map = {"週次": "BLUE", "月次": "GREEN", "四半期次": "ORANGE", "なし": "GRAY"}
+    ready_map = {"完了": "GREEN", "未完了": "RED", "N/A": "GRAY"}
+    deferred_flag_map = {"アクティブ": "BLUE", "延期": "ORANGE", "N/A": "GRAY"}
+    exam_guard_map = {"試験優先": "RED", "通常": "GRAY", "N/A": "GRAY"}
     lookup = {}
     if field_name == "Status":
         lookup = status_map
-    elif field_name == "Priority":
+    elif field_name == "優先度":
         lookup = priority_map
-    elif field_name == "Task Type":
+    elif field_name == "タスク種別":
         lookup = task_type_map
-    elif field_name == "Review Cycle":
+    elif field_name == "レビューサイクル":
         lookup = review_map
-    elif field_name in {"DoD Ready", "Evidence Ready"}:
+    elif field_name in {"完了定義", "エビデンス準備"}:
         lookup = ready_map
-    elif field_name == "Deferred Flag":
+    elif field_name == "延期フラグ":
         lookup = deferred_flag_map
-    elif field_name == "Exam Priority Guard":
+    elif field_name == "試験優先ガード":
         lookup = exam_guard_map
     if option_name in lookup:
         return lookup[option_name]
@@ -631,7 +631,7 @@ def option_color(field_name: str, option_name: str, index: int) -> str:
 
 def build_project_readme(seed: dict[str, Any]) -> str:
     lines = [
-        "# Career Transition 24-Month Plan",
+        "# 24ヶ月キャリア転換計画",
         "",
         f"- Source of truth: `{pathlib.Path('data/project-seed.yaml').as_posix()}`",
         f"- Period: {seed['meta']['start_date']} to {seed['meta']['end_date']}",
@@ -699,15 +699,15 @@ def milestone_specs_from_seed(seed: dict[str, Any]) -> list[MilestoneSpec]:
 
 def area_from_labels(labels: list[str]) -> str | None:
     mapping = {
-        "area:license": "License",
-        "area:control": "Control",
+        "area:license": "資格",
+        "area:control": "制御",
         "area:plc": "PLC",
-        "area:drawings": "Drawings",
-        "area:practice": "Practice",
-        "area:evidence": "Evidence",
-        "area:security": "Security",
+        "area:drawings": "図面",
+        "area:practice": "実習",
+        "area:evidence": "エビデンス",
+        "area:security": "セキュリティ",
         "area:ai": "AI",
-        "area:career": "Career",
+        "area:career": "キャリア",
     }
     for label in labels:
         if label in mapping:
@@ -717,13 +717,13 @@ def area_from_labels(labels: list[str]) -> str | None:
 
 def phase_from_labels(labels: list[str]) -> str | None:
     mapping = {
-        "phase:written-exam": "Written Exam",
-        "phase:practical-exam": "Practical Exam",
-        "phase:control-foundation": "Control Foundation",
-        "phase:plc-growth": "PLC Growth",
-        "phase:denken-ramp": "Denken Ramp",
-        "phase:ai-specialist": "AI Specialist",
-        "phase:career-finish": "Career Finish",
+        "phase:written-exam": "学科試験",
+        "phase:practical-exam": "実技試験",
+        "phase:control-foundation": "制御基礎",
+        "phase:plc-growth": "PLC強化",
+        "phase:denken-ramp": "電験準備",
+        "phase:ai-specialist": "AIスペシャリスト",
+        "phase:career-finish": "転職仕上げ",
     }
     for label in labels:
         if label in mapping:
@@ -745,15 +745,15 @@ def task_type_to_field(task_type: str | None) -> str | None:
 
 def infer_task_type(issue: dict[str, Any], *, entity_kind: str) -> str:
     if entity_kind == "epic":
-        return "Epic"
-    return task_type_to_field(str(issue.get("task_type", "")).lower()) or "Study"
+        return "エピック"
+    return task_type_to_field(str(issue.get("task_type", "")).lower()) or "学習"
 
 
 def infer_review_cycle(issue: dict[str, Any]) -> str | None:
     recurring = issue.get("recurring")
     if not recurring:
-        return "None"
-    return REVIEW_CYCLE_TO_FIELD.get(str(recurring).lower(), "None")
+        return "なし"
+    return REVIEW_CYCLE_TO_FIELD.get(str(recurring).lower(), "なし")
 
 
 def is_exam_priority_period(today: dt.date) -> bool:
@@ -778,18 +778,18 @@ def compute_status(
 ) -> str:
     deferred_date = parse_iso_date(deferred_until)
     if deferred_date and today <= deferred_date:
-        return "Deferred"
+        return "延期"
     active_date = parse_iso_date(active_from)
     if active_date and today < active_date:
-        return "Backlog"
+        return "バックログ"
     if blocked_by and any(seed_id not in closed_issue_seed_ids for seed_id in blocked_by):
-        return "Blocked"
+        return "ブロック中"
     if current_phase_is_exam and not exam_priority_guard:
-        return "Backlog"
+        return "バックログ"
     due = parse_iso_date(due_date)
     if due and due <= today + dt.timedelta(days=date_window_days):
-        return "Todo"
-    return "Backlog"
+        return "未着手"
+    return "バックログ"
 
 
 def infer_status(
@@ -800,7 +800,7 @@ def infer_status(
     closed_issue_seed_ids: set[str],
 ) -> str:
     if entity_kind == "epic":
-        return "Backlog"
+        return "バックログ"
     return compute_status(
         today=today,
         deferred_until=issue.get("deferred_until"),
@@ -832,26 +832,26 @@ def validate_seed(seed: dict[str, Any]) -> tuple[list[str], list[str]]:
             errors.append(f"Missing top-level section: {section}")
     required_fields = {
         "Status",
-        "Priority",
-        "Area",
-        "Phase",
-        "Due Date",
-        "Evidence Type",
-        "Monthly Bucket",
+        "優先度",
+        "分野",
+        "フェーズ",
+        "期日",
+        "エビデンス種別",
+        "月次バケット",
         "Quarter",
-        "Career Link",
-        "AI Link",
-        "Task Type",
-        "Review Cycle",
-        "Active Window",
-        "Deferred Until",
-        "Deferred Flag",
-        "Blocked By",
-        "DoD Ready",
-        "Evidence Ready",
-        "Exam Priority Guard",
-        "Start Date",
-        "End Date",
+        "キャリアリンク",
+        "AIリンク",
+        "タスク種別",
+        "レビューサイクル",
+        "活動期間",
+        "延期期日",
+        "延期フラグ",
+        "ブロック元",
+        "完了定義",
+        "エビデンス準備",
+        "試験優先ガード",
+        "開始日",
+        "終了日",
         "Execution Time Block",
         "Execution Estimate",
         "Execution Energy",
@@ -963,10 +963,10 @@ def build_epic_issue(
         "child_titles": child_titles,
         "labels": sorted(epic.get("labels", []) + [f"priority:{epic['priority']}"]),
         "field_values": {
-            "Status": "Backlog",
-            "Priority": priority_to_field(epic.get("priority")),
-            "Area": area_from_labels(epic.get("labels", [])),
-            "Task Type": "Epic",
+            "Status": "バックログ",
+            "優先度": priority_to_field(epic.get("priority")),
+            "分野": area_from_labels(epic.get("labels", [])),
+            "タスク種別": "エピック",
         },
     }
     fingerprint = sha256_text(json.dumps(fingerprint_source, ensure_ascii=False, sort_keys=True))
@@ -985,25 +985,25 @@ def build_epic_issue(
         labels=sorted(epic.get("labels", []) + [f"priority:{epic['priority']}"]),
         milestone_title=None,
         field_values={
-            "Status": "Backlog",
-            "Priority": priority_to_field(epic.get("priority")),
-            "Area": area_from_labels(epic.get("labels", [])),
-            "Phase": None,
-            "Due Date": None,
-            "Evidence Type": None,
-            "Monthly Bucket": None,
+            "Status": "バックログ",
+            "優先度": priority_to_field(epic.get("priority")),
+            "分野": area_from_labels(epic.get("labels", [])),
+            "フェーズ": None,
+            "期日": None,
+            "エビデンス種別": None,
+            "月次バケット": None,
             "Quarter": None,
-            "Career Link": None,
-            "AI Link": None,
-            "Task Type": "Epic",
-            "Review Cycle": "None",
-            "Active Window": None,
-            "Deferred Until": None,
-            "Deferred Flag": "N/A",
-            "Blocked By": None,
-            "DoD Ready": "N/A",
-            "Evidence Ready": "N/A",
-            "Exam Priority Guard": "N/A",
+            "キャリアリンク": None,
+            "AIリンク": None,
+            "タスク種別": "エピック",
+            "レビューサイクル": "なし",
+            "活動期間": None,
+            "延期期日": None,
+            "延期フラグ": "N/A",
+            "ブロック元": None,
+            "完了定義": "N/A",
+            "エビデンス準備": "N/A",
+            "試験優先ガード": "N/A",
         },
         fingerprint=fingerprint,
     )
@@ -1033,36 +1033,36 @@ def build_seed_issue(
             today=today,
             closed_issue_seed_ids=closed_issue_seed_ids,
         ),
-        "Priority": priority_to_field(issue.get("priority")),
-        "Area": area_from_labels(issue.get("labels", [])),
-        "Phase": phase_from_labels(issue.get("labels", [])),
-        "Due Date": issue.get("due_date") or None,
-        "Evidence Type": issue.get("evidence_type") or None,
-        "Monthly Bucket": issue.get("monthly_bucket") or None,
+        "優先度": priority_to_field(issue.get("priority")),
+        "分野": area_from_labels(issue.get("labels", [])),
+        "フェーズ": phase_from_labels(issue.get("labels", [])),
+        "期日": issue.get("due_date") or None,
+        "エビデンス種別": issue.get("evidence_type") or None,
+        "月次バケット": issue.get("monthly_bucket") or None,
         "Quarter": issue.get("quarter") or None,
-        "Career Link": issue.get("career_link") or None,
-        "AI Link": issue.get("ai_link") or None,
-        "Task Type": infer_task_type(issue, entity_kind="issue"),
-        "Review Cycle": infer_review_cycle(issue),
-        "Active Window": active_window_text(issue),
-        "Deferred Until": issue.get("deferred_until") or None,
-        "Deferred Flag": (
-            "Deferred"
+        "キャリアリンク": issue.get("career_link") or None,
+        "AIリンク": issue.get("ai_link") or None,
+        "タスク種別": infer_task_type(issue, entity_kind="issue"),
+        "レビューサイクル": infer_review_cycle(issue),
+        "活動期間": active_window_text(issue),
+        "延期期日": issue.get("deferred_until") or None,
+        "延期フラグ": (
+            "延期"
             if issue.get("deferred_until") and today <= parse_iso_date(issue["deferred_until"])
-            else "Active"
+            else "アクティブ"
         ),
-        "Blocked By": ", ".join(issue.get("blocked_by", [])) or None,
-        "DoD Ready": "Ready" if issue.get("dod") else "Missing",
-        "Evidence Ready": (
-            "Ready"
+        "ブロック元": ", ".join(issue.get("blocked_by", [])) or None,
+        "完了定義": "完了" if issue.get("dod") else "未完了",
+        "エビデンス準備": (
+            "完了"
             if issue.get("evidence_to_keep")
-            else ("Missing" if issue.get("evidence_type") else "N/A")
+            else ("未完了" if issue.get("evidence_type") else "N/A")
         ),
-        "Exam Priority Guard": (
-            "Exam Priority" if normalize_bool(issue.get("exam_priority_guard")) else "Normal"
+        "試験優先ガード": (
+            "試験優先" if normalize_bool(issue.get("exam_priority_guard")) else "通常"
         ),
-        "Start Date": issue.get("active_from") or None,
-        "End Date": issue.get("due_date") or None,
+        "開始日": issue.get("active_from") or None,
+        "終了日": issue.get("due_date") or None,
         "Execution Time Block": issue.get("time_block") or None,
         "Execution Estimate": issue.get("estimate") or None,
         "Execution Energy": issue.get("energy") or None,
@@ -1221,14 +1221,14 @@ def build_audit_findings(seed: dict[str, Any], *, today: dt.date) -> list[AuditF
                         "Item due_date is earlier than active_from.",
                     )
                 )
-        if status == "Blocked":
+        if status == "ブロック中":
             findings.append(AuditFinding("INFO", "blocked", issue_id, "Item is blocked by open dependencies."))
         if entity_kind in {"phase_card", "win_condition"} and not issue.get("linked_issue_ids"):
             findings.append(
                 AuditFinding("FAIL", "missing-linked-items", issue_id, "Layered item has no linked_issue_ids.")
             )
         if is_exam_priority_period(today) and not normalize_bool(issue.get("exam_priority_guard")):
-            if status not in {"Backlog", "Deferred"}:
+            if status not in {"バックログ", "延期"}:
                 findings.append(
                     AuditFinding(
                         "FAIL",
@@ -2092,7 +2092,7 @@ def write_report(
         if planned_issue.entity_kind == "issue"
     )
     task_type_counts = Counter(
-        planned_issue.field_values.get("Task Type")
+        planned_issue.field_values.get("タスク種別")
         for planned_issue in planned_issues
         if planned_issue.entity_kind == "issue"
     )
