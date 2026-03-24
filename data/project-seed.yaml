@@ -1,9 +1,11 @@
 meta:
   project_name: 24ヶ月キャリア転換計画
   owner: foru1215
-  repo: shared-auto-sync
+  repo: shared
   start_date: '2026-03-14'
-  end_date: '2028-03-31'
+  end_date: '2031-03-31'
+  phase_1_end: '2028-03-31'
+  phase_2_end: '2031-03-31'
 strategy:
   primary_goal: 制御盤営業 → 制御・設備 × AI 実務人材への転換（24か月）
   secondary_goals:
@@ -123,6 +125,68 @@ phases:
   success_criteria:
   - 内定獲得
   - 全成果物の最終整備完了
+- id: phase-aws-basic
+  name: AWS 基礎構築期
+  start: '2026-05-01'
+  end: '2026-12-31'
+  priority: p1
+  focus:
+  - AWS Cloud Practitioner (CLF-C02) 取得
+  - AWS アカウント設定・無料枠活用
+  - SAA 学習開始
+  success_criteria:
+  - CLF-C02 合格
+  - AWS アカウントが稼働し基本操作ができる
+  note: Phase 1 と並行実施。電工試験後の余力でAWSを開始
+- id: phase-aws-iot
+  name: AWS IoT 実践期
+  start: '2027-01-01'
+  end: '2027-09-30'
+  priority: p1
+  focus:
+  - AWS IoT Core + PLC シミュレータ連携
+  - Greengrass エッジ体験
+  - SiteWise データモデリング
+  success_criteria:
+  - IoT Core 経由で PLC データを受信できる
+  - Greengrass デバイスが動作する
+  note: PLC強化・電験準備と並行でIoT連携を構築
+- id: phase-3pillar
+  name: 3柱統合期
+  start: '2027-10-01'
+  end: '2028-03-31'
+  priority: p0
+  focus:
+  - 制御 × AI × AWS の統合ポートフォリオ構築
+  - Lambda + Step Functions 実装
+  - 転職活動との接続
+  success_criteria:
+  - 3本柱統合デモが動作する
+  - ポートフォリオに組み込まれている
+  note: AI スペシャリスト強化期・転職仕上げ期と重なる
+- id: phase-highclass
+  name: ハイクラス深化期
+  start: '2028-04-01'
+  end: '2029-09-30'
+  priority: p1
+  focus:
+  - SAP 学習・取得
+  - 高度 AWS アーキテクチャ実践
+  - エキスパート領域への深化
+  success_criteria:
+  - SAP 取得
+  - 高度実装経験の蓄積
+- id: phase-expert
+  name: エキスパート到達期
+  start: '2029-10-01'
+  end: '2031-03-31'
+  priority: p1
+  focus:
+  - AWS Specialty 取得
+  - 業界エキスパートとしての実績構築
+  success_criteria:
+  - Specialty 取得
+  - ハイクラス到達
 epics:
 - id: E-LIC
   name: License
@@ -172,6 +236,20 @@ epics:
   labels:
   - area:career
   priority: p1
+- id: E-AWS
+  name: AWS Cloud & IoT
+  description: AWS 資格取得（CLF → SAA → SAP）・IoT Core / Greengrass / SiteWise
+    / Lambda / Bedrock 統合までを含む。制御柱・AI柱と並ぶ独立柱。
+  labels:
+  - area:aws
+  - pillar:aws
+  priority: p1
+- id: E-ENG
+  name: English Support
+  description: AWS・AI・制御の3本柱を支える英語力の補強。英語は独立柱ではなく、AWS・AI・制御の3本柱を支える補助スキルとして扱う。
+  labels:
+  - area:english
+  priority: p2
 milestones:
 - id: M-2026-Q1
   title: '2026 Q1: 計画始動'
@@ -218,6 +296,36 @@ milestones:
   start: '2028-01-01'
   end: '2028-03-31'
   goal: 内定獲得
+- id: M-2026-Q3-AWS
+  title: '2026 Q3: AWS 基礎 + CLP'
+  start: '2026-07-01'
+  end: '2026-09-30'
+  goal: AWS Cloud Practitioner (CLF-C02) 取得
+- id: M-2026-Q4-AWS
+  title: '2026 Q4: SAA 取得'
+  start: '2026-10-01'
+  end: '2026-12-31'
+  goal: AWS Solutions Architect Associate 合格
+- id: M-2027-Q2-AWS
+  title: '2027 Q2: IoT 連携構築'
+  start: '2027-04-01'
+  end: '2027-06-30'
+  goal: AWS IoT Core + PLC シミュレータ連携が動作
+- id: M-2027-Q4-AWS
+  title: '2027 Q4: SAP 学習開始'
+  start: '2027-10-01'
+  end: '2027-12-31'
+  goal: SAP 学習計画策定
+- id: M-2029-Q2
+  title: '2029 Q2: SAP 取得'
+  start: '2029-04-01'
+  end: '2029-06-30'
+  goal: AWS Solutions Architect Professional 合格
+- id: M-2030-Q1
+  title: '2030 Q1: Specialty 取得'
+  start: '2030-01-01'
+  end: '2030-03-31'
+  goal: AWS Specialty 認定取得
 labels:
   area:
   - name: area:license
@@ -247,6 +355,12 @@ labels:
   - name: area:security
     color: 0052cc
     description: OT / ICS セキュリティ
+  - name: area:aws
+    color: ff9900
+    description: AWS クラウド
+  - name: area:english
+    color: 7057ff
+    description: 英語学習
   tool:
   - name: tool:codex
     color: c2e0c6
@@ -267,6 +381,19 @@ labels:
   - name: priority:p2
     color: 0e8a16
     description: 通常
+  pillar:
+  - name: pillar:control
+    color: 008672
+    description: 制御柱
+  - name: pillar:ai
+    color: 1d76db
+    description: AI柱
+  - name: pillar:aws
+    color: ff9900
+    description: AWS柱
+  - name: pillar:integration
+    color: e36209
+    description: 3柱統合
   phase:
   - name: phase:written-exam
     color: f9d0c4
@@ -289,6 +416,21 @@ labels:
   - name: phase:career-finish
     color: e4e669
     description: 転職仕上げ期
+  - name: phase:aws-basic
+    color: ff9900
+    description: AWS 基礎構築期
+  - name: phase:aws-iot
+    color: ffb84d
+    description: AWS IoT 実践期
+  - name: phase:3pillar
+    color: e36209
+    description: 3柱統合期
+  - name: phase:highclass
+    color: d73a49
+    description: ハイクラス深化期
+  - name: phase:expert
+    color: 6f42c1
+    description: エキスパート到達期
 project_fields:
 - name: Status
   type: single_select
@@ -317,6 +459,8 @@ project_fields:
   - AI
   - キャリア
   - セキュリティ
+  - AWS
+  - 英語
 - name: フェーズ
   type: single_select
   options:
@@ -327,6 +471,11 @@ project_fields:
   - 電験準備
   - AIスペシャリスト
   - 転職仕上げ
+  - AWS基礎
+  - AWS_IoT実践
+  - 3柱統合
+  - ハイクラス深化
+  - エキスパート到達
 - name: 期日
   type: date
 - name: エビデンス種別
@@ -352,6 +501,18 @@ project_fields:
   - 2027-Q3
   - 2027-Q4
   - 2028-Q1
+  - 2028-Q2
+  - 2028-Q3
+  - 2028-Q4
+  - 2029-Q1
+  - 2029-Q2
+  - 2029-Q3
+  - 2029-Q4
+  - 2030-Q1
+  - 2030-Q2
+  - 2030-Q3
+  - 2030-Q4
+  - 2031-Q1
 - name: キャリアリンク
   type: text
 - name: AIリンク
@@ -371,6 +532,7 @@ project_fields:
   - 定期レビュー
   - 成果物
   - セットアップ
+  - AWS
 - name: レビューサイクル
   type: single_select
   options:
@@ -1647,7 +1809,7 @@ issues:
   - 三菱電機 GX Works3 入門マニュアル（公式 PDF）
   - GX Works3 + GX Simulator3（シミュレータ環境）
   - ラダー図記号一覧表（AND/OR/NOT/コイル/接点）
-  - "Azure IoT Hub 無料枠ドキュメント（ISS-048 で利用）https://docs.microsoft.com/ja-jp/azure/iot-hub/"
+  - "AWS IoT Core 無料枠ドキュメント（ISS-048 で利用）https://docs.aws.amazon.com/iot/"
   things_to_make:
   - PLC成果物
   - 動作確認メモ
@@ -2392,7 +2554,7 @@ issues:
   - Anthropic API ドキュメント https://docs.anthropic.com/en/api/
   - 自社の仕様書テンプレート
   - ISS-019 の学習ログ（プロンプト集）
-  - "Azure AI Foundry https://azure.microsoft.com/ja-jp/products/ai-foundry/（ISS-050 の基盤）"
+  - "Amazon Bedrock https://docs.aws.amazon.com/bedrock/（ISS-050 の基盤）"
   things_to_make:
   - 学習ログ
   - 転用アイデアメモ
@@ -2448,7 +2610,7 @@ issues:
   - ISS-034 の AI 業務改善成果物
   - ISS-015〜016 の図面読解ノート
   - Claude Code プロンプト集（ISS-019）
-  - "Azure AI Foundry（ISS-050 で統合予定）"
+  - "Amazon Bedrock（ISS-050 で統合予定）"
   things_to_make:
   - 学習ログ
   - 転用アイデアメモ
@@ -3008,7 +3170,7 @@ issues:
   - ISS-043〜044 の OT セキュリティノート
   - ISS-020〜024 の PLC 課題成果物
   - IEC 62443 概要資料
-  - "Microsoft Defender for IoT（ISS-049 で実際に使用）https://azure.microsoft.com/ja-jp/products/defender-for-iot/"
+  - "AWS IoT Device Defender（ISS-049 で実際に使用）https://docs.aws.amazon.com/iot-device-defender/"
   things_to_make:
   - PLC / 制御盤セキュリティ観点チェックリスト
   completion_check:
@@ -3087,12 +3249,13 @@ issues:
   energy: High
   focus: 統合・説明可能化・公開準備
 - id: ISS-047
-  title: '[AI] 2026-05: AZ-900 Azure 基礎認定取得'
-  body: Microsoft Learn の AZ-900 学習パスを完了し、Azure 基礎認定を取得する。
-  epic: E-AI
+  title: '[AWS] 2026-05: AWS Cloud Practitioner (CLF-C02) 取得'
+  body: AWS Skill Builder の CLF-C02 学習パスを完了し、AWS Cloud Practitioner 認定を取得する。
+  epic: E-AWS
   phase: phase-1
   labels:
-  - area:ai
+  - area:aws
+  - pillar:aws
   - phase:practical-exam
   - priority:p1
   priority: p1
@@ -3104,41 +3267,41 @@ issues:
   evidence_type: 認定証
   monthly_bucket: 2026-05
   quarter: 2026-Q2
-  career_link: "Azure 知識で DX 推進・制御×クラウド系ポジションへの応募資格が上がる"
-  ai_link: "Azure AI / IoT Hub を後続 Issue で活用するための語彙基盤"
+  career_link: "AWS 知識で DX 推進・制御×クラウド系ポジションへの応募資格が上がる"
+  ai_link: "Amazon Bedrock / IoT Core を後続 Issue で活用するための語彙基盤"
   task_type: study
   work_steps:
-  - "Microsoft Learn の AZ-900 学習パスを全モジュール完了する（無料・絀10時間）"
+  - "AWS Skill Builder の CLF-C02 学習パスを全モジュール完了する（無料）"
   - "模擬試験を2周して合格点（700点以上）を確認する"
   - "ピアソン VUE で試験を予約して受験する"
   deliverables:
-  - "AZ-900 認定証（Microsoft Credential ページ）"
+  - "CLF-C02 認定証（AWS Certification ページ）"
   evidence_to_keep:
   - "認定証の URL を Issue コメントに記録"
   - "模擬試験スコア推移を Issue に記録"
   dod:
-  - "AZ-900 試験に合格した"
+  - "CLF-C02 試験に合格した"
   - "認定証 URL が Issue に記録されている"
   active_from: '2026-04-28'
   deferred_until: null
   exam_priority_guard: false
   review_note: "レビュー時に完了モジュール数と模擬試験スコアを更新する。"
-  outcome: "AZ-900 を取得し、Azure の基本語彙（VM / Storage / IoT Hub / IAM 等）が分かる状態。"
-  next_action: "Microsoft Learn の AZ-900 学習パストップを開いて最初のモジュールを始める。"
-  why_this_matters: "Azure 実務経験の土台 / 後続の IoT Hub・Defender for IoT 体験のベース"
+  outcome: "CLF-C02 を取得し、AWS の基本語彙（EC2 / S3 / IoT Core / IAM 等）が分かる状態。"
+  next_action: "AWS Skill Builder の CLF-C02 学習パストップを開いて最初のモジュールを始める。"
+  why_this_matters: "AWS 実務経験の土台 / 後続の IoT Hub・IoT Device Defender 体験のベース"
   device: PC
   inputs:
-  - "Microsoft Learn AZ-900 学習パス https://learn.microsoft.com/ja-jp/certifications/azure-fundamentals/"
-  - "「合格対策 Microsoft 認定 AZ-900 試験対策テキスト」（翔泳社）"
-  - "Azure 無料アカウント https://azure.microsoft.com/ja-jp/free/"
+  - "AWS Skill Builder CLF-C02 学習パス https://skillbuilder.aws/"
+  - "「AWS認定クラウドプラクティショナー CLF-C02 対策テキスト」"
+  - "AWS 無料アカウント https://aws.amazon.com/free/"
   things_to_make:
-  - AZ-900 認定証
+  - CLF-C02 認定証
   completion_check:
   - "Microsoft Learn の学習パスを全モジュール完了した"
   - "模擬試験で合格点（700点以上）を2回確認した"
-  - "AZ-900 試験に合格した"
+  - "CLF-C02 試験に合格した"
   daily_execution:
-  - '朝 (60分): Microsoft Learn の AZ-900 学習パスを全モジュール完了する（無料・絀10時間）（1モジュールを完走する）'
+  - '朝 (60分): AWS Skill Builder の CLF-C02 学習パスを全モジュール完了する（無料）（1モジュールを完走する）'
   - '昼 (30分): 完了モジュールの重要語彙3つを紙に書いて暗記確認する（テキスト不可）'
   - '夕 (2h): 模擬試験を1回分解いて全問の正誤理由を書く → 認定証の URL を Issue コメントに記録'
   time_block: "平日 30分 + 週末 2時間（実技試験準備の隙間で進める）"
@@ -3146,18 +3309,19 @@ issues:
   energy: Low
   focus: "認定取得 → クラウド基礎の語彙を身につける"
 - id: ISS-048
-  title: '[AI] 2026-09: Azure IoT Hub 入門 + PLC シミュレータ接続デモ'
-  body: "Azure IoT Hub 無料枠で仮想 PLC からデータを送受信するデモを作成する。"
-  epic: E-AI
+  title: '[AWS] 2026-11: AWS IoT Core 入門 + PLC シミュレータ接続デモ'
+  body: "AWS IoT Core 無料枠で仮想 PLC からデータを送受信するデモを作成する。"
+  epic: E-AWS
   phase: phase-2
   labels:
-  - area:ai
+  - area:aws
+  - pillar:aws
   - area:plc
   - phase:control-foundation
   - priority:p1
   priority: p1
   milestone: M-2026-Q3
-  due_date: '2026-10-31'
+  due_date: '2026-12-31'
   recurring: false
   dependencies:
   - ISS-020
@@ -3166,15 +3330,15 @@ issues:
   - ISS-020
   - ISS-047
   evidence_type: コード
-  monthly_bucket: 2026-09
-  quarter: 2026-Q3
+  monthly_bucket: '2026-11'
+  quarter: 2026-Q4
   career_link: "PLC × クラウド連携の実装経験として職務経歴書に書ける"
-  ai_link: "Claude Code で IoT Hub データの可視化スクリプトを試作する"
-  task_type: ai
+  ai_link: "Claude Code で IoT Core データの可視化スクリプトを試作する"
+  task_type: aws
   work_steps:
-  - "Azure 無料アカウントで IoT Hub を作成する（F1 無料枠）"
+  - "AWS 無料アカウントで IoT Hub を作成する（F1 無料枠）"
   - "GX Simulator3 の仮想 PLC から MQTT でデータを送信する Python スクリプトを作る"
-  - "IoT Hub でデータ受信を確認しスクリーンショットを記録する"
+  - "IoT Core でデータ受信を確認しスクリーンショットを記録する"
   - "Claude Code でデータを集計・可視化する簡単なスクリプトを試作する"
   - "手順と成果物を GitHub に保存して Issue にリンクを記録する"
   deliverables:
@@ -3182,7 +3346,7 @@ issues:
   - "動作確認スクリーンショット"
   evidence_to_keep:
   - "GitHub リポジトリリンク"
-  - "IoT Hub データ受信のスクリーンショット"
+  - "IoT Core データ受信のスクリーンショット"
   dod:
   - "PLC シミュレータから IoT Hub へのデータ送信が動作確認済み"
   - "スクリプトが GitHub に保存されている"
@@ -3191,108 +3355,152 @@ issues:
   deferred_until: null
   exam_priority_guard: false
   review_note: "レビュー時に接続状況・成果物の完成度・次の改善アイデアを更新する。"
-  outcome: "GX Simulator3 から Azure IoT Hub へのデータ送信が動作し、制御×クラウド連携の実例1件が成果物として残る状態。"
-  next_action: "Azure 無料アカウントを作成し、IoT Hub の作成チュートリアルの最初のステップを始める。"
+  outcome: "GX Simulator3 から AWS IoT Core へのデータ送信が動作し、制御×クラウド連携の実例1件が成果物として残る状態。"
+  next_action: "AWS 無料アカウントを作成し、IoT Core の作成チュートリアルの最初のステップを始める。"
   why_this_matters: "PLC + クラウドの実装経験は制御×DX 転職で直接アピールできる"
   device: PC
   inputs:
-  - "Azure IoT Hub ドキュメント https://docs.microsoft.com/ja-jp/azure/iot-hub/"
+  - "AWS IoT Core ドキュメント https://docs.aws.amazon.com/iot/"
   - "ISS-020～024 の PLC シミュレータ環境（GX Works3 + GX Simulator3）"
   - "MQTT プロトコル入門（デバイス→クラウド通信の基礎）"
   things_to_make:
   - "PLC → IoT Hub 接続スクリプト（Python）"
   - "動作確認ドキュメント"
   completion_check:
-  - "Azure IoT Hub を作成しデバイス登録が完了している"
+  - "AWS IoT Core を作成しデバイス登録が完了している"
   - "PLC シミュレータからクラウドへのデータ受信が確認できている"
   - "成果物が GitHub に保存されている"
   daily_execution:
-  - '土日 セッション1 (3h): Azure 無料アカウントで IoT Hub を作成する（F1 無料枠）'
-  - '土日 セッション2 (3h): IoT Hub でデータ受信を確認しスクリーンショットを記録する'
+  - '土日 セッション1 (3h): AWS 無料アカウントで IoT Hub を作成する（F1 無料枠）'
+  - '土日 セッション2 (3h): IoT Core でデータ受信を確認しスクリーンショットを記録する'
   - '土日 セッション3 (3h): 手順と成果物を GitHub に保存して Issue にリンクを記録する → GitHub に保存 → GitHub リポジトリリンク'
   time_block: "休日 2～3時間 × 3回"
   estimate: 3-5 sessions
   energy: Medium
   focus: "PLC データをクラウドへ送る → 制御×IoT の原理を体験する"
 - id: ISS-049
-  title: '[SEC] 2027-01: Microsoft Defender for IoT 体験 + OT 環境評価ラボ'
-  body: "Defender for IoT 30日無料評価で OT 資産スキャンと推奨事項確認を体験する。"
+  title: '[SEC] 2027-03: AWS IoT Device Defender 体験 + OT 環境評価ラボ'
+  body: |-
+    ## 概要
+    このIssueは AWS IoT 実践期 に進める セキュリティ学習Issue です。
+    AWS IoT Device Defender を使い、ISS-048 で構築した IoT Core 環境に対して監査（Audit）と検知（Detect）の基本を体験する。
+    狙い: OTセキュリティを「概念」ではなく「AWS上の具体運用」で説明できる状態を作る。
+
+    ## 完了条件
+    - AWS IoT Device Defender の Audit 機能を1回以上実行した
+    - 少なくとも3件の監査項目について「何を見ているか」を説明できる
+    - IoT Core 環境の改善アクションを3件以上記録した
+    - 実施記録を Markdown で GitHub に残した
+
+    ## 今回の到達目標
+    - Device Defender が「何を守るか」「どこまで守れるか」を説明できる状態
+    - 作るもの: Audit 実施記録 + 改善メモ + 簡易構成図
+    - 重点: Audit / Detect / Policy の違いを理解すること
+
+    ## 最初の一手（5分で開始できる行動）
+    - [ ] AWS IoT Device Defender のドキュメントを開き、Audit のチェック項目一覧を確認する
+
+    ## タスクリスト
+    - [ ] AWS IoT Device Defender の公式ドキュメントを読む
+    - [ ] ISS-048 の IoT Core 環境が利用できることを確認する
+    - [ ] Audit を実行し、検出内容を記録する
+    - [ ] 検出結果から改善アクションを3件以上洗い出す
+    - [ ] OT観点で「現場的に意味がある注意点」を日本語で整理する
+    - [ ] Markdown レポートを GitHub に保存する
+
+    ## 補足メモ
+    - 使う資料・入力:
+      - AWS IoT Device Defender ドキュメント https://docs.aws.amazon.com/iot-device-defender/
+      - ISS-048 の AWS IoT Core 構成
+      - ISS-044, ISS-045 の OT セキュリティ学習内容
+    - 依存Issue:
+      - ISS-044
+      - ISS-045
+      - ISS-048
+    - 時間の目安: 休日 2-3時間 × 2〜3回
+    - 想定セッション数: 3-5 sessions
+    - 負荷感: Medium
+    - 注意: これはペンテストではない。AWS の監査・設定観点で「安全な構成」を確認する学習である
   epic: E-SEC
-  phase: phase-3
+  phase: phase-aws-iot
   labels:
   - area:security
-  - area:plc
-  - phase:plc-growth
+  - area:aws
   - priority:p1
+  - phase:aws-iot
+  - pillar:aws
+  - pillar:integration
   priority: p1
   milestone: M-2027-Q1
-  due_date: '2027-01-31'
+  due_date: '2027-03-31'
   recurring: false
   dependencies:
   - ISS-044
   - ISS-045
   - ISS-048
+  evidence_type: ドキュメント
+  monthly_bucket: '2027-03'
+  quarter: 2027-Q1
+  career_link: OTセキュリティを AWS IoT 環境で説明できる証拠
+  ai_link: Claude Code で Audit 結果の分析を補助する
+  task_type: study
+  work_steps:
+  - AWS IoT Device Defender の公式ドキュメントを読む
+  - ISS-048 の IoT Core 環境が利用できることを確認する
+  - Audit を実行し、検出内容を記録する
+  - 検出結果から改善アクションを3件以上洗い出す
+  - OT観点で「現場的に意味がある注意点」を日本語で整理する
+  - Markdown レポートを GitHub に保存する
+  deliverables:
+  - Audit 実施記録
+  - 改善メモ
+  - 簡易構成図
+  evidence_to_keep:
+  - Audit 実施記録（Markdown）
+  - 検出結果と改善アクションの記録
+  dod:
+  - Audit 実施済み
+  - 検出結果の記録あり
+  - 改善アクションを3件以上説明可能
+  active_from: '2027-03-01'
+  deferred_until: null
   blocked_by:
   - ISS-044
   - ISS-045
   - ISS-048
-  evidence_type: ドキュメント
-  monthly_bucket: 2027-01
-  quarter: 2027-Q1
-  career_link: "OT セキュリティツールの実装経験で制御 DX 系企業への差別化ポイントになる"
-  ai_link: "Defender のアラートデータを Claude Code で分析するスクリプトを試作できる"
-  task_type: evidence
-  work_steps:
-  - "Microsoft Defender for IoT の 30日無料評価を Azure ポータルで有効化する"
-  - "ISS-048 で作成した IoT Hub に Defender for IoT を接続する"
-  - "仮想 OT ネットワーク（または IoT Hub のデバイス）をスキャンして資産検出を体験する"
-  - "検出されたアラート・推奨事項を ISS-045 のセキュリティチェックリストと照合する"
-  - "評価レポートと実務への適用アイデアを Issue に記録する"
-  deliverables:
-  - "Defender for IoT 評価レポート"
-  - "ISS-045 チェックリストとの照合メモ"
-  evidence_to_keep:
-  - "評価環境のスクリーンショット"
-  - "推奨事項レポートの PDF または Issue への記録"
-  dod:
-  - "Defender for IoT 評価環境が稼働した"
-  - "OT 資産スキャン結果が Issue に記録されている"
-  - "ISS-045 チェックリストとの照合メモが残っている"
-  active_from: '2026-11-01'
-  deferred_until: null
   exam_priority_guard: false
-  review_note: "レビュー時に評価進捗・発見事項・実務への転用可能性を更新する。"
-  outcome: "Defender for IoT を実際に動かし、OT セキュリティツールの概念が「動く経験」として残る状態。面接で「Defender for IoT で検証しました」と語れる状態。"
-  next_action: "Microsoft Defender for IoT の製品ページを開き、30日無料評価の申込みフローを確認する。"
-  why_this_matters: "OT セキュリティの実装経験は転職市場で希少価値が高い"
+  review_note: Audit / Detect / Policy の観点でレビューする。面接で語れるポイントを整理する。
+  outcome: ISS-048 の IoT Core 環境に対して、監査・検知・改善提案を説明できる状態
+  next_action: AWS IoT Device Defender の公式ドキュメントを開き、Audit チェック一覧を確認する
+  why_this_matters: OTセキュリティをAWS上の具体運用で説明できる差別化ポイント
   device: PC
   inputs:
-  - "Microsoft Defender for IoT 無料評価 https://azure.microsoft.com/ja-jp/products/defender-for-iot/"
-  - "ISS-043～044 の OT セキュリティノート（NIST SP 800-82 / CISA ICS 101）"
-  - "ISS-045 のセキュリティチェックリスト（照合用）"
-  - "ISS-048 の Azure IoT Hub 環境（接続ターゲット）"
+  - "AWS IoT Device Defender ドキュメント https://docs.aws.amazon.com/iot-device-defender/"
+  - ISS-048 の AWS IoT Core 構成
+  - ISS-044, ISS-045 の OT セキュリティ学習内容
   things_to_make:
-  - "Defender for IoT 評価レポート"
-  - "実務適用メモ"
+  - Audit 実施記録 + 改善メモ + 簡易構成図
   completion_check:
-  - "Defender for IoT 評価環境を構築した"
-  - "OT 資産スキャンの結果が記録されている"
-  - "実務適用アイデアが Issue に記録されている"
+  - Audit 実施済み / 検出結果の記録あり / 改善アクションを3件以上説明可能
   daily_execution:
-  - '土日 セッション1 (3h): Microsoft Defender for IoT の 30日無料評価を Azure ポータルで有効化する'
-  - '土日 セッション2 (3h): 仮想 OT ネットワーク（または IoT Hub のデバイス）をスキャンして資産検出を体験する'
-  - '土日 セッション3 (3h): 評価レポートと実務への適用アイデアを Issue に記録する → 完成度確認 → 評価環境のスクリーンショット'
-  time_block: "休日 3時間 × 2～3回"
+  - '休日 セッション1 (2-3h): AWS IoT Device Defender の公式ドキュメントを読む → Audit のチェック項目を確認'
+  - '休日 セッション2 (2-3h): ISS-048 の IoT Core 環境で Audit を実行し、検出内容を記録する'
+  - '休日 セッション3 (2-3h): 検出結果から改善アクションを洗い出し、Markdown レポートを作成'
+  time_block: 休日 2-3時間
   estimate: 3-5 sessions
-  energy: High
-  focus: "OT セキュリティツールを実際に動かして理解する"
+  energy: Medium
+  focus: AWS IoT Device Defender の Audit / Detect の体験
 - id: ISS-050
-  title: '[AI] 2027-11: Azure AI Foundry で制御 × AI デモ統合'
-  body: "Azure AI Foundry に Claude をデプロイし、IoT Hub データ + OT セキュリティ観点を組み込んだ制御×AI デモを完成させる。"
-  epic: E-AI
+  title: '[AI/AWS] 2027-11: Amazon Bedrock で制御 × AI デモ統合'
+  body: "Amazon Bedrock に Claude をデプロイし、IoT Core データ + OT セキュリティ観点を組み込んだ制御×AI デモを完成させる。"
+  epic: E-AI  # E-AWS にも所属（3柱交点）
   phase: phase-5
   labels:
   - area:ai
+  - area:aws
+  - pillar:ai
+  - pillar:aws
+  - pillar:integration
   - area:security
   - phase:ai-specialist
   - priority:p1
@@ -3313,53 +3521,853 @@ issues:
   evidence_type: ポートフォリオ
   monthly_bucket: 2027-11
   quarter: 2027-Q4
-  career_link: "Azure AI + 制御 + OT セキュリティの三角形がポートフォリオの核になる"
-  ai_link: "Azure AI Foundry で Claude をデプロイして制御データの AI 分析を実装する"
+  career_link: "Amazon Bedrock + 制御 + OT セキュリティの三角形がポートフォリオの核になる"
+  ai_link: "Amazon Bedrock で Claude をデプロイして制御データの AI 分析を実装する"
   task_type: deliverable
   work_steps:
-  - "Azure AI Foundry で Claude（Anthropic）モデルをデプロイする"
-  - "ISS-034～035 の Claude Code 成果物を Azure 上で動かせる形にリファクタリングする"
-  - "ISS-048 の IoT Hub データを AI で分析する簡単なデモを作成する"
+  - "Amazon Bedrock で Claude（Anthropic）モデルをデプロイする"
+  - "ISS-034～035 の Claude Code 成果物を AWS 上で動かせる形にリファクタリングする"
+  - "ISS-048 の IoT Core データを AI で分析する簡単なデモを作成する"
   - "ISS-049 の OT セキュリティ観点チェックをデモに組み込む"
   - "GitHub に公開してポートフォリオリンクを Issue に記録する"
   deliverables:
-  - "Azure AI Foundry 上の制御×AI 統合デモ"
+  - "Amazon Bedrock 上の制御×AI 統合デモ"
   - "GitHub 公開リポジトリ"
   evidence_to_keep:
   - "GitHub 公開リポジトリリンク"
-  - "Azure デプロイ画面のスクリーンショット"
+  - "AWS デプロイ画面のスクリーンショット"
   dod:
-  - "Azure AI Foundry で Claude モデルが動作している"
+  - "Amazon Bedrock で Claude モデルが動作している"
   - "制御×AI 統合デモが GitHub に公開されている"
   - "ポートフォリオリンクが Issue に記録されている"
   active_from: '2027-10-01'
   deferred_until: null
   exam_priority_guard: false
   review_note: "レビュー時に統合進捗・デモの完成度・ポートフォリオとしての訴求力を更新する。"
-  outcome: "Azure AI Foundry + Claude Code + IoT Hub + OT セキュリティを組み合わせた制御×AI デモがポートフォリオとして公開された状態。"
-  next_action: "Azure AI Foundry のページで Claude モデルのデプロイ手順を確認し、最初のモデル作成を始める。"
-  why_this_matters: "Azure + Claude Code の両方を使える制御×AI エンジニアとしての差別化"
+  outcome: "Amazon Bedrock + Claude Code + IoT Hub + OT セキュリティを組み合わせた制御×AI デモがポートフォリオとして公開された状態。"
+  next_action: "Amazon Bedrock のページで Claude モデルのデプロイ手順を確認し、最初のモデル作成を始める。"
+  why_this_matters: "AWS + Claude Code の両方を使える制御×AI エンジニアとしての差別化"
   device: PC
   inputs:
-  - "Azure AI Foundry https://azure.microsoft.com/ja-jp/products/ai-foundry/"
+  - "Amazon Bedrock https://docs.aws.amazon.com/bedrock/"
   - "ISS-034～035 の Claude Code による制御×AI 成果物"
-  - "ISS-048 の Azure IoT Hub データパイプライン"
-  - "ISS-049 の Defender for IoT 評価レポート（セキュリティ観点）"
+  - "ISS-048 の AWS IoT Core データパイプライン"
+  - "ISS-049 の IoT Device Defender 評価レポート（セキュリティ観点）"
   things_to_make:
-  - "Azure AI Foundry 上の制御×AI デモ"
+  - "Amazon Bedrock 上の制御×AI デモ"
   - "公開リポジトリ + README（ポートフォリオ用）"
   completion_check:
-  - "Azure AI Foundry デプロイが完了した"
+  - "Amazon Bedrock デプロイが完了した"
   - "統合デモが動作確認済み"
   - "ポートフォリオ公開リンクが記録されている"
   daily_execution:
-  - '土日 セッション1 (3h): Azure AI Foundry で Claude（Anthropic）モデルをデプロイする'
-  - '土日 セッション2 (3h): ISS-048 の IoT Hub データを AI で分析する簡単なデモを作成する'
+  - '土日 セッション1 (3h): Amazon Bedrock で Claude（Anthropic）モデルをデプロイする'
+  - '土日 セッション2 (3h): ISS-048 の IoT Core データを AI で分析する簡単なデモを作成する'
   - '土日 セッション3 (3h): GitHub に公開してポートフォリオリンクを Issue に記録する → 完成度確認 → GitHub 公開リポジトリリンク'
   time_block: "休日 3時間 × 4～5回"
   estimate: 5-8 sessions
   energy: High
-  focus: "既存の制御×AI 成果物を Azure AI Foundry でスケールしてポートフォリオ最終形にする"
+  focus: "既存の制御×AI 成果物を Amazon Bedrock でスケールしてポートフォリオ最終形にする"
+- id: ISS-051
+  title: '[AWS] 2026-05: AWS アカウント + 無料枠セットアップ'
+  body: |-
+    AWS アカウントを作成し、無料枠の範囲と請求アラートを把握する。
+    IAM ユーザー・MFA 設定・CloudTrail 有効化まで完了し、安全に使える状態を作る。
+  epic: E-AWS
+  phase: phase-aws-basic
+  labels:
+  - area:aws
+  - pillar:aws
+  - phase:aws-basic
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q2
+  due_date: '2026-05-31'
+  recurring: false
+  dependencies: []
+  evidence_type: ドキュメント
+  monthly_bucket: '2026-05'
+  quarter: 2026-Q2
+  career_link: AWS 環境を自力で立ち上げられる基礎力の証拠
+  ai_link: Claude Code で AWS CLI スクリプトを効率的に作成する
+  task_type: setup
+  work_steps:
+  - AWS アカウントを作成する
+  - IAM ユーザーを作成し MFA を設定する
+  - CloudTrail を有効化する
+  - 請求アラート（$5, $10）を設定する
+  - 無料枠の範囲を確認しメモする
+  deliverables:
+  - AWS アカウント設定メモ
+  - 請求アラート設定のスクリーンショット
+  evidence_to_keep:
+  - 設定手順メモ（GitHub）
+  - スクリーンショット
+  dod:
+  - AWS アカウントが作成され IAM + MFA が設定済み
+  - 請求アラートが動作している
+  active_from: '2026-05-01'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: true
+  review_note: セキュリティ設定の漏れがないか確認する。
+  outcome: AWS アカウントが安全に使える状態。
+  next_action: AWS 無料アカウント https://aws.amazon.com/free/ にアクセスしてサインアップを開始する。
+  why_this_matters: 全AWS学習の起点。安全な環境がなければ何も始まらない。
+  device: PC
+  inputs:
+  - "AWS 無料アカウント https://aws.amazon.com/free/"
+  - "IAM ベストプラクティス https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+  things_to_make:
+  - AWS アカウント設定メモ
+  completion_check:
+  - AWS マネジメントコンソールにログインできる
+  - IAM ユーザー + MFA が設定済み
+  - 請求アラートが設定済み
+  daily_execution:
+  - '休日 (60分): アカウント作成 → IAM + MFA → 請求アラート → メモ保存'
+  time_block: 休日 60分
+  estimate: 1 session
+  energy: Low
+  focus: AWS アカウントの安全なセットアップ
+- id: ISS-052
+  title: '[AWS] 2026-08: SAA 学習開始（AWS Solutions Architect Associate）'
+  body: |-
+    CLF-C02 取得後、SAA-C03 の学習を開始する。
+    公式学習パス + Udemy/書籍で主要サービス（VPC, EC2, S3, RDS, IAM, Lambda）を理解する。
+  epic: E-AWS
+  phase: phase-aws-basic
+  labels:
+  - area:aws
+  - pillar:aws
+  - phase:aws-basic
+  - priority:p1
+  priority: p1
+  milestone: M-2026-Q4-AWS
+  due_date: '2026-11-30'
+  recurring: false
+  dependencies:
+  - ISS-047
+  evidence_type: ノート
+  monthly_bucket: '2026-08'
+  quarter: 2026-Q3
+  career_link: SAA はクラウドエンジニアの基本資格。転職市場での価値が高い。
+  ai_link: Claude Code で AWS 構成図や CloudFormation テンプレートを生成する
+  task_type: study
+  work_steps:
+  - SAA-C03 の出題範囲を確認する
+  - AWS Skill Builder の SAA 学習パスを開始する
+  - VPC / EC2 / S3 / RDS / IAM / Lambda を順に学習する
+  - 模擬試験を2回以上実施する
+  deliverables:
+  - SAA 学習ノート
+  - 模擬試験結果記録
+  evidence_to_keep:
+  - 学習ログ（GitHub）
+  - 模擬試験スコア
+  dod:
+  - 主要サービスの基本概念を説明できる
+  - 模擬試験で 720 点以上を安定して取れる
+  active_from: '2026-08-01'
+  deferred_until: '2026-07-31'
+  blocked_by:
+  - ISS-047
+  exam_priority_guard: false
+  review_note: 模擬試験スコアの推移と弱点分野を確認する。
+  outcome: SAA の主要範囲を理解し、受験準備が整った状態。
+  next_action: SAA-C03 の公式試験ガイドを確認し、出題ドメインを把握する。
+  why_this_matters: SAA は AWS 実務力の証明。IoT / Bedrock 活用の基盤になる。
+  device: PC
+  inputs:
+  - "AWS Skill Builder https://skillbuilder.aws/"
+  - "SAA-C03 試験ガイド https://aws.amazon.com/certification/certified-solutions-architect-associate/"
+  things_to_make:
+  - SAA 学習ノート
+  completion_check:
+  - 出題範囲の全ドメインを学習済み
+  - 模擬試験スコア 720+ を2回以上記録
+  daily_execution:
+  - '朝 (60分): AWS Skill Builder で1モジュールを完走する'
+  - '昼 (30分): 前日の学習内容を復習する'
+  time_block: 平日朝 60分 + 週末 120分
+  estimate: 8-12 sessions
+  energy: High
+  focus: SAA-C03 の主要サービス理解と模擬試験
+- id: ISS-053
+  title: '[AWS] 2026-12: SAA 合格'
+  body: |-
+    SAA-C03 試験を受験し合格する。
+    CLF-C02 + SAA の2資格で AWS の基礎〜設計レベルを証明する。
+  epic: E-AWS
+  phase: phase-aws-basic
+  labels:
+  - area:aws
+  - pillar:aws
+  - phase:aws-basic
+  - priority:p0
+  priority: p0
+  milestone: M-2026-Q4-AWS
+  due_date: '2026-12-31'
+  recurring: false
+  dependencies:
+  - ISS-052
+  evidence_type: 認定証
+  monthly_bucket: '2026-12'
+  quarter: 2026-Q4
+  career_link: SAA は転職市場で最も評価される AWS 資格
+  ai_link: ''
+  task_type: exam
+  work_steps:
+  - 模擬試験で最終確認する
+  - 試験を予約し受験する
+  - 結果を記録する
+  deliverables:
+  - SAA 認定証
+  - 受験記録
+  evidence_to_keep:
+  - AWS Certification ページのスクリーンショット
+  - 認定証PDF
+  dod:
+  - SAA-C03 試験に合格した
+  - 認定証が取得できている
+  active_from: '2026-12-01'
+  deferred_until: '2026-11-30'
+  blocked_by:
+  - ISS-052
+  exam_priority_guard: true
+  review_note: 試験日前後2週間は SAA 優先。
+  outcome: SAA 合格。AWS 基礎〜設計レベルの証明。
+  next_action: Pearson VUE で SAA-C03 の試験日を予約する。
+  why_this_matters: CLF + SAA の2資格で AWS 基盤力を証明する
+  device: PC
+  inputs:
+  - ISS-052 の学習成果
+  - "Pearson VUE https://www.pearsonvue.com/aws/"
+  things_to_make:
+  - 受験記録メモ
+  completion_check:
+  - SAA-C03 に合格した
+  - 認定証を取得した
+  daily_execution:
+  - '試験前2週間: 朝 (60分) 模擬試験 + 弱点補強'
+  time_block: 試験前2週間集中
+  estimate: 2-3 sessions
+  energy: High
+  focus: SAA 合格
+- id: ISS-054
+  title: '[AWS] 2027-04: Greengrass エッジ体験'
+  body: |-
+    AWS IoT Greengrass を使い、エッジデバイスでの Lambda 実行と IoT Core 連携を体験する。
+    ISS-048 の IoT Core 環境を拡張し、エッジ側でのデータ前処理を実装する。
+  epic: E-AWS
+  phase: phase-aws-iot
+  labels:
+  - area:aws
+  - pillar:aws
+  - phase:aws-iot
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q2-AWS
+  due_date: '2027-04-30'
+  recurring: false
+  dependencies:
+  - ISS-048
+  - ISS-053
+  evidence_type: コード
+  monthly_bucket: '2027-04'
+  quarter: 2027-Q2
+  career_link: エッジコンピューティング経験は制御×クラウドの差別化要素
+  ai_link: Claude Code でエッジ Lambda のスクリプトを生成する
+  task_type: aws
+  work_steps:
+  - Greengrass Core ソフトウェアをローカル環境にインストールする
+  - エッジ Lambda を作成し、IoT Core からのメッセージを処理する
+  - ISS-048 の PLC シミュレータデータをエッジで前処理する
+  - 動作確認と構成図を記録する
+  deliverables:
+  - Greengrass セットアップ手順
+  - エッジ Lambda スクリプト
+  - 構成図
+  evidence_to_keep:
+  - GitHub リポジトリ
+  - 動作確認スクリーンショット
+  dod:
+  - Greengrass Core が動作している
+  - エッジ Lambda で PLC データを前処理できている
+  active_from: '2027-04-01'
+  deferred_until: '2027-03-31'
+  blocked_by:
+  - ISS-048
+  - ISS-053
+  exam_priority_guard: false
+  review_note: エッジ処理の実用性とデモ性を確認する。
+  outcome: Greengrass でエッジ処理が動作し、IoT Core と連携できている状態。
+  next_action: Greengrass 公式ドキュメントのチュートリアルを開始する。
+  why_this_matters: OT × クラウドのエッジ層を理解する。実案件でのGreengrass活用に直結。
+  device: PC / ローカル環境
+  inputs:
+  - "AWS IoT Greengrass ドキュメント https://docs.aws.amazon.com/greengrass/"
+  - ISS-048 の IoT Core 環境
+  things_to_make:
+  - Greengrass セットアップ手順 + エッジ Lambda スクリプト
+  completion_check:
+  - Greengrass Core が動作確認済み
+  - エッジ Lambda で PLC データを処理できている
+  daily_execution:
+  - '休日 セッション1 (3h): Greengrass Core のインストールと初期設定'
+  - '休日 セッション2 (3h): エッジ Lambda の作成と IoT Core 連携'
+  time_block: 休日 3時間 × 2-3回
+  estimate: 3-4 sessions
+  energy: Medium
+  focus: Greengrass エッジコンピューティングの基本体験
+- id: ISS-055
+  title: '[AWS] 2027-06: SiteWise でデータモデリング'
+  body: |-
+    AWS IoT SiteWise を使い、PLC シミュレータの制御データを産業用データモデルで管理する。
+    IoT Core → SiteWise のパイプラインを構築し、ダッシュボードで可視化する。
+  epic: E-AWS
+  phase: phase-aws-iot
+  labels:
+  - area:aws
+  - pillar:aws
+  - phase:aws-iot
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q2-AWS
+  due_date: '2027-06-30'
+  recurring: false
+  dependencies:
+  - ISS-048
+  - ISS-054
+  evidence_type: コード
+  monthly_bucket: '2027-06'
+  quarter: 2027-Q2
+  career_link: 産業 IoT データモデリングは制御 DX の中核スキル
+  ai_link: Claude Code で SiteWise モデル定義を効率化する
+  task_type: aws
+  work_steps:
+  - SiteWise のアセットモデルを作成する
+  - IoT Core ルールで SiteWise にデータを送る
+  - SiteWise Monitor でダッシュボードを作成する
+  - 制御データの可視化結果を記録する
+  deliverables:
+  - SiteWise アセットモデル定義
+  - ダッシュボードスクリーンショット
+  - 構成図
+  evidence_to_keep:
+  - GitHub リポジトリ
+  - ダッシュボードスクリーンショット
+  dod:
+  - SiteWise でデータモデルが動作している
+  - ダッシュボードで PLC データを可視化できている
+  active_from: '2027-05-01'
+  deferred_until: '2027-04-30'
+  blocked_by:
+  - ISS-048
+  - ISS-054
+  exam_priority_guard: false
+  review_note: データモデルの設計品質とダッシュボードの見やすさを確認する。
+  outcome: SiteWise で産業用データモデリングが動作し、可視化ダッシュボードが完成した状態。
+  next_action: SiteWise 公式ドキュメントのチュートリアルを開始する。
+  why_this_matters: 産業 IoT のデータ管理・可視化は実案件の核心
+  device: PC
+  inputs:
+  - "AWS IoT SiteWise ドキュメント https://docs.aws.amazon.com/iot-sitewise/"
+  - ISS-048 の IoT Core パイプライン
+  - ISS-054 の Greengrass 環境
+  things_to_make:
+  - SiteWise アセットモデル + ダッシュボード
+  completion_check:
+  - SiteWise アセットモデルが作成済み
+  - ダッシュボードで PLC データが表示されている
+  daily_execution:
+  - '休日 セッション1 (3h): SiteWise アセットモデルの作成'
+  - '休日 セッション2 (3h): IoT Core → SiteWise パイプライン構築'
+  - '休日 セッション3 (3h): ダッシュボード作成と記録'
+  time_block: 休日 3時間 × 3回
+  estimate: 3-5 sessions
+  energy: Medium
+  focus: 産業用データモデリングと可視化
+- id: ISS-056
+  title: '[AWS] 2027-09: Lambda + Step Functions で制御ワークフロー'
+  body: |-
+    Lambda と Step Functions を使い、IoT Core データの異常検知→通知→ログ記録のワークフローを構築する。
+    制御×クラウドのサーバーレスパターンを体験する。
+  epic: E-AWS
+  phase: phase-aws-iot
+  labels:
+  - area:aws
+  - pillar:aws
+  - phase:aws-iot
+  - priority:p1
+  priority: p1
+  milestone: M-2027-Q3
+  due_date: '2027-09-30'
+  recurring: false
+  dependencies:
+  - ISS-055
+  evidence_type: コード
+  monthly_bucket: '2027-09'
+  quarter: 2027-Q3
+  career_link: サーバーレスアーキテクチャは AWS 実務の基本パターン
+  ai_link: Claude Code で Lambda 関数と Step Functions 定義を生成する
+  task_type: aws
+  work_steps:
+  - Lambda 関数で IoT Core データの異常判定を実装する
+  - Step Functions で異常検知→SNS 通知→S3 ログ保存のワークフローを構築する
+  - ISS-055 の SiteWise データをトリガーとして動作確認する
+  - 構成図と動作ログを記録する
+  deliverables:
+  - Lambda 関数コード
+  - Step Functions 定義（ASL）
+  - 構成図
+  evidence_to_keep:
+  - GitHub リポジトリ
+  - 動作確認ログ
+  dod:
+  - 異常検知→通知→ログ記録のワークフローが動作している
+  - Step Functions の実行ログが確認できる
+  active_from: '2027-07-01'
+  deferred_until: '2027-06-30'
+  blocked_by:
+  - ISS-055
+  exam_priority_guard: false
+  review_note: ワークフローの実用性とエラーハンドリングを確認する。
+  outcome: サーバーレスワークフローで IoT データの異常検知→通知が自動化された状態。
+  next_action: Lambda の公式チュートリアルを開始する。
+  why_this_matters: Lambda + Step Functions は AWS の実装パターンの基本。実案件でも活用。
+  device: PC
+  inputs:
+  - "AWS Lambda ドキュメント https://docs.aws.amazon.com/lambda/"
+  - "AWS Step Functions ドキュメント https://docs.aws.amazon.com/step-functions/"
+  - ISS-055 の SiteWise パイプライン
+  things_to_make:
+  - Lambda + Step Functions ワークフロー
+  completion_check:
+  - 異常検知ワークフローが動作確認済み
+  - 構成図とログが保存されている
+  daily_execution:
+  - '休日 セッション1 (3h): Lambda 関数の作成と単体テスト'
+  - '休日 セッション2 (3h): Step Functions ワークフロー構築'
+  - '休日 セッション3 (3h): 統合テストと記録'
+  time_block: 休日 3時間 × 3-4回
+  estimate: 4-6 sessions
+  energy: High
+  focus: サーバーレスワークフローの構築
+- id: ISS-057
+  title: '[AWS] Phase 2 概要: SAP 学習・取得（2028-04〜2029-09）'
+  body: |-
+    Phase 2 の概要Issue。AWS Solutions Architect Professional の学習と取得。
+    詳細タスクは Phase 2 開始時に具体化する。
+  epic: E-AWS
+  phase: phase-highclass
+  labels:
+  - area:aws
+  - pillar:aws
+  - phase:highclass
+  - priority:p2
+  priority: p2
+  milestone: M-2029-Q2
+  due_date: '2029-06-30'
+  recurring: false
+  dependencies:
+  - ISS-053
+  evidence_type: 認定証
+  monthly_bucket: ''
+  quarter: 2029-Q2
+  career_link: SAP はハイクラスポジションへのパスポート
+  ai_link: ''
+  task_type: aws
+  work_steps:
+  - Phase 2 開始時に詳細化する
+  deliverables:
+  - SAP 認定証
+  evidence_to_keep:
+  - 認定証PDF
+  dod:
+  - SAP 試験に合格した
+  active_from: '2028-04-01'
+  deferred_until: '2028-03-31'
+  blocked_by:
+  - ISS-053
+  exam_priority_guard: false
+  review_note: Phase 2 開始時に計画を具体化する。
+  outcome: SAP 取得。ハイクラス到達の基盤。
+  next_action: Phase 2 開始時に学習計画を策定する。
+  why_this_matters: ハイクラス深化期の中核資格
+  device: PC
+  inputs: []
+  things_to_make:
+  - SAP 学習計画
+  completion_check:
+  - SAP に合格した
+  daily_execution:
+  - Phase 2 開始時に策定
+  time_block: TBD
+  estimate: TBD
+  energy: High
+  focus: SAP 取得
+- id: ISS-058
+  title: '[AWS] Phase 2 概要: Specialty 取得（2029-10〜2030-03）'
+  body: |-
+    Phase 2 の概要Issue。AWS Specialty 認定（IoT or Security or ML）の取得。
+    詳細タスクは Phase 2 中盤で具体化する。
+  epic: E-AWS
+  phase: phase-expert
+  labels:
+  - area:aws
+  - pillar:aws
+  - phase:expert
+  - priority:p2
+  priority: p2
+  milestone: M-2030-Q1
+  due_date: '2030-03-31'
+  recurring: false
+  dependencies:
+  - ISS-057
+  evidence_type: 認定証
+  monthly_bucket: ''
+  quarter: 2030-Q1
+  career_link: Specialty はエキスパート到達の証明
+  ai_link: ''
+  task_type: aws
+  work_steps:
+  - Phase 2 中盤で詳細化する
+  deliverables:
+  - Specialty 認定証
+  evidence_to_keep:
+  - 認定証PDF
+  dod:
+  - Specialty 試験に合格した
+  active_from: '2029-10-01'
+  deferred_until: '2029-09-30'
+  blocked_by:
+  - ISS-057
+  exam_priority_guard: false
+  review_note: Phase 2 中盤で計画を具体化する。
+  outcome: Specialty 取得。エキスパート到達。
+  next_action: Phase 2 中盤に Specialty の種類を決定する。
+  why_this_matters: エキスパート到達の証明
+  device: PC
+  inputs: []
+  things_to_make:
+  - Specialty 学習計画
+  completion_check:
+  - Specialty に合格した
+  daily_execution:
+  - Phase 2 中盤で策定
+  time_block: TBD
+  estimate: TBD
+  energy: High
+  focus: Specialty 取得
+- id: ISS-059
+  title: '[AWS] Phase 2 概要: 高度アーキテクチャ実践（2030-04〜2031-03）'
+  body: |-
+    Phase 2 の概要Issue。高度 AWS アーキテクチャの実践とエキスパート領域の確立。
+    詳細タスクは Phase 2 後半で具体化する。
+  epic: E-AWS
+  phase: phase-expert
+  labels:
+  - area:aws
+  - pillar:aws
+  - phase:expert
+  - priority:p2
+  priority: p2
+  milestone: M-2030-Q1
+  due_date: '2031-03-31'
+  recurring: false
+  dependencies:
+  - ISS-058
+  evidence_type: ポートフォリオ
+  monthly_bucket: ''
+  quarter: 2031-Q1
+  career_link: ハイクラス到達の最終証明
+  ai_link: ''
+  task_type: aws
+  work_steps:
+  - Phase 2 後半で詳細化する
+  deliverables:
+  - 高度アーキテクチャ実践記録
+  evidence_to_keep:
+  - ポートフォリオ
+  dod:
+  - 高度実践記録が残っている
+  active_from: '2030-04-01'
+  deferred_until: '2030-03-31'
+  blocked_by:
+  - ISS-058
+  exam_priority_guard: false
+  review_note: Phase 2 後半で計画を具体化する。
+  outcome: エキスパート領域の確立。
+  next_action: Phase 2 後半に計画を策定する。
+  why_this_matters: 5年計画の最終到達点
+  device: PC
+  inputs: []
+  things_to_make:
+  - 実践記録
+  completion_check:
+  - 実践記録が残っている
+  daily_execution:
+  - Phase 2 後半で策定
+  time_block: TBD
+  estimate: TBD
+  energy: High
+  focus: エキスパート到達
+- id: ISS-060
+  title: '[ENG] 2026-06: 技術英単語100語（AWS / 制御 / AI）'
+  body: |-
+    AWS / 制御 / AI 領域の技術英単語を100語習得する。
+    AWS ドキュメントや技術記事を読むための語彙基盤を作る。
+  epic: E-ENG
+  phase: phase-aws-basic
+  labels:
+  - area:english
+  - priority:p2
+  priority: p2
+  milestone: M-2026-Q2
+  due_date: '2026-06-30'
+  recurring: false
+  dependencies: []
+  evidence_type: ノート
+  monthly_bucket: '2026-06'
+  quarter: 2026-Q2
+  career_link: 技術英語力は外資・グローバル企業への応募に必須
+  ai_link: Claude Code で英単語リストと例文を効率的に生成する
+  task_type: study
+  work_steps:
+  - AWS / 制御 / AI の技術文書から頻出英単語を抽出する
+  - 100語のリストを作成する
+  - Anki などで反復学習する
+  deliverables:
+  - 技術英単語100語リスト
+  evidence_to_keep:
+  - 単語リスト（GitHub）
+  dod:
+  - 100語リストが完成している
+  - 80語以上を説明できる
+  active_from: '2026-05-01'
+  deferred_until: null
+  blocked_by: []
+  exam_priority_guard: false
+  review_note: 主計画を圧迫しない範囲で進める。英語はP2。
+  outcome: 技術英語の基本語彙100語を習得した状態。
+  next_action: AWS ドキュメントから頻出単語を10語抽出する。
+  why_this_matters: 英語は3本柱を支える補助スキル。語彙がなければドキュメントが読めない。
+  device: PC / スマホ
+  inputs:
+  - AWS ドキュメント（英語版）
+  - 制御系英語用語集
+  things_to_make:
+  - 技術英単語100語リスト
+  completion_check:
+  - 100語リストが GitHub に保存されている
+  daily_execution:
+  - '通勤時間 (15分): 5語ずつ覚える'
+  time_block: 通勤 15分
+  estimate: 20日間
+  energy: Low
+  focus: 技術英単語の習得
+- id: ISS-061
+  title: '[ENG] 2027-01: AWS ドキュメント英読（週1ページ）'
+  body: |-
+    AWS 公式ドキュメントを英語で週1ページ読む習慣を作る。
+    ISS-060 の語彙基盤を活用し、読解力を実践的に鍛える。
+  epic: E-ENG
+  phase: phase-aws-iot
+  labels:
+  - area:english
+  - area:aws
+  - priority:p2
+  priority: p2
+  milestone: M-2027-Q1
+  due_date: '2027-03-31'
+  recurring: false
+  dependencies:
+  - ISS-060
+  evidence_type: ノート
+  monthly_bucket: '2027-01'
+  quarter: 2027-Q1
+  career_link: 英語ドキュメントを読める力は日常業務に直結
+  ai_link: Claude Code で不明な技術表現の解説を得る
+  task_type: study
+  work_steps:
+  - 毎週1ページの AWS ドキュメント（英語）を選ぶ
+  - 読んで要約を日本語でメモする
+  - 不明な表現をリストに追加する
+  deliverables:
+  - 英読ログ（週次）
+  evidence_to_keep:
+  - 英読ログ（GitHub）
+  dod:
+  - 12週以上の英読ログが残っている
+  active_from: '2027-01-01'
+  deferred_until: '2026-12-31'
+  blocked_by:
+  - ISS-060
+  exam_priority_guard: false
+  review_note: 英語は主計画を遅らせない範囲で。P2維持。
+  outcome: AWS ドキュメントを英語で読む習慣が定着した状態。
+  next_action: 今週読む AWS ドキュメントのページを1つ選ぶ。
+  why_this_matters: 英語ドキュメントの読解は AWS 実務の日常
+  device: PC
+  inputs:
+  - "AWS ドキュメント（英語版）https://docs.aws.amazon.com/"
+  things_to_make:
+  - 英読ログ
+  completion_check:
+  - 12件以上の英読ログが GitHub に保存されている
+  daily_execution:
+  - '週末 (30分): AWS ドキュメント1ページを英語で読み、要約をメモする'
+  time_block: 週末 30分
+  estimate: 12+ sessions
+  energy: Low
+  focus: AWS ドキュメントの英語読解
+- id: ISS-062
+  title: '[ENG] 2027-06: 英語 README 作成'
+  body: |-
+    ポートフォリオリポジトリの README を英語で作成する。
+    制御 × AI × AWS の成果物を英語で説明できるようにする。
+  epic: E-ENG
+  phase: phase-aws-iot
+  labels:
+  - area:english
+  - area:career
+  - priority:p2
+  priority: p2
+  milestone: M-2027-Q2
+  due_date: '2027-06-30'
+  recurring: false
+  dependencies:
+  - ISS-061
+  evidence_type: ドキュメント
+  monthly_bucket: '2027-06'
+  quarter: 2027-Q2
+  career_link: 英語 README は海外チームとの協業力の証明
+  ai_link: Claude Code で英語 README のドラフトを生成する
+  task_type: deliverable
+  work_steps:
+  - ポートフォリオの主要成果物を英語で説明する構成を決める
+  - Claude Code で英語 README のドラフトを生成する
+  - ネイティブチェックまたは Grammarly で校正する
+  deliverables:
+  - 英語 README
+  evidence_to_keep:
+  - GitHub リポジトリの README.md
+  dod:
+  - 英語 README が GitHub に公開されている
+  - 技術的内容が正確に伝わる
+  active_from: '2027-05-01'
+  deferred_until: '2027-04-30'
+  blocked_by:
+  - ISS-061
+  exam_priority_guard: false
+  review_note: 英語表現の正確性と技術的な分かりやすさを確認する。
+  outcome: 英語 README が公開され、海外からもポートフォリオが理解できる状態。
+  next_action: README に含める成果物のリストを日本語で作る。
+  why_this_matters: グローバルに見せられるポートフォリオの仕上げ
+  device: PC
+  inputs:
+  - ポートフォリオリポジトリ
+  - ISS-060〜061 の英語学習成果
+  things_to_make:
+  - 英語 README
+  completion_check:
+  - 英語 README が GitHub に公開されている
+  daily_execution:
+  - '休日 (2h): README 構成決定 → ドラフト → 校正 → 公開'
+  time_block: 休日 2時間
+  estimate: 2-3 sessions
+  energy: Medium
+  focus: 英語 README の作成
+- id: ISS-064
+  title: '[統合] 2028-01: 3本柱統合ポートフォリオ — 制御盤図面 AI 解析デモ'
+  body: |-
+    制御 × AI × AWS の3本柱を統合した最重要ポートフォリオ。
+    PLC シミュレータ → Greengrass → IoT Core → SiteWise / Lambda / Bedrock / S3 / QuickSight の
+    フルパイプラインを構築し、制御盤図面のAI解析デモとして完成させる。
+
+    この Issue は 3本柱の交差点を示す最重要成果物であり、
+    転職面接での技術デモ・ポートフォリオの核として位置づける。
+  epic: E-AI  # E-AWS にも所属（3柱交点）
+  phase: phase-3pillar
+  labels:
+  - area:ai
+  - area:aws
+  - area:control
+  - pillar:ai
+  - pillar:aws
+  - pillar:control
+  - pillar:integration
+  - phase:3pillar
+  - priority:p0
+  priority: p0
+  milestone: M-2028-Q1
+  due_date: '2028-01-31'
+  recurring: false
+  dependencies:
+  - ISS-050
+  - ISS-054
+  - ISS-055
+  - ISS-056
+  evidence_type: ポートフォリオ
+  monthly_bucket: '2028-01'
+  quarter: 2028-Q1
+  career_link: 制御 × AI × AWS の三角形がポートフォリオの核。転職面接の最大武器。
+  ai_link: Bedrock + Claude Code で制御データの AI 分析を実装する
+  task_type: deliverable
+  work_steps:
+  - PLC シミュレータ → Greengrass → IoT Core のデータパイプラインを統合する
+  - SiteWise でデータモデリング + Lambda / Step Functions でワークフロー構築
+  - Bedrock で制御データの AI 分析を実装する
+  - S3 + QuickSight で結果の可視化
+  - デモ動画 or 画面録画を作成する
+  - GitHub リポジトリに公開する
+  deliverables:
+  - 3本柱統合デモ（動作するシステム）
+  - 構成図
+  - デモ動画
+  - README（日英）
+  evidence_to_keep:
+  - GitHub リポジトリ
+  - デモ動画
+  - 構成図
+  dod:
+  - フルパイプラインが動作している
+  - 面接で3分以内にデモできる
+  - GitHub に公開済み
+  active_from: '2027-11-01'
+  deferred_until: '2027-10-31'
+  blocked_by:
+  - ISS-050
+  - ISS-054
+  - ISS-055
+  - ISS-056
+  exam_priority_guard: false
+  review_note: デモの完成度と面接での説明しやすさを確認する。3本柱の接続が見えるか。
+  outcome: 制御 × AI × AWS の統合デモが面接用ポートフォリオとして完成した状態。
+  next_action: ISS-050〜056 の成果物を統合する計画を立てる。
+  why_this_matters: 3本柱統合の証明。転職活動の最大武器。実案件の図面AI解析計画に直結。
+  device: PC
+  inputs:
+  - ISS-050 の Amazon Bedrock 環境
+  - ISS-054 の Greengrass エッジ環境
+  - ISS-055 の SiteWise データモデル
+  - ISS-056 の Lambda + Step Functions ワークフロー
+  - ISS-020〜024 の PLC シミュレータ環境
+  things_to_make:
+  - 3本柱統合デモシステム + README + デモ動画
+  completion_check:
+  - フルパイプラインが動作確認済み
+  - GitHub に公開されている
+  - デモ動画が作成されている
+  daily_execution:
+  - '休日 セッション1 (3h): データパイプラインの統合'
+  - '休日 セッション2 (3h): AI 分析 + 可視化'
+  - '休日 セッション3 (3h): デモ動画作成 + README + 公開'
+  time_block: 休日 3時間 × 5-8回
+  estimate: 8-12 sessions
+  energy: High
+  focus: 3本柱統合ポートフォリオの完成
 - id: ISS-R01
   title: '[レビュー] 週次レビュー'
   body: 日曜夕方30分。GitHub Projects の Issue 確認、完了タスクのクローズ、来週の計画。
@@ -4327,12 +5335,13 @@ win_conditions:
   energy: Medium
   focus: 実技13問を複線図まで反復できるようにする
 - id: WC-005
-  title: '[26/04/28-07/04] [WIN] AI 学習を補助線として維持する'
-  body: 実技集中期 で達成すべき中間成果。関連する具体作業を束ねる。
+  title: '[26/04/28-07/04] [WIN] AI 学習を補助線として維持する + AWS 基礎を開始する'
+  body: 実技集中期 で達成すべき中間成果。関連する具体作業を束ねる。AWS アカウントセットアップと CLF-C02 学習もこの期間に開始する。
   epic: ''
   phase: phase-1
   labels:
   - area:ai
+  - area:aws
   - phase:practical-exam
   - priority:p0
   priority: p0
@@ -4343,6 +5352,8 @@ win_conditions:
   blocked_by: []
   linked_issue_ids:
   - ISS-010
+  - ISS-047
+  - ISS-051
   - ISS-R01
   - ISS-R02
   evidence_type: ドキュメント
@@ -4529,12 +5540,13 @@ win_conditions:
   energy: Medium
   focus: 図面・仕様書・OT セキュリティの読解を接続する
 - id: WC-008
-  title: '[26/07/05-10/31] [WIN] AI 中級と記録運用を継続する'
-  body: 制御基礎強化期 で達成すべき中間成果。関連する具体作業を束ねる。
+  title: '[26/07/05-10/31] [WIN] AI 中級と記録運用を継続する + SAA 学習を開始する'
+  body: 制御基礎強化期 で達成すべき中間成果。関連する具体作業を束ねる。SAA 学習（ISS-052）もこの期間に開始する。
   epic: ''
   phase: phase-2
   labels:
   - area:ai
+  - area:aws
   - phase:control-foundation
   - priority:p1
   priority: p1
@@ -4545,6 +5557,7 @@ win_conditions:
   blocked_by: []
   linked_issue_ids:
   - ISS-019
+  - ISS-052
   - ISS-R01
   - ISS-R02
   - ISS-R04
@@ -4988,14 +6001,17 @@ win_conditions:
   energy: Medium
   focus: 受験期でもレビューと記録を維持する
 - id: WC-015
-  title: '[27/10/01-01/31] [WIN] AI・制御・OT セキュリティの成果物を統合する'
-  body: AI スペシャリスト強化期 で達成すべき中間成果。関連する具体作業を束ねる。
+  title: '[27/10/01-01/31] [WIN] 制御 × AI × AWS の3本柱成果物を統合する'
+  body: AI スペシャリスト強化期・3柱統合期 で達成すべき中間成果。AWS（Bedrock・Lambda・3柱統合デモ）を含む制御×AI×AWSの成果物を束ねる。
   epic: ''
   phase: phase-5
   labels:
   - area:security
   - area:ai
+  - area:aws
+  - pillar:integration
   - phase:ai-specialist
+  - phase:3pillar
   - priority:p1
   priority: p1
   milestone: M-2028-Q1
@@ -5009,6 +6025,9 @@ win_conditions:
   - ISS-036
   - ISS-039
   - ISS-046
+  - ISS-050
+  - ISS-056
+  - ISS-064
   evidence_type: ドキュメント
   monthly_bucket: 2027-10..2028-01
   quarter: 2028-Q1

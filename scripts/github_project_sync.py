@@ -34,6 +34,7 @@ TASK_TYPE_TO_FIELD = {
     "review": "定期レビュー",
     "deliverable": "成果物",
     "setup": "セットアップ",
+    "aws": "AWS",
 }
 
 REVIEW_CYCLE_TO_FIELD = {
