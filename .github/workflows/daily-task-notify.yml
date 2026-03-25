@@ -115,12 +115,15 @@ jobs:
 
             body += `---\n💡 完了したら Issue を **完了** に更新してください。\n`;
 
+            body += `\n/cc @foru1215`;
+
             await github.rest.issues.create({
-              owner:  context.repo.owner,
-              repo:   context.repo.repo,
-              title:  `[今日のタスク] ${yyyy}/${mm}/${dd}（${dayName}）`,
+              owner:     context.repo.owner,
+              repo:      context.repo.repo,
+              title:     `[今日のタスク] ${yyyy}/${mm}/${dd}（${dayName}）`,
               body,
-              labels: ['daily-notify'],
+              labels:    ['daily-notify'],
+              assignees: ['foru1215'],
             });
 
             console.log(`通知 Issue 作成完了（${tasks.length}件）`);
