@@ -26,6 +26,7 @@ jobs:
             const todayStr = `${yyyy}-${mm}-${dd}`;
             const dayName  = ['日','月','火','水','木','金','土'][jst.getUTCDay()];
             const today    = new Date(`${todayStr}T00:00:00`);
+            const notificationRecipient = context.repo.owner;
 
             // ── 前日の通知 Issue を Close ────────────────────────────
             const oldIssues = await github.rest.issues.listForRepo({
@@ -99,6 +100,7 @@ jobs:
 
             // ── Issue 本文を構築 ────────────────────────────────────
             let body = `## ☀️ ${yyyy}/${mm}/${dd}（${dayName}）のタスク\n\n`;
+            body += `@${notificationRecipient} 今日のタスク通知です。\n\n`;
             body += `**${tasks.length}件** が本日の実施範囲です。WIP 上限3つを守って進めよう。\n\n---\n\n`;
 
             for (const t of tasks) {
@@ -120,6 +122,7 @@ jobs:
               repo:   context.repo.repo,
               title:  `[今日のタスク] ${yyyy}/${mm}/${dd}（${dayName}）`,
               body,
+              assignees: [notificationRecipient],
               labels: ['daily-notify'],
             });
 
