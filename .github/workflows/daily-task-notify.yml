@@ -40,7 +40,7 @@ jobs:
 
       - name: 今日の主タスク通知を生成
         run: |
-          python scripts/daily_task_notification.py \
+          python -m scripts.daily_task_notification \
             --repo "$REPO" \
             --recipient "$RECIPIENT" \
             --seed-path "data/project-seed.yaml" \

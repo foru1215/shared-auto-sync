@@ -6,9 +6,13 @@ import datetime as dt
 import json
 import pathlib
 import subprocess
+import sys
 from typing import Any
 
 import yaml
+
+if __package__ in {None, ""}:
+    sys.path.append(str(pathlib.Path(__file__).resolve().parents[1]))
 
 from scripts import github_project_sync as sync
 
